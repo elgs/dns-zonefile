@@ -1,0 +1,15 @@
+$TTL	{ttl}
+@   IN  SOA   {origin}   {person} (
+               {serial} ;serial
+               {refresh} ;refresh
+               {retry} ;retry
+               {expire} ;expire
+               {minimum} );minimum
+
+{ns}
+
+{a}
+
+{cname}
+
+{mx}

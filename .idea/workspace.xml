@@ -210,7 +210,11 @@
       <created>1390143518216</created>
       <updated>1390143518216</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="added zonefile_data.json&#10;">
+      <created>1390147419646</created>
+      <updated>1390147419646</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -245,7 +249,8 @@
     </option>
     <MESSAGE value="Refactored." />
     <MESSAGE value="added zonefile_data.json" />
-    <option name="LAST_COMMIT_MESSAGE" value="added zonefile_data.json" />
+    <MESSAGE value="added zonefile_data.json&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="added zonefile_data.json&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />

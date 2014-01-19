@@ -1,38 +1,7 @@
 (function () {
     var fs = require('fs');
 
-    var defaultOptions = {
-        soa: {
-            ttl: 1800,
-            origin: 'NS1.NAMESERVER.NET.',
-            person: 'HOSTMASTER.MYDOMAIN.COM.',
-            serial: 45,
-            refresh: 3600,
-            retry: 600,
-            expire: 3600000,
-            minimum: 86400
-        },
-        ns: [
-            'NS1.NAMESERVER.NET',
-            'NS2.NAMESERVER.NET'
-        ],
-        a: {
-            '@': '127.0.0.1',
-            'www': '127.0.0.1',
-            'mail': '127.0.0.1'
-        },
-        cname: {
-            'mail1': 'mail',
-            'mail2': 'mail'
-        },
-        mx: {
-            '0': 'mail1',
-            '10': 'mail2'
-        }
-    };
-
-    var generate = function (options) {
-        var template = fs.readFileSync('./zonefile_template', 'utf8');
+    var generate = function (template, options) {
         template = processSOA(template, options['soa']);
         template = processNS(template, options['ns']);
         template = processA(template, options['a']);
@@ -85,5 +54,7 @@
         return template.replace('{mx}', ret);
     };
 
-    generate(defaultOptions);
+    var template = fs.readFileSync('./zonefile_template', 'utf8');
+    var options = require('./zonefile_data.json');
+    generate(template, options);
 })();

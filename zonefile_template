@@ -5,11 +5,7 @@ $TTL	{ttl}
                {retry} ;retry
                {expire} ;expire
                {minimum} );minimum
-
 {ns}
-
 {a}
-
 {cname}
-
 {mx}

@@ -22,7 +22,7 @@
     var processNS = function (template, data) {
         var ret = '';
         for (var i in data) {
-            ret += '\t\tNS\t\t' + data[i] + '\n';
+            ret += 'IN\t\tNS\t\t' + data[i] + '\n';
         }
         return template.replace('{ns}', ret);
     };
@@ -31,7 +31,7 @@
         var ret = '';
         for (var key in data) {
             var value = data[key];
-            ret += key + '\t\tA\t\t' + value + '\n';
+            ret += key + '\t\tIN\t\tA\t\t' + value + '\n';
         }
         return template.replace('{a}', ret);
     };
@@ -40,7 +40,7 @@
         var ret = '';
         for (var key in data) {
             var value = data[key];
-            ret += key + '\t\tCNAME\t\t' + value + '\n';
+            ret += key + '\t\tIN\t\tCNAME\t\t' + value + '\n';
         }
         return template.replace('{cname}', ret);
     };
@@ -49,7 +49,7 @@
         var ret = '';
         for (var key in data) {
             var value = data[key];
-            ret += 'MX\t\t' + key + '\t\t' + value + '\n';
+            ret += 'IN\t\tMX\t\t' + key + '\t\t' + value + '\n';
         }
         return template.replace('{mx}', ret);
     };

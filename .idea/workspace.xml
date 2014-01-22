@@ -2,8 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b0551417-0631-4f46-9099-1e7e3ec47d26" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/test.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bin/zonefile.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/zonefile.js" afterPath="$PROJECT_DIR$/lib/zonefile.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/zonefile_data.json" afterPath="$PROJECT_DIR$/test/zonefile_data.json" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/zonefile_template" afterPath="$PROJECT_DIR$/lib/zonefile_template" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/zonefile_data.json" afterPath="$PROJECT_DIR$/zonefile_data.json" />
     </list>
     <ignored path="dns-zonefile.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -27,27 +32,27 @@
   <component name="FileEditorManager">
     <leaf>
       <file leaf-file-name="zonefile.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/zonefile.js">
+        <entry file="file://$PROJECT_DIR$/lib/zonefile.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="54" column="6" selection-start="1666" selection-end="1666" vertical-scroll-proportion="0.0" vertical-offset="293" max-vertical-offset="975">
+            <state line="1" column="0" selection-start="15" selection-end="15" vertical-scroll-proportion="0.0" vertical-offset="276" max-vertical-offset="915">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="zonefile_data.json" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/zonefile_data.json">
+      <file leaf-file-name="package.json" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="21" column="24" selection-start="467" selection-end="467" vertical-scroll-proportion="0.33404028" vertical-offset="0" max-vertical-offset="943">
+            <state line="9" column="27" selection-start="231" selection-end="231" vertical-scroll-proportion="-5.625" vertical-offset="0" max-vertical-offset="465">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="zonefile_template" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/zonefile_template">
+      <file leaf-file-name="zonefile.js" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/bin/zonefile.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="4" selection-start="231" selection-end="231" vertical-scroll-proportion="0.0" vertical-offset="150" max-vertical-offset="240">
+            <state line="23" column="39" selection-start="634" selection-end="634" vertical-scroll-proportion="0.5399061" vertical-offset="0" max-vertical-offset="639">
               <folding />
             </state>
           </provider>
@@ -68,8 +73,13 @@
       <list>
         <option value="$PROJECT_DIR$/zonefile_template" />
         <option value="$PROJECT_DIR$/zonefile_data.json.js" />
-        <option value="$PROJECT_DIR$/zonefile.js" />
         <option value="$PROJECT_DIR$/zonefile_data.json" />
+        <option value="$PROJECT_DIR$/zonefile.js" />
+        <option value="$PROJECT_DIR$/test.js" />
+        <option value="$PROJECT_DIR$/index.js" />
+        <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/test/test.js" />
+        <option value="$PROJECT_DIR$/bin/zonefile.js" />
       </list>
     </option>
   </component>
@@ -124,6 +134,48 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dns-zonefile" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dns-zonefile" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dns-zonefile" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dns-zonefile" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dns-zonefile" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dns-zonefile" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
     </panes>
@@ -135,14 +187,16 @@
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
     <property name="recentsLimit" value="5" />
+    <property name="restartRequiresConfirmation" value="true" />
   </component>
-  <component name="RunManager" selected="Node.js.zonefile.js">
-    <configuration default="false" name="zonefile.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-node="/usr/local/bin/node" path-to-js-file="zonefile.js" working-dir="$PROJECT_DIR$">
-      <browser start="false" url="" with-js-debugger="false" />
-      <RunnerSettings RunnerId="NodeJS.run" />
-      <ConfigurationWrapper RunnerId="NodeJS.run" />
-      <method />
-    </configuration>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/test" />
+      <recent name="$PROJECT_DIR$/lib" />
+      <recent name="$PROJECT_DIR$/bin" />
+    </key>
+  </component>
+  <component name="RunManager">
     <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
       <option name="VMOptions" />
       <option name="arguments" />
@@ -179,14 +233,7 @@
       <browser start="false" url="" with-js-debugger="false" />
       <method />
     </configuration>
-    <list size="1">
-      <item index="0" class="java.lang.String" itemvalue="Node.js.zonefile.js" />
-    </list>
-    <recent_temporary>
-      <list size="1">
-        <item index="0" class="java.lang.String" itemvalue="Node.js.zonefile.js" />
-      </list>
-    </recent_temporary>
+    <list size="0" />
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
   <component name="SvnConfiguration" maxAnnotateRevisions="500" myUseAcceleration="nothing" myAutoUpdateAfterCommit="false" cleanupOnStartRun="false" SSL_PROTOCOLS="sslv3">
@@ -232,13 +279,18 @@
       <created>1390198041634</created>
       <updated>1390198041634</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Minor changes.">
+      <created>1390385250198</created>
+      <updated>1390385250198</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="918" y="22" width="960" height="1090" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -248,9 +300,8 @@
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32964823" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32964823" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -269,48 +320,65 @@
     <MESSAGE value="added zonefile_data.json" />
     <MESSAGE value="added zonefile_data.json&#10;" />
     <MESSAGE value="Normalized the zone file." />
-    <option name="LAST_COMMIT_MESSAGE" value="Normalized the zone file." />
+    <MESSAGE value="Minor changes." />
+    <option name="LAST_COMMIT_MESSAGE" value="Minor changes." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/zonefile.js">
+    <entry file="file://$PROJECT_DIR$/lib/zonefile.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="37" column="0" selection-start="1123" selection-end="1123" vertical-scroll-proportion="0.0" vertical-offset="555" max-vertical-offset="975">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/zonefile_data.json">
+    <entry file="file://$PROJECT_DIR$/test/zonefile_data.json">
       <provider selected="true" editor-type-id="text-editor">
         <state line="24" column="8" selection-start="508" selection-end="508" vertical-scroll-proportion="0.0" vertical-offset="360" max-vertical-offset="510">
           <folding />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/lib/zonefile_template">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="4" selection-start="231" selection-end="231" vertical-scroll-proportion="0.23474178" vertical-offset="0" max-vertical-offset="639">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/zonefile_data.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="28" column="1" selection-start="562" selection-end="562" vertical-scroll-proportion="0.68292683" vertical-offset="0" max-vertical-offset="615">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="943" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/zonefile.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="54" column="6" selection-start="1666" selection-end="1666" vertical-scroll-proportion="0.0" vertical-offset="293" max-vertical-offset="975">
+        <state line="9" column="27" selection-start="231" selection-end="231" vertical-scroll-proportion="-5.625" vertical-offset="0" max-vertical-offset="465">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/zonefile_template">
+    <entry file="file://$PROJECT_DIR$/test/test.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="4" selection-start="231" selection-end="231" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="240">
+        <state line="5" column="25" selection-start="184" selection-end="191" vertical-scroll-proportion="0.11737089" vertical-offset="0" max-vertical-offset="639">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/zonefile_data.json">
+    <entry file="file://$PROJECT_DIR$/lib/zonefile.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="24" selection-start="467" selection-end="467" vertical-scroll-proportion="0.33404028" vertical-offset="0" max-vertical-offset="943">
+        <state line="1" column="0" selection-start="15" selection-end="15" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="915">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bin/zonefile.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="23" column="39" selection-start="634" selection-end="634" vertical-scroll-proportion="0.5399061" vertical-offset="0" max-vertical-offset="639">
           <folding />
         </state>
       </provider>

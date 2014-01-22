@@ -54,7 +54,7 @@ zonefile zonefile_data.json
 ```
 Output will be as follows:
 ```
-$TTL	180
+$TTL	3600
 @   IN  SOA   NS1.NAMESERVER.NET.	   HOSTMASTER.MYDOMAIN.COM.	 (
                45	 ;serial
                3600	 ;refresh

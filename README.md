@@ -1,4 +1,4 @@
-zonefile-generator
+dns-zonefile
 ==================
 
 A DNS zone file generator written in Nodejs.
@@ -48,8 +48,11 @@ In standalone mode, a JSON file as the argument like the following is expected:
     }
 }
 ```
-
-Output as follows:
+Assuming a JSON file named zonefile_data.json contains the JSON data above, run:
+```
+zonefile zonefile_data.json
+```
+Output will be as follows:
 ```
 $TTL	180
 @   IN  SOA   NS1.NAMESERVER.NET.	   HOSTMASTER.MYDOMAIN.COM.	 (

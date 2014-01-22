@@ -1,6 +1,6 @@
 {
     "soa": {
-        "ttl": 1800,
+        "ttl": 180,
         "origin": "NS1.NAMESERVER.NET.",
         "person": "HOSTMASTER.MYDOMAIN.COM.",
         "serial": 45,

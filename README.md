@@ -1,11 +1,10 @@
 dns-zonefile
 ==================
-
 A DNS zone file generator written in Nodejs.
+RFC1537 compliant. [http://www.ietf.org/rfc/rfc1537.txt](http://www.ietf.org/rfc/rfc1537.txt)
 
 Installation
 ===
-
 Standalone
 ---
 `sudo npm install dns-zonefile -g`

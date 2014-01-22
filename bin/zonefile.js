@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 (function () {
-    var fs = require('fs');
+
     var zonefile = require('../lib/zonefile.js');
 
     var args = function () {
@@ -18,7 +18,8 @@
     };
 
     var input = args();
-    var template = fs.readFileSync('../lib/zonefile_template', 'utf8');
+
     var options = require(input[0]);
-    zonefile.generate(template, options);
+    var output = zonefile.generate(options);
+    console.log(output);
 })();

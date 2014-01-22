@@ -14,7 +14,7 @@ Module
 ---
 `npm install dns-zonefile`
 
-Configuration
+Run as standalone
 ===
 In standalone mode, a json file as the argument like the following is expected:
 ```json
@@ -72,3 +72,6 @@ IN		MX		0		mail1
 IN		MX		10		mail2
 
 ```
+
+Run as module
+===

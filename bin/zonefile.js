@@ -18,7 +18,6 @@
     };
 
     var input = args();
-    console.log(input[0]);
     var template = fs.readFileSync('../lib/zonefile_template', 'utf8');
     var options = require(input[0]);
     zonefile.generate(template, options);

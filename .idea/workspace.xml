@@ -2,13 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b0551417-0631-4f46-9099-1e7e3ec47d26" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/test.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bin/zonefile.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/zonefile.js" afterPath="$PROJECT_DIR$/lib/zonefile.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/zonefile_data.json" afterPath="$PROJECT_DIR$/test/zonefile_data.json" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/zonefile_template" afterPath="$PROJECT_DIR$/lib/zonefile_template" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/zonefile.js" afterPath="$PROJECT_DIR$/bin/zonefile.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/zonefile_data.json" afterPath="$PROJECT_DIR$/test/zonefile_data.json" />
     </list>
     <ignored path="dns-zonefile.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -40,21 +37,51 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="package.json" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/package.json">
+      <file leaf-file-name="zonefile_data.json" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test/zonefile_data.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="27" selection-start="231" selection-end="231" vertical-scroll-proportion="-5.625" vertical-offset="0" max-vertical-offset="465">
+            <state line="2" column="19" selection-start="30" selection-end="34" vertical-scroll-proportion="-1.25" vertical-offset="0" max-vertical-offset="510">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="zonefile.js" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/bin/zonefile.js">
+      <file leaf-file-name="package.json" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="23" column="39" selection-start="634" selection-end="634" vertical-scroll-proportion="0.5399061" vertical-offset="0" max-vertical-offset="639">
+            <state line="1" column="25" selection-start="15" selection-end="27" vertical-scroll-proportion="-0.625" vertical-offset="0" max-vertical-offset="465">
               <folding />
             </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="zonefile_template" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/zonefile_template">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="10" column="4" selection-start="231" selection-end="231" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="240">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="zonefile.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/bin/zonefile.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="20" column="26" selection-start="485" selection-end="485" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="435">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="README.md" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider editor-type-id="text-editor">
+            <state line="22" column="19" selection-start="333" selection-end="333" vertical-scroll-proportion="0.0" vertical-offset="596" max-vertical-offset="1185">
+              <folding />
+            </state>
+          </provider>
+          <provider selected="true" editor-type-id="MarkdownPreviewEditor">
+            <state />
           </provider>
         </entry>
       </file>
@@ -79,6 +106,8 @@
         <option value="$PROJECT_DIR$/index.js" />
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/test/test.js" />
+        <option value="$PROJECT_DIR$/test/zonefile_data.json" />
+        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/bin/zonefile.js" />
       </list>
     </option>
@@ -283,12 +312,16 @@
       <created>1390385250198</created>
       <updated>1390385250198</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Refactored.">
+      <created>1390386684108</created>
+      <updated>1390386684108</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="918" y="22" width="960" height="1090" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -296,7 +329,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32916668" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32916668" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
@@ -316,12 +349,12 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="Refactored." />
     <MESSAGE value="added zonefile_data.json" />
     <MESSAGE value="added zonefile_data.json&#10;" />
     <MESSAGE value="Normalized the zone file." />
     <MESSAGE value="Minor changes." />
-    <option name="LAST_COMMIT_MESSAGE" value="Minor changes." />
+    <MESSAGE value="Refactored." />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactored." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -341,30 +374,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/zonefile_template">
+    <entry file="file://$PROJECT_DIR$/test/test.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="4" selection-start="231" selection-end="231" vertical-scroll-proportion="0.23474178" vertical-offset="0" max-vertical-offset="639">
+        <state line="5" column="25" selection-start="184" selection-end="191" vertical-scroll-proportion="0.11737089" vertical-offset="0" max-vertical-offset="639">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/zonefile_data.json">
+    <entry file="file://$PROJECT_DIR$/lib/zonefile_template">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="1" selection-start="562" selection-end="562" vertical-scroll-proportion="0.68292683" vertical-offset="0" max-vertical-offset="615">
+        <state line="10" column="4" selection-start="231" selection-end="231" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="240">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="27" selection-start="231" selection-end="231" vertical-scroll-proportion="-5.625" vertical-offset="0" max-vertical-offset="465">
+        <state line="1" column="25" selection-start="15" selection-end="27" vertical-scroll-proportion="-0.625" vertical-offset="0" max-vertical-offset="465">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/test.js">
+    <entry file="file://$PROJECT_DIR$/test/zonefile_data.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="25" selection-start="184" selection-end="191" vertical-scroll-proportion="0.11737089" vertical-offset="0" max-vertical-offset="639">
+        <state line="2" column="19" selection-start="30" selection-end="34" vertical-scroll-proportion="-1.25" vertical-offset="0" max-vertical-offset="510">
           <folding />
         </state>
       </provider>
@@ -378,9 +411,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/bin/zonefile.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="39" selection-start="634" selection-end="634" vertical-scroll-proportion="0.5399061" vertical-offset="0" max-vertical-offset="639">
+        <state line="20" column="26" selection-start="485" selection-end="485" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="435">
           <folding />
         </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider editor-type-id="text-editor">
+        <state line="22" column="19" selection-start="333" selection-end="333" vertical-scroll-proportion="0.0" vertical-offset="596" max-vertical-offset="1185">
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="MarkdownPreviewEditor">
+        <state />
       </provider>
     </entry>
   </component>

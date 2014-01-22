@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 (function () {
-
+    var fs = require('fs');
     var zonefile = require('../lib/zonefile.js');
 
     var args = function () {
@@ -12,14 +12,14 @@
             }
         });
         if (ret.length === 0) {
-            ret.push('../test/zonefile_data.json');
+            ret.push(__dirname + '/../test/zonefile_data.json');
         }
         return ret;
     };
 
     var input = args();
 
-    var options = require(input[0]);
-    var output = zonefile.generate(options);
+    var options = fs.readFileSync(input[0], 'utf8');
+    var output = zonefile.generate(JSON.parse(options));
     console.log(output);
 })();

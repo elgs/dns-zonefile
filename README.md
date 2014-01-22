@@ -16,7 +16,7 @@ Module
 
 Run as standalone
 ===
-In standalone mode, a json file as the argument like the following is expected:
+In standalone mode, a JSON file as the argument like the following is expected:
 ```json
 {
     "soa": {
@@ -75,3 +75,10 @@ IN		MX		10		mail2
 
 Run as module
 ===
+```javascript
+var zonefile = require('dns-zonefile');
+var options = require('./zonefile_data.json');
+var output = zonefile.generate(options);
+console.log(output);
+```
+where zonefile_data.json follows the configuration JSON format above.

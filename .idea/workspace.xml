@@ -3,10 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="b0551417-0631-4f46-9099-1e7e3ec47d26" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/test.js" afterPath="$PROJECT_DIR$/test/test.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/zonefile.js" afterPath="$PROJECT_DIR$/bin/zonefile.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/zonefile.js" afterPath="$PROJECT_DIR$/lib/zonefile.js" />
     </list>
     <ignored path="dns-zonefile.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -41,7 +39,7 @@
       <file leaf-file-name="test.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test/test.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="24" selection-start="185" selection-end="185" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="165">
+            <state line="4" column="19" selection-start="180" selection-end="180" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="165">
               <folding />
             </state>
           </provider>
@@ -59,12 +57,21 @@
       <file leaf-file-name="README.md" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="77" column="0" selection-start="1344" selection-end="1344" vertical-scroll-proportion="0.90425533" vertical-offset="305" max-vertical-offset="1245">
+            <state line="18" column="26" selection-start="241" selection-end="241" vertical-scroll-proportion="0.28723404" vertical-offset="0" max-vertical-offset="1335">
               <folding />
             </state>
           </provider>
           <provider editor-type-id="MarkdownPreviewEditor">
             <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="package.json" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/package.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="1" column="13" selection-start="15" selection-end="27" vertical-scroll-proportion="-0.625" vertical-offset="0" max-vertical-offset="465">
+              <folding />
+            </state>
           </provider>
         </entry>
       </file>
@@ -87,12 +94,12 @@
         <option value="$PROJECT_DIR$/zonefile.js" />
         <option value="$PROJECT_DIR$/test.js" />
         <option value="$PROJECT_DIR$/index.js" />
-        <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/test/zonefile_data.json" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/bin/zonefile.js" />
         <option value="$PROJECT_DIR$/lib/zonefile.js" />
         <option value="$PROJECT_DIR$/test/test.js" />
+        <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -304,12 +311,16 @@
       <created>1390387046899</created>
       <updated>1390387046899</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Refactored.">
+      <created>1390388640145</created>
+      <updated>1390388640145</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="918" y="22" width="960" height="1090" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -341,9 +352,9 @@
     <MESSAGE value="added zonefile_data.json&#10;" />
     <MESSAGE value="Normalized the zone file." />
     <MESSAGE value="Minor changes." />
-    <MESSAGE value="Refactored." />
     <MESSAGE value="README.md updated." />
-    <option name="LAST_COMMIT_MESSAGE" value="README.md updated." />
+    <MESSAGE value="Refactored." />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactored." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -377,23 +388,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="25" selection-start="15" selection-end="27" vertical-scroll-proportion="0.01590668" vertical-offset="0" max-vertical-offset="943">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/zonefile.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="26" column="17" selection-start="920" selection-end="920" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="945">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/test.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="24" selection-start="185" selection-end="185" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="165">
           <folding />
         </state>
       </provider>
@@ -405,9 +402,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/test/test.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="19" selection-start="180" selection-end="180" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="165">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="13" selection-start="15" selection-end="27" vertical-scroll-proportion="-0.625" vertical-offset="0" max-vertical-offset="465">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="77" column="0" selection-start="1344" selection-end="1344" vertical-scroll-proportion="0.90425533" vertical-offset="305" max-vertical-offset="1245">
+        <state line="18" column="26" selection-start="241" selection-end="241" vertical-scroll-proportion="0.28723404" vertical-offset="0" max-vertical-offset="1335">
           <folding />
         </state>
       </provider>

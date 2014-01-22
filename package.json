@@ -1,6 +1,6 @@
 {
     "name": "dns-zonefile",
-    "version": "0.0.3",
+    "version": "0.0.4",
     "description": "A DNS zone file generator.",
     "main": "./lib/zonefile.js",
     "bin": {
@@ -8,11 +8,8 @@
     },
     "repository": {
         "type": "git",
-        "url": "https://github.com/elgs/zonefile-generator.git"
-    },
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
-    },
+        "url": "https://github.com/elgs/dns-zonefile.git"
+    }
     "keywords": [
         "DNS",
         "zone"

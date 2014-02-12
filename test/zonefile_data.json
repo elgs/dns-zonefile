@@ -10,8 +10,8 @@
         "minimum": 86400
     },
     "ns": [
-        "NS1.NAMESERVER.NET",
-        "NS2.NAMESERVER.NET"
+        "NS1.NAMESERVER.NET.",
+        "NS2.NAMESERVER.NET."
     ],
     "a": {
         "@": "127.0.0.1",

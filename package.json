@@ -1,6 +1,6 @@
 {
     "name": "dns-zonefile",
-    "version": "0.0.5",
+    "version": "0.0.6",
     "description": "A DNS zone file generator.",
     "main": "./lib/zonefile.js",
     "bin": {
@@ -15,5 +15,9 @@
         "zone"
     ],
     "author": "Elgs Chen",
-    "license": "ISC"
+    "license": "ISC",
+    "contributors": [{
+        "name": "William Ferrell",
+        "email": "willfe@gmail.com"
+    }]
 }

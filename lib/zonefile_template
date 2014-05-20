@@ -1,11 +1,13 @@
+{$origin}
 $TTL	{ttl}
 @   IN  SOA   {origin}   {person} (
                {serial} ;serial
                {refresh} ;refresh
                {retry} ;retry
                {expire} ;expire
-               {minimum} );minimum
+               {minimum} ) ;minimum
 {ns}
 {a}
 {cname}
 {mx}
+{ptr}

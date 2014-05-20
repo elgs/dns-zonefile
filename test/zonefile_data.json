@@ -1,4 +1,5 @@
 {
+    "$origin": "0.168.192.IN-ADDR.ARPA.",
     "soa": {
         "ttl": 3600,
         "origin": "NS1.NAMESERVER.NET.",
@@ -26,4 +27,7 @@
         "0": "mail1",
         "10": "mail2"
     }
+    "ptr": {
+        "1": "HOST1.NAMESERVER.NET.",
+        "2": "HOST2.NAMESERVER.NET.",
 }

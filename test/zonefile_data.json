@@ -26,8 +26,9 @@
     "mx": {
         "0": "mail1",
         "10": "mail2"
-    }
+    },
     "ptr": {
         "1": "HOST1.NAMESERVER.NET.",
-        "2": "HOST2.NAMESERVER.NET.",
+        "2": "HOST2.NAMESERVER.NET."
+    }
 }

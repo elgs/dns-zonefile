@@ -26,9 +26,5 @@
     "mx": {
         "0": "mail1",
         "10": "mail2"
-    },
-    "ptr": {
-        "1": "HOST1.MYDOMAIN.COM.",
-        "2": "HOST2.MYDOMAIN.COM."
     }
 }

@@ -31,20 +31,20 @@ The following JSON produces a zone file for a forward DNS zone:
 
 ```json
 {
-    "$origin": "NAMESERVER.NET.",
+    "$origin": "MYDOMAIN.COM.",
     "soa": {
         "ttl": 3600,
-        "origin": "NS1.NAMESERVER.NET.",
-        "person": "HOSTMASTER.MYDOMAIN.COM.",
+        "mname": "NS1.NAMESERVER.NET.",
+        "rname": "HOSTMASTER.MYDOMAIN.COM.",
         "serial": 45,
         "refresh": 3600,
         "retry": 600,
-        "expire": 3600000,
+        "expire": 604800,
         "minimum": 86400
     },
     "ns": [
-        "NS1.NAMESERVER.NET",
-        "NS2.NAMESERVER.NET"
+        "NS1.NAMESERVER.NET.",
+        "NS2.NAMESERVER.NET."
     ],
     "a": {
         "@": "127.0.0.1",
@@ -60,32 +60,34 @@ The following JSON produces a zone file for a forward DNS zone:
         "10": "mail2"
     }
 }
+
 ```
 
 _dns-zonefile_ will produce the following zone file from the above information:
 
 ```
-$ORIGIN NAMESERVER.NET.
+$ORIGIN MYDOMAIN.COM.
 $TTL	3600
 @   IN  SOA   NS1.NAMESERVER.NET.	   HOSTMASTER.MYDOMAIN.COM.	 (
                45	 ;serial
                3600	 ;refresh
                600	 ;retry
-               3600000	 ;expire
-               86400	 );minimum
-IN		NS		NS1.NAMESERVER.NET
-IN		NS		NS2.NAMESERVER.NET
+               604800	 ;expire
+               86400	 ;minimum ttl
+)
 
-@		IN		A		127.0.0.1
-www		IN		A		127.0.0.1
-mail		IN		A		127.0.0.1
+@	NS	NS1.NAMESERVER.NET.
+@	NS	NS2.NAMESERVER.NET.
 
-mail1		IN		CNAME		mail
-mail2		IN		CNAME		mail
+@	MX	0	mail1
+@	MX	10	mail2
 
-IN		MX		0		mail1
-IN		MX		10		mail2
+@	A	127.0.0.1
+www	A	127.0.0.1
+mail	A	127.0.0.1
 
+mail1	CNAME	mail
+mail2	CNAME	mail
 ```
 
 ### Reverse DNS Zone
@@ -95,20 +97,20 @@ keyword is recommended for reverse DNS zones):
 
 ```json
 {
-    "$origin": "0.168.192.IN_ADDR.ARPA.",
+    "$origin": "0.168.192.IN-ADDR.ARPA.",
     "soa": {
         "ttl": 3600,
-        "origin": "NS1.NAMESERVER.NET.",
-        "person": "HOSTMASTER.MYDOMAIN.COM.",
+        "mname": "NS1.NAMESERVER.NET.",
+        "rname": "HOSTMASTER.MYDOMAIN.COM.",
         "serial": 45,
         "refresh": 3600,
         "retry": 600,
-        "expire": 3600000,
+        "expire": 604800,
         "minimum": 86400
     },
     "ns": [
-        "NS1.NAMESERVER.NET",
-        "NS2.NAMESERVER.NET"
+        "NS1.NAMESERVER.NET.",
+        "NS2.NAMESERVER.NET."
     ],
     "ptr": {
         "1": "HOST1.MYDOMAIN.COM.",
@@ -120,19 +122,21 @@ keyword is recommended for reverse DNS zones):
 _dns-zonefile_ will produce the following zone file from the above information:
 
 ```
-$ORIGIN 0.168.192.in-addr.arpa.
+$ORIGIN 0.168.192.IN-ADDR.ARPA.
 $TTL	3600
 @   IN  SOA   NS1.NAMESERVER.NET.	   HOSTMASTER.MYDOMAIN.COM.	 (
                45	 ;serial
                3600	 ;refresh
                600	 ;retry
-               3600000	 ;expire
-               86400	 );minimum
-IN		NS		NS1.NAMESERVER.NET
-IN		NS		NS2.NAMESERVER.NET
+               604800	 ;expire
+               86400	 ;minimum ttl
+)
 
-1       IN      PTR     HOST1.MYDOMAIN.COM.
-2       IN      PTR     HOST2.MYDOMAIN.COM.
+@	NS	NS1.NAMESERVER.NET.
+@	NS	NS2.NAMESERVER.NET.
+
+1	PTR	HOST1.MYDOMAIN.COM.
+2	PTR	HOST2.MYDOMAIN.COM.
 ```
 
 ## Standalone Usage

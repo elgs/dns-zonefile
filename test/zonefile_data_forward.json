@@ -1,5 +1,5 @@
 {
-    "$origin": "0.168.192.IN-ADDR.ARPA.",
+    "$origin": "MYDOMAIN.COM.",
     "soa": {
         "ttl": 3600,
         "mname": "NS1.NAMESERVER.NET.",

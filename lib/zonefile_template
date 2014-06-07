@@ -9,7 +9,7 @@ $TTL	{ttl}
 )
 
 {ns}
+{mx}
 {a}
 {cname}
-{mx}
 {ptr}

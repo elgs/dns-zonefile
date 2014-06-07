@@ -1,0 +1,21 @@
+{
+    "$origin": "0.168.192.IN-ADDR.ARPA.",
+    "soa": {
+        "ttl": 3600,
+        "mname": "NS1.NAMESERVER.NET.",
+        "rname": "HOSTMASTER.MYDOMAIN.COM.",
+        "serial": 45,
+        "refresh": 3600,
+        "retry": 600,
+        "expire": 604800,
+        "minimum": 86400
+    },
+    "ns": [
+        "NS1.NAMESERVER.NET.",
+        "NS2.NAMESERVER.NET."
+    ],
+    "ptr": {
+        "1": "HOST1.MYDOMAIN.COM.",
+        "2": "HOST2.MYDOMAIN.COM."
+    }
+}

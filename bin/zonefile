@@ -12,14 +12,17 @@
             }
         });
         if (ret.length === 0) {
-            ret.push(__dirname + '/../test/zonefile_data.json');
+            ret.push(__dirname + '/../test/zonefile_data_forward.json');
+            ret.push(__dirname + '/../test/zonefile_data_reverse.json');
         }
         return ret;
     };
 
     var input = args();
 
-    var options = fs.readFileSync(input[0], 'utf8');
-    var output = zonefile.generate(JSON.parse(options));
-    console.log(output);
+    for(var i in input) {
+        var options = fs.readFileSync(input[i], 'utf8');
+        var output = zonefile.generate(JSON.parse(options));
+        console.log(output);
+    }
 })();

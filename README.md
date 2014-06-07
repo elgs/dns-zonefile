@@ -1,6 +1,6 @@
 dns-zonefile
 ============
-An [RFC1537 compliant](http://www.ietf.org/rfc/rfc1537.txt) DNS zone file
+An [RFC1035 compliant](http://www.ietf.org/rfc/rfc1035.txt) DNS zone file
 generator for Node.js.
 
 # Installation

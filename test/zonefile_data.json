@@ -2,12 +2,12 @@
     "$origin": "0.168.192.IN-ADDR.ARPA.",
     "soa": {
         "ttl": 3600,
-        "origin": "NS1.NAMESERVER.NET.",
-        "person": "HOSTMASTER.MYDOMAIN.COM.",
+        "mname": "NS1.NAMESERVER.NET.",
+        "rname": "HOSTMASTER.MYDOMAIN.COM.",
         "serial": 45,
         "refresh": 3600,
         "retry": 600,
-        "expire": 3600000,
+        "expire": 604800,
         "minimum": 86400
     },
     "ns": [
@@ -28,7 +28,7 @@
         "10": "mail2"
     },
     "ptr": {
-        "1": "HOST1.NAMESERVER.NET.",
-        "2": "HOST2.NAMESERVER.NET."
+        "1": "HOST1.MYDOMAIN.COM.",
+        "2": "HOST2.MYDOMAIN.COM."
     }
 }

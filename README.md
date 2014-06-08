@@ -36,7 +36,7 @@ The following JSON produces a zone file for a forward DNS zone:
         "ttl": 3600,
         "mname": "NS1.NAMESERVER.NET.",
         "rname": "HOSTMASTER.MYDOMAIN.COM.",
-        "serial": 45,
+        "serial": "{time}",
         "refresh": 3600,
         "retry": 600,
         "expire": 604800,
@@ -60,7 +60,6 @@ The following JSON produces a zone file for a forward DNS zone:
         "10": "mail2"
     }
 }
-
 ```
 
 _dns-zonefile_ will produce the following zone file from the above information:
@@ -69,7 +68,7 @@ _dns-zonefile_ will produce the following zone file from the above information:
 $ORIGIN MYDOMAIN.COM.
 $TTL	3600
 @   IN  SOA   NS1.NAMESERVER.NET.	   HOSTMASTER.MYDOMAIN.COM.	 (
-               45	 ;serial
+               1402203462	 ;serial
                3600	 ;refresh
                600	 ;retry
                604800	 ;expire
@@ -102,7 +101,7 @@ keyword is recommended for reverse DNS zones):
         "ttl": 3600,
         "mname": "NS1.NAMESERVER.NET.",
         "rname": "HOSTMASTER.MYDOMAIN.COM.",
-        "serial": 45,
+        "serial": "{time}",
         "refresh": 3600,
         "retry": 600,
         "expire": 604800,
@@ -125,7 +124,7 @@ _dns-zonefile_ will produce the following zone file from the above information:
 $ORIGIN 0.168.192.IN-ADDR.ARPA.
 $TTL	3600
 @   IN  SOA   NS1.NAMESERVER.NET.	   HOSTMASTER.MYDOMAIN.COM.	 (
-               45	 ;serial
+               1402203462	 ;serial
                3600	 ;refresh
                600	 ;retry
                604800	 ;expire

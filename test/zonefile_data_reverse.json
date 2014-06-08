@@ -4,7 +4,7 @@
         "ttl": 3600,
         "mname": "NS1.NAMESERVER.NET.",
         "rname": "HOSTMASTER.MYDOMAIN.COM.",
-        "serial": 45,
+        "serial": "{time}",
         "refresh": 3600,
         "retry": 600,
         "expire": 604800,

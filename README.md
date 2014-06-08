@@ -165,3 +165,12 @@ console.log(output);
 `options` can either be a parsed JSON object as shown above, or a regular
 Javascript object containing the same required fields.
 
+It is also possible to parse a zone file to JSON by invoking its `parse()`
+function as shown in the following example:
+
+```javascript
+var zonefile = require('dns-zonefile');
+var text = fs.readFileSync('./zone_file_forward.txt', {encoding: 'utf8'});
+output = zonefile.parse(text);
+console.log(output);
+```

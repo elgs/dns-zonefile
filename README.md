@@ -147,7 +147,7 @@ file to disk (`my_zone.conf` in this example), use redirection as in this
 example:
 
 ```
-zonefile zonefile_data.json > my_zone.conf
+zonefile zonefile_forward.json > my_zone.conf
 ```
 
 ## Module Usage
@@ -157,7 +157,7 @@ it, then invoke its `generate()` function as shown in the following example:
 
 ```javascript
 var zonefile = require('dns-zonefile');
-var options = require('./zonefile_data.json');
+var options = require('./zonefile_forward.json');
 var output = zonefile.generate(options);
 console.log(output);
 ```
@@ -170,7 +170,7 @@ function as shown in the following example:
 
 ```javascript
 var zonefile = require('dns-zonefile');
-var text = fs.readFileSync('./zone_file_forward.txt', {encoding: 'utf8'});
+var text = fs.readFileSync('./zonefile_forward.txt', {encoding: 'utf8'});
 output = zonefile.parse(text);
 console.log(output);
 ```

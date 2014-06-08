@@ -12,8 +12,10 @@
             }
         });
         if (ret.length === 0) {
-            ret.push(__dirname + '/../test/zonefile_data_forward.json');
-            ret.push(__dirname + '/../test/zonefile_data_reverse.json');
+            ret.push(__dirname + '/../test/zonefile_forward.json');
+            ret.push(__dirname + '/../test/zonefile_reverse.json');
+            ret.push(__dirname + '/../test/zonefile_forward.txt');
+            ret.push(__dirname + '/../test/zonefile_reverse.txt');
         }
         return ret;
     };

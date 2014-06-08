@@ -17,11 +17,11 @@ generator for Node.js.
 
 ## Zone Information
 
-_dns-zonefile_ accepts zone data expressed as a JSON object. It supports `SOA`,
-`NS`, `A`, `CNAME`, `MX` and `PTR` record types as well as the `$ORIGIN`
-keyword (for zone-wide use only). Each record type (and the `$ORIGIN` keyword)
-is optional, though _bind_ expects to find at least an `SOA` record in a valid
-zone file.
+_dns-zonefile_ accepts both zone data expressed as a JSON object or plain text
+zone file. It supports `SOA`, `NS`, `A`, `CNAME`, `MX` and `PTR` record types
+as well as the `$ORIGIN` keyword (for zone-wide use only). Each record type
+(and the `$ORIGIN` keyword) is optional, though _bind_ expects to find at least
+an `SOA` record in a valid zone file.
 
 ### Examples
 
@@ -62,7 +62,9 @@ The following JSON produces a zone file for a forward DNS zone:
 }
 ```
 
-_dns-zonefile_ will produce the following zone file from the above information:
+_dns-zonefile_ will produce the following zone file from the above information,
+while the following zone file can as well be parsed to produce the zone file
+like above:
 
 ```
 $ORIGIN MYDOMAIN.COM.
@@ -118,7 +120,9 @@ keyword is recommended for reverse DNS zones):
 }
 ```
 
-_dns-zonefile_ will produce the following zone file from the above information:
+_dns-zonefile_ will produce the following zone file from the above information,
+while the following zone file can as well be parsed to produce the zone file
+like above:
 
 ```
 $ORIGIN 0.168.192.IN-ADDR.ARPA.
@@ -140,15 +144,30 @@ $TTL	3600
 
 ## Standalone Usage
 
-To use _dns-zonefile_ from the command line, place the desired JSON data in a
-file (`zonefile_data.json` in this example) and run the following command. Note
-that the resulting zone file will be printed to the console; to save the zone
-file to disk (`my_zone.conf` in this example), use redirection as in this
-example:
+To use _dns-zonefile_ to generate a zone file from JSON from the command line,
+place the desired JSON data in a file (`zonefile_data.json` in this example)
+and run the following command. Note that the resulting zone file will be
+printed to the console; to save the zone file to disk (`my_zone.conf` in this
+example), use redirection as in this example:
 
 ```
-zonefile zonefile_forward.json > my_zone.conf
+zonefile -g zonefile_data.json > my_zone.conf
 ```
+
+To use _dns-zonefile_ to parse a zone file to JSON from the command line, place
+the desired zone file data in a file (`zonefile_data.txt` in this example) and
+run the following command. Note that the resulting JSON will be printed to the
+console; to save the JSON to disk (`my_zone.json` in this example), use
+redirection as in this example:
+
+```
+zonefile -p zonefile_data.txt > my_zone.json
+```
+
+If the `-g` or `-p` is omitted, `-g` will be assumed if the lower cased
+filename contains `.json`, otherwise, `-p` will be assumed.
+
+`zonefile -v` or `zonefile --version` will print the version information.
 
 ## Module Usage
 

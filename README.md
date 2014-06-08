@@ -170,7 +170,7 @@ function as shown in the following example:
 
 ```javascript
 var zonefile = require('dns-zonefile');
-var text = fs.readFileSync('./zonefile_forward.txt', {encoding: 'utf8'});
+var text = fs.readFileSync('./zonefile_forward.txt', 'utf8');
 output = zonefile.parse(text);
 console.log(output);
 ```

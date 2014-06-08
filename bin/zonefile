@@ -22,9 +22,14 @@
 
     var input = args();
 
-    for(var i in input) {
-        var options = fs.readFileSync(input[i], 'utf8');
-        var output = zonefile.generate(JSON.parse(options));
+    for (var i in input) {
+        var src = input[i];
+        var options = fs.readFileSync(src, 'utf8');
+        if (src.toLocaleLowerCase().indexOf('.json') > 0) {
+            var output = zonefile.generate(JSON.parse(options));
+        } else {
+            output = zonefile.parse(options);
+        }
         console.log(output);
     }
 })();

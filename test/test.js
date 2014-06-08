@@ -12,17 +12,13 @@
     console.log(output);
 
     console.log('##########', 'Parsing forward zone file to JSON', '##########');
-    var text = fs.readFileSync('./zonefile_forward.txt', {
-        encoding: 'utf8'
-    });
+    var text = fs.readFileSync('./zonefile_forward.txt', 'utf8');
     output = zonefile.parse(text);
     console.log(output);
 
     console.log('\n');
     console.log('##########', 'Parsing reverse zone file to JSON', '##########');
-    text = fs.readFileSync('./zonefile_reverse.txt', {
-        encoding: 'utf8'
-    });
+    text = fs.readFileSync('./zonefile_reverse.txt', 'utf8');
     output = zonefile.parse(text);
     console.log(output);
 })();

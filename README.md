@@ -32,8 +32,8 @@ The following JSON produces a zone file for a forward DNS zone:
 ```json
 {
     "$origin": "MYDOMAIN.COM.",
+    "$ttl": 3600,
     "soa": {
-        "ttl": 3600,
         "mname": "NS1.NAMESERVER.NET.",
         "rname": "HOSTMASTER.MYDOMAIN.COM.",
         "serial": "{time}",
@@ -97,8 +97,8 @@ keyword is recommended for reverse DNS zones):
 ```json
 {
     "$origin": "0.168.192.IN-ADDR.ARPA.",
+    "$ttl": 3600,
     "soa": {
-        "ttl": 3600,
         "mname": "NS1.NAMESERVER.NET.",
         "rname": "HOSTMASTER.MYDOMAIN.COM.",
         "serial": "{time}",

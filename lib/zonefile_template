@@ -1,5 +1,5 @@
 {$origin}
-$TTL	{ttl}
+{$ttl}
 @   IN  SOA   {mname}   {rname} (
                {serial} ;serial
                {refresh} ;refresh

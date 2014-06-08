@@ -1,7 +1,7 @@
 {
     "$origin": "0.168.192.IN-ADDR.ARPA.",
+    "$ttl": 3600,
     "soa": {
-        "ttl": 3600,
         "mname": "NS1.NAMESERVER.NET.",
         "rname": "HOSTMASTER.MYDOMAIN.COM.",
         "serial": "{time}",

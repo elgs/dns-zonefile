@@ -1,0 +1,22 @@
+$ORIGIN MYDOMAIN.COM.
+$TTL    3600
+@   IN  SOA   NS1.NAMESERVER.NET.       HOSTMASTER.MYDOMAIN.COM.     (
+               1402203462     ;serial
+               3600     ;refresh
+               600     ;retry
+               604800     ;expire
+               86400     ;minimum ttl
+)
+
+@    NS    NS1.NAMESERVER.NET.
+@    NS    NS2.NAMESERVER.NET.
+
+@    MX    0    mail1
+@    MX    10    mail2
+
+@    A    127.0.0.1
+www    A    127.0.0.1
+mail    A    127.0.0.1
+
+mail1    CNAME    mail
+mail2    CNAME    mail

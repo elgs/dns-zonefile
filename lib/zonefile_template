@@ -1,15 +1,16 @@
 {$origin}
 {$ttl}
-@   IN  SOA   {mname}   {rname} (
-               {serial} ;serial
-               {refresh} ;refresh
-               {retry} ;retry
-               {expire} ;expire
-               {minimum} ;minimum ttl
+@	IN	SOA	{mname}{rname}(
+			{serial} ;serial
+			{refresh} ;refresh
+			{retry} ;retry
+			{expire} ;expire
+			{minimum} ;minimum ttl
 )
 
 {ns}
 {mx}
 {a}
+{aaaa}
 {cname}
 {ptr}

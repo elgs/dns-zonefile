@@ -1,5 +1,5 @@
 {
-    "$origin": "MYDOMAIN.COM.",
+    "$origin": "0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.8.b.d.0.1.0.0.2.ip6.arpa.",
     "$ttl": 3600,
     "soa": {
         "mname": "NS1.NAMESERVER.NET.",
@@ -14,21 +14,8 @@
         "NS1.NAMESERVER.NET.",
         "NS2.NAMESERVER.NET."
     ],
-    "a": {
-        "@": "127.0.0.1",
-        "www": "127.0.0.1",
-        "mail": "127.0.0.1"
-    },
-    "aaaa": {
-        "@": "::1",
-        "mail": "2001:db8::1"
-    },
-    "cname": {
-        "mail1": "mail",
-        "mail2": "mail"
-    },
-    "mx": {
-        "0": "mail1",
-        "10": "mail2"
+    "ptr": {
+        "1": "HOST1.MYDOMAIN.COM.",
+        "2": "HOST2.MYDOMAIN.COM."
     }
 }

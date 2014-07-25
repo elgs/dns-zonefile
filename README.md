@@ -18,7 +18,7 @@ generator for Node.js.
 ## Zone Information
 
 _dns-zonefile_ accepts both zone data expressed as a JSON object or plain text
-zone file. It supports `SOA`, `NS`, `A`, `CNAME`, `MX` and `PTR` record types
+zone file. It supports `SOA`, `NS`, `A`, `AAAA`, `CNAME`, `MX` and `PTR` record types
 as well as the `$ORIGIN` keyword (for zone-wide use only). Each record type
 (and the `$ORIGIN` keyword) is optional, though _bind_ expects to find at least
 an `SOA` record in a valid zone file.
@@ -51,6 +51,10 @@ The following JSON produces a zone file for a forward DNS zone:
         "www": "127.0.0.1",
         "mail": "127.0.0.1"
     },
+    "aaaa": {
+        "@": "::1",
+        "mail": "2001:db8::1"
+    },
     "cname": {
         "mail1": "mail",
         "mail2": "mail"
@@ -68,13 +72,13 @@ like above:
 
 ```
 $ORIGIN MYDOMAIN.COM.
-$TTL	3600
-@   IN  SOA   NS1.NAMESERVER.NET.	   HOSTMASTER.MYDOMAIN.COM.	 (
-               1402203462	 ;serial
-               3600	 ;refresh
-               600	 ;retry
-               604800	 ;expire
-               86400	 ;minimum ttl
+$TTL 3600
+@	IN	SOA	NS1.NAMESERVER.NET.	HOSTMASTER.MYDOMAIN.COM.	(
+			1406291485	 ;serial
+			3600	 ;refresh
+			600	 ;retry
+			604800	 ;expire
+			86400	 ;minimum ttl
 )
 
 @	NS	NS1.NAMESERVER.NET.
@@ -87,6 +91,9 @@ $TTL	3600
 www	A	127.0.0.1
 mail	A	127.0.0.1
 
+@	AAAA	::1
+mail	AAAA	2001:db8::1
+
 mail1	CNAME	mail
 mail2	CNAME	mail
 ```
@@ -98,25 +105,25 @@ keyword is recommended for reverse DNS zones):
 
 ```json
 {
-    "$origin": "0.168.192.IN-ADDR.ARPA.",
-    "$ttl": 3600,
-    "soa": {
-        "mname": "NS1.NAMESERVER.NET.",
-        "rname": "HOSTMASTER.MYDOMAIN.COM.",
-        "serial": "{time}",
-        "refresh": 3600,
-        "retry": 600,
-        "expire": 604800,
-        "minimum": 86400
-    },
-    "ns": [
-        "NS1.NAMESERVER.NET.",
-        "NS2.NAMESERVER.NET."
-    ],
-    "ptr": {
-        "1": "HOST1.MYDOMAIN.COM.",
-        "2": "HOST2.MYDOMAIN.COM."
-    }
+	"$origin": "0.168.192.IN-ADDR.ARPA.",
+	"$ttl": 3600,
+	"soa": {
+		"mname": "NS1.NAMESERVER.NET.",
+		"rname": "HOSTMASTER.MYDOMAIN.COM.",
+		"serial": "{time}",
+		"refresh": 3600,
+		"retry": 600,
+		"expire": 604800,
+		"minimum": 86400
+	},
+	"ns": [
+		"NS1.NAMESERVER.NET.",
+		"NS2.NAMESERVER.NET."
+	],
+	"ptr": {
+		"1": "HOST1.MYDOMAIN.COM.",
+		"2": "HOST2.MYDOMAIN.COM."
+	}
 }
 ```
 
@@ -126,13 +133,13 @@ like above:
 
 ```
 $ORIGIN 0.168.192.IN-ADDR.ARPA.
-$TTL	3600
+$TTL 3600
 @   IN  SOA   NS1.NAMESERVER.NET.	   HOSTMASTER.MYDOMAIN.COM.	 (
-               1402203462	 ;serial
-               3600	 ;refresh
-               600	 ;retry
-               604800	 ;expire
-               86400	 ;minimum ttl
+			   1402203462	 ;serial
+			   3600	 ;refresh
+			   600	 ;retry
+			   604800	 ;expire
+			   86400	 ;minimum ttl
 )
 
 @	NS	NS1.NAMESERVER.NET.

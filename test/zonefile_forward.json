@@ -11,24 +11,24 @@
         "minimum": 86400
     },
     "ns": [
-        "NS1.NAMESERVER.NET.",
-        "NS2.NAMESERVER.NET."
+        { "host": "NS1.NAMESERVER.NET." },
+        { "host": "NS2.NAMESERVER.NET." }
     ],
-    "a": {
-        "@": "127.0.0.1",
-        "www": "127.0.0.1",
-        "mail": "127.0.0.1"
-    },
-    "aaaa": {
-        "@": "::1",
-        "mail": "2001:db8::1"
-    },
-    "cname": {
-        "mail1": "mail",
-        "mail2": "mail"
-    },
-    "mx": {
-        "0": "mail1",
-        "10": "mail2"
-    }
+    "a": [
+        { "name": "@", "ip": "127.0.0.1" },
+        { "name": "www", "ip": "127.0.0.1" },
+        { "name": "mail", "ip": "127.0.0.1" }
+    ],
+    "aaaa": [
+        { "ip": "::1" },
+        { "name": "mail", "ip": "2001:db8::1" }
+    ],
+    "cname":[
+        { "name": "mail1", "alias": "mail" },
+        { "name": "mail2", "alias": "mail" }
+    ],
+    "mx":[
+        { "preference": 0, "host": "mail1" },
+        { "preference": 10, "host": "mail2" }
+    ]
 }

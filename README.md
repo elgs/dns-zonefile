@@ -43,26 +43,26 @@ The following JSON produces a zone file for a forward DNS zone:
         "minimum": 86400
     },
     "ns": [
-        "NS1.NAMESERVER.NET.",
-        "NS2.NAMESERVER.NET."
+        { "host": "NS1.NAMESERVER.NET." },
+        { "host": "NS2.NAMESERVER.NET." }
     ],
-    "a": {
-        "@": "127.0.0.1",
-        "www": "127.0.0.1",
-        "mail": "127.0.0.1"
-    },
-    "aaaa": {
-        "@": "::1",
-        "mail": "2001:db8::1"
-    },
-    "cname": {
-        "mail1": "mail",
-        "mail2": "mail"
-    },
-    "mx": {
-        "0": "mail1",
-        "10": "mail2"
-    }
+    "a": [
+        { "name": "@", "ip": "127.0.0.1" },
+        { "name": "www", "ip": "127.0.0.1" },
+        { "name": "mail", "ip": "127.0.0.1" }
+    ],
+    "aaaa": [
+        { "ip": "::1" },
+        { "name": "mail", "ip": "2001:db8::1" }
+    ],
+    "cname":[
+        { "name": "mail1", "alias": "mail" },
+        { "name": "mail2", "alias": "mail" }
+    ],
+    "mx":[
+        { "preference": 0, "host": "mail1" },
+        { "preference": 10, "host": "mail2" }
+    ]
 }
 ```
 
@@ -71,31 +71,41 @@ while the following zone file can as well be parsed to produce the zone file
 like above:
 
 ```
+; Zone: MYDOMAIN.COM.
+; Exported  (yyyy-mm-ddThh:mm:ss.sssZ): 2014-09-22T21:10:36.697Z
+
 $ORIGIN MYDOMAIN.COM.
 $TTL 3600
-@	IN	SOA	NS1.NAMESERVER.NET.	HOSTMASTER.MYDOMAIN.COM.	(
-			1406291485	 ;serial
+
+; SOA Record
+@	 		IN	SOA	NS1.NAMESERVER.NET.	HOSTMASTER.MYDOMAIN.COM.	(
+			1411420237	 ;serial
 			3600	 ;refresh
 			600	 ;retry
 			604800	 ;expire
 			86400	 ;minimum ttl
 )
 
-@	NS	NS1.NAMESERVER.NET.
-@	NS	NS2.NAMESERVER.NET.
+; NS Records
+@	IN	NS	NS1.NAMESERVER.NET.
+@	IN	NS	NS2.NAMESERVER.NET.
 
-@	MX	0	mail1
-@	MX	10	mail2
+; MX Records
+@	IN	MX	0	mail1
+@	IN	MX	10	mail2
 
-@	A	127.0.0.1
-www	A	127.0.0.1
-mail	A	127.0.0.1
+; A Records
+@	IN	A	127.0.0.1
+www	IN	A	127.0.0.1
+mail	IN	A	127.0.0.1
 
-@	AAAA	::1
-mail	AAAA	2001:db8::1
+; AAAA Records
+@	IN	AAAA	::1
+mail	IN	AAAA	2001:db8::1
 
-mail1	CNAME	mail
-mail2	CNAME	mail
+; CNAME Records
+mail1	IN	CNAME	mail
+mail2	IN	CNAME	mail
 ```
 
 ### Reverse DNS Zone
@@ -116,14 +126,14 @@ keyword is recommended for reverse DNS zones):
 		"expire": 604800,
 		"minimum": 86400
 	},
-	"ns": [
-		"NS1.NAMESERVER.NET.",
-		"NS2.NAMESERVER.NET."
-	],
-	"ptr": {
-		"1": "HOST1.MYDOMAIN.COM.",
-		"2": "HOST2.MYDOMAIN.COM."
-	}
+  "ns": [
+      { "host": "NS1.NAMESERVER.NET." },
+      { "host": "NS2.NAMESERVER.NET." }
+  ],
+  "ptr":[
+      { "name": 1, "host": "HOST1.MYDOMAIN.COM." },
+      { "name": 2, "host": "HOST2.MYDOMAIN.COM." }
+  ]
 }
 ```
 
@@ -132,21 +142,28 @@ while the following zone file can as well be parsed to produce the zone file
 like above:
 
 ```
+; Zone: 0.168.192.IN-ADDR.ARPA.
+; Exported  (yyyy-mm-ddThh:mm:ss.sssZ): 2014-09-22T21:10:36.698Z
+
 $ORIGIN 0.168.192.IN-ADDR.ARPA.
 $TTL 3600
-@   IN  SOA   NS1.NAMESERVER.NET.	   HOSTMASTER.MYDOMAIN.COM.	 (
-			   1402203462	 ;serial
-			   3600	 ;refresh
-			   600	 ;retry
-			   604800	 ;expire
-			   86400	 ;minimum ttl
+
+; SOA Record
+@	 		IN	SOA	NS1.NAMESERVER.NET.	HOSTMASTER.MYDOMAIN.COM.	(
+			1411420237	 ;serial
+			3600	 ;refresh
+			600	 ;retry
+			604800	 ;expire
+			86400	 ;minimum ttl
 )
 
-@	NS	NS1.NAMESERVER.NET.
-@	NS	NS2.NAMESERVER.NET.
+; NS Records
+@	IN	NS	NS1.NAMESERVER.NET.
+@	IN	NS	NS2.NAMESERVER.NET.
 
-1	PTR	HOST1.MYDOMAIN.COM.
-2	PTR	HOST2.MYDOMAIN.COM.
+; PTR Records
+1	IN	PTR	HOST1.MYDOMAIN.COM.
+2	IN	PTR	HOST2.MYDOMAIN.COM.
 ```
 
 ## Standalone Usage

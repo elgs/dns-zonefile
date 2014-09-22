@@ -11,11 +11,11 @@
         "minimum": 86400
     },
     "ns": [
-        "NS1.NAMESERVER.NET.",
-        "NS2.NAMESERVER.NET."
+        { "host": "NS1.NAMESERVER.NET." },
+        { "host": "NS2.NAMESERVER.NET." }
     ],
-    "ptr": {
-        "1": "HOST1.MYDOMAIN.COM.",
-        "2": "HOST2.MYDOMAIN.COM."
-    }
+    "ptr":[
+        { "name": 1, "host": "HOST1.MYDOMAIN.COM." },
+        { "name": 2, "host": "HOST2.MYDOMAIN.COM." }
+    ]
 }

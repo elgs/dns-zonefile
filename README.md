@@ -18,7 +18,7 @@ generator for Node.js.
 ## Zone Information
 
 _dns-zonefile_ accepts both zone data expressed as a JSON object or plain text
-zone file. It supports `SOA`, `NS`, `A`, `AAAA`, `CNAME`, `MX` and `PTR` record types
+zone file. It supports `SOA`, `NS`, `A`, `AAAA`, `CNAME`, `MX`, `PTR`, `SRV` and `TXT` record types
 as well as the `$ORIGIN` keyword (for zone-wide use only). Each record type
 (and the `$ORIGIN` keyword) is optional, though _bind_ expects to find at least
 an `SOA` record in a valid zone file.
@@ -62,6 +62,14 @@ The following JSON produces a zone file for a forward DNS zone:
     "mx":[
         { "preference": 0, "host": "mail1" },
         { "preference": 10, "host": "mail2" }
+    ],
+    "txt":[
+        { "name": "txt1", "txt": "hello" },
+        { "name": "txt2", "txt": "world" }
+    ],
+    "srv":[
+        { "name": "_xmpp-client._tcp", "target": "jabber", "priority": 10, "weight": 0, "port": 5222 },
+        { "name": "_xmpp-server._tcp", "target": "jabber", "priority": 10, "weight": 0, "port": 5269 }
     ]
 }
 ```
@@ -106,6 +114,14 @@ mail	IN	AAAA	2001:db8::1
 ; CNAME Records
 mail1	IN	CNAME	mail
 mail2	IN	CNAME	mail
+
+; TXT Records
+txt1	IN	TXT	"hello"
+txt2	IN	TXT	"world"
+
+; SRV Records
+_xmpp-client._tcp	IN	SRV	10	0	5222	jabber
+_xmpp-server._tcp	IN	SRV	10	0	5269	jabber
 ```
 
 ### Reverse DNS Zone

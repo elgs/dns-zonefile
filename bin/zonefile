@@ -1,6 +1,8 @@
 #!/usr/bin/env node
 
 (function () {
+    'use strict';
+
     var fs = require('fs');
     var zonefile = require('../lib/zonefile.js');
 

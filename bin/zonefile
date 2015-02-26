@@ -30,22 +30,22 @@
     } else if (input[0] === '-v' || input[0] === '--version') {
         console.log('dns-zonefile version: ', pjson.version);
     } else if (input[0] === '-g') {
-        src = input[1];
-        options = fs.readFileSync(src, 'utf8');
-        output = zonefile.generate(JSON.parse(options));
+        var src = input[1];
+        var options = fs.readFileSync(src, 'utf8');
+        var output = zonefile.generate(JSON.parse(options));
         console.log(output);
     } else if (input[0] === '-p') {
-        src = input[1];
-        options = fs.readFileSync(src, 'utf8');
-        output = zonefile.parse(options);
+        var src = input[1];
+        var options = fs.readFileSync(src, 'utf8');
+        var output = zonefile.parse(options);
         console.log(output);
     } else {
-        src = input[0];
-        options = fs.readFileSync(src, 'utf8');
+        var src = input[0];
+        var options = fs.readFileSync(src, 'utf8');
         if (src.toLocaleLowerCase().indexOf('.json') > 0) {
-            output = zonefile.generate(JSON.parse(options));
+            var output = zonefile.generate(JSON.parse(options));
         } else {
-            output = zonefile.parse(options);
+            var output = zonefile.parse(options);
         }
         console.log(output);
     }

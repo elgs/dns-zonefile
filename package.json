@@ -1,33 +1,33 @@
 {
-    "name": "dns-zonefile",
-    "version": "0.1.4",
-    "description": "A DNS zone file parser and generator.",
-    "main": "./lib/zonefile.js",
-    "bin": {
-        "zonefile": "./bin/zonefile"
+  "name": "dns-zonefile",
+  "version": "0.1.5",
+  "description": "A DNS zone file parser and generator.",
+  "main": "./lib/zonefile.js",
+  "bin": {
+    "zonefile": "./bin/zonefile"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/elgs/dns-zonefile.git"
+  },
+  "keywords": [
+    "DNS",
+    "zone"
+  ],
+  "author": "Elgs Chen",
+  "license": "ISC",
+  "contributors": [
+    {
+      "name": "William Ferrell",
+      "email": "willfe@gmail.com"
     },
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/elgs/dns-zonefile.git"
+    {
+      "name": "Christoph Witzko",
+      "email": "github@christophwitzko.com"
     },
-    "keywords": [
-        "DNS",
-        "zone"
-    ],
-    "author": "Elgs Chen",
-    "license": "ISC",
-    "contributors": [
-        {
-            "name": "William Ferrell",
-            "email": "willfe@gmail.com"
-        },
-        {
-            "name": "Christoph Witzko",
-            "email": "github@christophwitzko.com"
-        },
-        {
-            "name": "Lance Hudson",
-            "email": "lance@lancehudson.com"
-        }
-    ]
+    {
+      "name": "Lance Hudson",
+      "email": "lance@lancehudson.com"
+    }
+  ]
 }

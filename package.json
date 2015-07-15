@@ -1,6 +1,6 @@
 {
   "name": "dns-zonefile",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "description": "A DNS zone file parser and generator.",
   "main": "./lib/zonefile.js",
   "bin": {
@@ -37,6 +37,10 @@
     },
     {
       "name": "Chris Flook"
+    },
+    {
+      "name": "Stephen Sawchuk",
+      "email": "sawchuk@gmail.com"
     }
   ]
 }

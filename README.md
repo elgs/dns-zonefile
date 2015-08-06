@@ -211,7 +211,7 @@ redirection as in this example:
 zonefile -p zonefile_data.txt > my_zone.json
 ```
 
-If the `-g` or `-p` is omitted, `-g` will be assumed if the lower cased
+If the `-g` and `-p` are omitted, `-g` will be assumed if the lower cased
 filename contains `.json`, otherwise, `-p` will be assumed.
 
 `zonefile -v` or `zonefile --version` will print the version information.

@@ -25,3 +25,5 @@ mail	AAAA	2001:db8::1
 
 mail1	CNAME	mail
 mail2	CNAME	mail
+
+treefrog.ca. IN TXT "v=spf1 a mx a:mail.treefrog.ca a:webmail.treefrog.ca ip4:76.75.250.33 ?all"

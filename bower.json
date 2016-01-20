@@ -1,6 +1,6 @@
 {
   "name": "dns-zonefile",
-  "version": "0.1.11",
+  "version": "0.1.12",
   "homepage": "https://github.com/elgs/dns-zonefile",
   "authors": [
     "elgs <elgs1980@hotmail.com>"

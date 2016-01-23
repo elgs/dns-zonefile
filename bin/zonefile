@@ -26,7 +26,7 @@
         console.log('   "zonefile -p zonefile.txt" to parse a zonefile to JSON.');
         console.log('   "zonefile -g zonefile.json" to generate a zonefile from JSON.');
         console.log('   "zonefile zonefile.json" to generate a zonefile from JSON if the file name ' +
-            '\n     contains ".json", otherwise to parse the file as a zonefile to JSON.');
+            '\n     contains ".json", case insensitively, otherwise to parse the file as a zonefile to JSON.');
     } else if (input[0] === '-v' || input[0] === '--version') {
         console.log('dns-zonefile version: ', pjson.version);
     } else if (input[0] === '-g') {

@@ -3,9 +3,6 @@ dns-zonefile
 An [RFC1035 compliant](http://www.ietf.org/rfc/rfc1035.txt) DNS zone file
 parser and generator for Node.js and browser.
 
-# What's new
-`fs` and `path` dependencies were removed so that `dns-zonefile` is friendly to browsers now.
-
 # Installation
 
 ## Bower Install

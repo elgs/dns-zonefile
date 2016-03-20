@@ -235,7 +235,7 @@ function as shown in the following example:
 var zonefile = require('dns-zonefile');
 var text = fs.readFileSync('./zonefile_forward.txt', 'utf8');
 output = zonefile.parse(text);
-console.log(output);
+console.log(JSON.stringify(output));
 ```
 
 #License

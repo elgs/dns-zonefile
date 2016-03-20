@@ -38,7 +38,7 @@
         var src = input[1];
         var options = fs.readFileSync(src, 'utf8');
         var output = zonefile.parse(options);
-        console.log(output);
+        console.log(JSON.stringify(output));
     } else {
         var src = input[0];
         var options = fs.readFileSync(src, 'utf8');
@@ -46,6 +46,7 @@
             var output = zonefile.generate(JSON.parse(options));
         } else {
             var output = zonefile.parse(options);
+            output = JSON.stringify(output);
         }
         console.log(output);
     }

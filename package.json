@@ -1,6 +1,6 @@
 {
   "name": "dns-zonefile",
-  "version": "0.1.15",
+  "version": "0.1.16",
   "description": "A DNS zone file parser and generator.",
   "main": "./lib/zonefile.js",
   "bin": {

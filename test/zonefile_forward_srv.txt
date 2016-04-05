@@ -1,0 +1,22 @@
+$ORIGIN example.com.
+@               SOA server.example.com. hostmaster.example.com. (
+                          1995032001 3600 3600 604800 86400 )
+                NS  server.example.com.
+                NS  ns1.ip-provider.net.
+                NS  ns2.ip-provider.net.
+; foobar - use old-slow-box or new-fast-box if either is
+; available, make three quarters of the logins go to
+; new-fast-box.
+_foobar._tcp    SRV 0 1 9 old-slow-box.example.com.
+                SRV 0 3 9 new-fast-box.example.com.
+; if neither old-slow-box or new-fast-box is up, switch to
+; using the sysdmin's box and the server
+                SRV 1 0 9 sysadmins-box.example.com.
+                SRV 1 0 9 server.example.com.
+server           A   172.30.79.10
+old-slow-box     A   172.30.79.11
+sysadmins-box    A   172.30.79.12
+new-fast-box     A   172.30.79.13
+; NO other services are supported
+*._tcp          SRV  0 0 0 .
+*._udp          SRV  0 0 0 .

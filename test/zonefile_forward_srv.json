@@ -1,0 +1,89 @@
+{
+  "$origin": "example.com.",
+  "soa": {
+    "name": "@",
+    "minimum": 86400,
+    "expire": 604800,
+    "retry": 3600,
+    "refresh": 3600,
+    "serial": 1995032001,
+    "rname": "hostmaster.example.com.",
+    "mname": "server.example.com."
+  },
+  "ns": [
+    {
+      "name": "@",
+      "host": "server.example.com."
+    },
+    {
+      "name": "@",
+      "host": "ns1.ip-provider.net."
+    },
+    {
+      "name": "@",
+      "host": "ns2.ip-provider.net."
+    }
+  ],
+  "srv": [
+    {
+      "name": "_foobar._tcp",
+      "target": "old-slow-box.example.com.",
+      "priority": 0,
+      "weight": 1,
+      "port": 9
+    },
+    {
+      "name": "_foobar._tcp",
+      "target": "new-fast-box.example.com.",
+      "priority": 0,
+      "weight": 3,
+      "port": 9
+    },
+    {
+      "name": "_foobar._tcp",
+      "target": "sysadmins-box.example.com.",
+      "priority": 1,
+      "weight": 0,
+      "port": 9
+    },
+    {
+      "name": "_foobar._tcp",
+      "target": "server.example.com.",
+      "priority": 1,
+      "weight": 0,
+      "port": 9
+    },
+    {
+      "name": "*._tcp",
+      "target": ".",
+      "priority": 0,
+      "weight": 0,
+      "port": 0
+    },
+    {
+      "name": "*._udp",
+      "target": ".",
+      "priority": 0,
+      "weight": 0,
+      "port": 0
+    }
+  ],
+  "a": [
+    {
+      "name": "server",
+      "ip": "172.30.79.10"
+    },
+    {
+      "name": "old-slow-box",
+      "ip": "172.30.79.11"
+    },
+    {
+      "name": "sysadmins-box",
+      "ip": "172.30.79.12"
+    },
+    {
+      "name": "new-fast-box",
+      "ip": "172.30.79.13"
+    }
+  ]
+}

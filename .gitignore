@@ -14,3 +14,9 @@ Thumbs.db
 .Trashes
 
 .idea
+
+# Node
+node_modules
+
+# Misc
+unused

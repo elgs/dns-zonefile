@@ -2,13 +2,13 @@
   "name": "dns-zonefile",
   "version": "0.1.13",
   "description": "A DNS zone file parser and generator.",
-  "main": "./lib/zonefile.js",
-  "bin": {
-    "zonefile": "./bin/zonefile"
+  "main": "lib/index",
+  "scripts": {
+    "test": "node unitTests.js"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/elgs/dns-zonefile.git"
+    "url": "https://github.com/blockstack/dns-zonefile.git"
   },
   "keywords": [
     "DNS",
@@ -45,5 +45,8 @@
     {
       "name": "Mayo Jordanov"
     }
-  ]
+  ],
+  "devDependencies": {
+    "tape": "^4.5.1"
+  }
 }

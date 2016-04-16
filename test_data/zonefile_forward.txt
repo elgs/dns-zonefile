@@ -14,12 +14,11 @@ $TTL 3600
 @	MX	0	mail1
 @	MX	10	mail2
 
-	A	1.1.1.1
 @	A	127.0.0.1
 www	A	127.0.0.1
 mail	A	127.0.0.1
 			A 1.2.3.4
-tst 300 IN A 101.228.10.127;this is a comment
+tst 300 IN A 101.228.10.127
 
 @	AAAA	::1
 mail	AAAA	2001:db8::1

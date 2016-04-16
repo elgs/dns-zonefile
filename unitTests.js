@@ -6,12 +6,12 @@ let zonefile = require('./lib/index')
 
 let zoneFileReferences = [{
   name: 'Forward',
-  json: require('./test/zonefile_forward.json'),
-  text: fs.readFileSync('./test/zonefile_forward.txt', 'utf8')
+  json: require('./testData/zonefile_forward.json'),
+  text: fs.readFileSync('./testData/zonefile_forward.txt', 'utf8')
 }, {
   name: 'Forward 2',
-  json: require('./test/zonefile_forward_2.json'),
-  text: fs.readFileSync('./test/zonefile_forward_2.txt', 'utf8')
+  json: require('./testData/zonefile_forward_2.json'),
+  text: fs.readFileSync('./testData/zonefile_forward_2.txt', 'utf8')
 }]
 
 function testZoneFileToText(zoneFileReference) {

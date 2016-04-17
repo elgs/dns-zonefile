@@ -1,33 +1,39 @@
-dns-zonefile
-============
-An [RFC1035 compliant](http://www.ietf.org/rfc/rfc1035.txt) DNS zone file
-parser and generator for Node.js and browser.
+# DNS Zone File JS
 
-# Installation
+[![CircleCI](https://img.shields.io/circleci/project/blockstack/dns-zone-file-js/master.svg)](https://circleci.com/gh/blockstack/dns-zone-file-js/tree/master)
+[![Slack](http://slack.blockstack.org/badge.svg)](http://slack.blockstack.org/)
 
-## Bower Install
+An [RFC1035-compliant](http://www.ietf.org/rfc/rfc1035.txt) DNS zone file parser and generator for Node.js and the browser.
 
-`bower install dns-zonefile --save`
+### Installation
 
-## Standalone
+#### Bower Install
 
-`sudo npm install dns-zonefile -g`
+```bash
+$ bower install dns-zonefile --save
+```
 
-## Module
+#### Standalone
 
-`npm install dns-zonefile`
+```bash
+$ sudo npm install dns-zonefile -g
+```
 
-# Usage
+#### Module
 
-## Zone Information
+```bash
+$ npm install dns-zonefile
+```
+
+### Usage
+
+#### Zone Information
 
 _dns-zonefile_ accepts both zone data expressed as a JSON object or plain text
 zone file. It supports `SOA`, `NS`, `A`, `AAAA`, `CNAME`, `MX`, `PTR`, `SRV` and `TXT` record types
 as well as the `$ORIGIN` keyword (for zone-wide use only). Each record type
 (and the `$ORIGIN` keyword) is optional, though _bind_ expects to find at least
 an `SOA` record in a valid zone file.
-
-### Examples
 
 #### Forward DNS Zone
 
@@ -128,7 +134,7 @@ _xmpp-client._tcp	IN	SRV	10	0	5222	jabber
 _xmpp-server._tcp	IN	SRV	10	0	5269	jabber
 ```
 
-### Reverse DNS Zone
+#### Reverse DNS Zone
 
 This JSON will produce a zone file for a reverse DNS zone (the `$ORIGIN`
 keyword is recommended for reverse DNS zones):
@@ -186,7 +192,7 @@ $TTL 3600
 2	IN	PTR	HOST2.MYDOMAIN.COM.
 ```
 
-## Standalone Usage
+### Standalone Usage
 
 To use _dns-zonefile_ to generate a zone file from JSON from the command line,
 place the desired JSON data in a file (`zonefile_data.json` in this example)
@@ -194,8 +200,8 @@ and run the following command. Note that the resulting zone file will be
 printed to the console; to save the zone file to disk (`my_zone.conf` in this
 example), use redirection as in this example:
 
-```
-zonefile -g zonefile_data.json > my_zone.conf
+```bash
+$ zonefile -g zonefile_data.json > my_zone.conf
 ```
 
 To use _dns-zonefile_ to parse a zone file to JSON from the command line, place
@@ -204,8 +210,8 @@ run the following command. Note that the resulting JSON will be printed to the
 console; to save the JSON to disk (`my_zone.json` in this example), use
 redirection as in this example:
 
-```
-zonefile -p zonefile_data.txt > my_zone.json
+```bash
+$ zonefile -p zonefile_data.txt > my_zone.json
 ```
 
 If the `-g` and `-p` are omitted, `-g` will be assumed if the lower cased
@@ -218,7 +224,7 @@ filename contains `.json`, otherwise, `-p` will be assumed.
 _dns-zonefile_ can also be used as a module. Simply use `require()` to include
 it, then invoke its `generate()` function as shown in the following example:
 
-```javascript
+```js
 var zonefile = require('dns-zonefile');
 var options = require('./zonefile_forward.json');
 var output = zonefile.generate(options);
@@ -231,14 +237,15 @@ Javascript object containing the same required fields.
 It is also possible to parse a zone file to JSON by invoking its `parse()`
 function as shown in the following example:
 
-```javascript
+```js
 var zonefile = require('dns-zonefile');
 var text = fs.readFileSync('./zonefile_forward.txt', 'utf8');
 output = zonefile.parse(text);
 console.log(output);
 ```
 
-#License
+### License
+
 ISC License (ISC)
 
 Copyright (c) 2014, Elgs Qian Chen

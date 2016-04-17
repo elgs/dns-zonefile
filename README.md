@@ -1,6 +1,9 @@
 # DNS Zone File JS
 
 [![CircleCI](https://img.shields.io/circleci/project/blockstack/dns-zone-file-js/master.svg)](https://circleci.com/gh/blockstack/dns-zone-file-js/tree/master)
+[![npm](https://img.shields.io/npm/l/zone-file.svg)](https://www.npmjs.com/package/zone-file)
+[![npm](https://img.shields.io/npm/v/zone-file.svg)](https://www.npmjs.com/package/zone-file)
+[![npm](https://img.shields.io/npm/dm/zone-file.svg)](https://www.npmjs.com/package/zone-file)
 [![Slack](http://slack.blockstack.org/badge.svg)](http://slack.blockstack.org/)
 
 An [RFC1035-compliant](http://www.ietf.org/rfc/rfc1035.txt) DNS zone file parser and generator for Node.js and the browser.

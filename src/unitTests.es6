@@ -1,33 +1,31 @@
-'use strict'
+import test from 'tape'
+import fs from 'fs'
+import zonefile from './index'
 
-var test = require('tape')
-var fs = require('fs')
-var zonefile = require('./lib/index')
-
-var zoneFileReferences = [{
+let zoneFileReferences = [{
   name: 'Forward',
-  json: require('./testData/zonefile_forward.json'),
+  json: require('../testData/zonefile_forward.json'),
   text: fs.readFileSync('./testData/zonefile_forward.txt', 'utf8')
 }, {
   name: 'Forward 2',
-  json: require('./testData/zonefile_forward_2.json'),
+  json: require('../testData/zonefile_forward_2.json'),
   text: fs.readFileSync('./testData/zonefile_forward_2.txt', 'utf8')
 }]
 
 function testZoneFileToText(zoneFileReference) {
-  test(zoneFileReference.name + ' testToText', function(t) {
+  test(zoneFileReference.name + ' testToText', (t) => {
     t.plan(1)
 
-    var zoneFileText = zonefile.generate(zoneFileReference.json)
+    let zoneFileText = zonefile.generate(zoneFileReference.json)
     t.equal(zoneFileText.split('\n')[0], zoneFileReference.text.split('\n')[0])
   })
 }
 
 function testZoneFileToJson(zoneFileReference) {
-  test(zoneFileReference.name + ' testToJson', function(t) {
+  test(zoneFileReference.name + ' testToJson', (t) => {
     t.plan(6)
 
-    var zoneFileJson = zonefile.parse(zoneFileReference.text)
+    let zoneFileJson = zonefile.parse(zoneFileReference.text)
     t.equal(zoneFileJson['$origin'], zoneFileReference.json['$origin'])
     t.equal(zoneFileJson['$ttl'], zoneFileReference.json['$ttl'])
     t.equal(zoneFileJson['soa']['refresh'], zoneFileReference.json['soa']['refresh'])
@@ -43,7 +41,7 @@ zoneFileReferences.forEach((zoneFileReference) => {
 })
 
 /*
-var zoneFileReverseReferences = [{
+let zoneFileReverseReferences = [{
   name: 'Reverse',
   json: require('./test/zonefile_reverse.json'),
   text: fs.readFileSync('./test/zonefile_reverse.txt', 'utf8')

@@ -1,7 +1,7 @@
 {
-  "name": "dns-zonefile",
-  "version": "0.1.13",
-  "description": "A DNS zone file parser and generator.",
+  "name": "dns-zone-file",
+  "version": "0.0.0",
+  "description": "A DNS zone file parser and generator",
   "main": "lib/index",
   "scripts": {
     "compile": "babel --presets es2015 src -d lib",
@@ -10,17 +10,22 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/blockstack/dns-zonefile.git"
+    "url": "https://github.com/blockstack/dns-zone-file-js.git"
   },
   "keywords": [
     "DNS",
     "zone",
     "zone file",
-    "zonefile"
+    "zonefile",
+    "domain",
+    "domain name"
   ],
-  "author": "Elgs Chen",
+  "author": "Halfmoon Labs Inc.",
   "license": "ISC",
   "contributors": [
+    {
+      "name": "Elgs Chen"
+    },
     {
       "name": "William Ferrell",
       "email": "willfe@gmail.com"

@@ -1,5 +1,5 @@
 {
-  "name": "dns-zone-file",
+  "name": "zone-file",
   "version": "0.0.0",
   "description": "A DNS zone file parser and generator",
   "main": "lib/index",

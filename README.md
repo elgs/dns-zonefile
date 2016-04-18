@@ -6,29 +6,27 @@
 [![npm](https://img.shields.io/npm/dm/blockstack-zones.svg)](https://www.npmjs.com/package/blockstack-zones)
 [![Slack](http://slack.blockstack.org/badge.svg)](http://slack.blockstack.org/)
 
-An [RFC1035-compliant](http://www.ietf.org/rfc/rfc1035.txt) DNS zone file parser and generator for Node.js and the browser.
+An [RFC1035-compliant](http://www.ietf.org/rfc/rfc1035.txt) DNS zone file parser and generator for Node.js and the browser. Based on the `dns-zonefile` library by Elgs Qian Chen.
 
 ### Installation
 
-#### Bower Install
-
 ```bash
-$ bower install dns-zonefile --save
-```
-
-#### Standalone
-
-```bash
-$ sudo npm install dns-zonefile -g
-```
-
-#### Module
-
-```bash
-$ npm install dns-zonefile
+$ npm install blockstack-zones
 ```
 
 ### Usage
+
+#### Making Zone Files
+
+```js
+var zoneFileText = makeZoneFile(zoneFileJson)
+```
+
+#### Parsing Zone Files
+
+```js
+var zoneFileJson = parseZoneFile(zoneFileText)
+```
 
 #### Zone Information
 

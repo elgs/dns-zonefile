@@ -1,6 +1,6 @@
 {
   "name": "blockstack-zones",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "A DNS zone file parser and generator",
   "main": "lib/index",
   "scripts": {

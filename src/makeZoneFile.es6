@@ -38,11 +38,13 @@ let processTTL = function(data, template) {
 
 let processSOA = function(data, template) {
     let ret = template;
-    data.name = data.name || '@';
-    data.ttl = data.ttl || '';
-    for (let key in data) {
-        let value = data[key];
-        ret = ret.replace('{' + key + '}', value + '\t');
+    if (typeof data !== 'undefined') {
+        data.name = data.name || '@';
+        data.ttl = data.ttl || '';
+        for (let key in data) {
+            let value = data[key];
+            ret = ret.replace('{' + key + '}', value + '\t');
+        }
     }
     return ret;
 };

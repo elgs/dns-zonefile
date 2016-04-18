@@ -1,4 +1,4 @@
-# DNS Zone File JS
+# Blockstack Zone Files JS
 
 [![CircleCI](https://img.shields.io/circleci/project/blockstack/blockstack-zones-js/master.svg)](https://circleci.com/gh/blockstack/blockstack-zones-js/tree/master)
 [![npm](https://img.shields.io/npm/l/blockstack-zones.svg)](https://www.npmjs.com/package/blockstack-zones)

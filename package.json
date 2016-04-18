@@ -1,16 +1,16 @@
 {
-  "name": "zone-file",
+  "name": "blockstack-zones",
   "version": "0.0.0",
   "description": "A DNS zone file parser and generator",
   "main": "lib/index",
   "scripts": {
     "compile": "babel --presets es2015 src -d lib",
-    "test": "npm run compile; node lib/unitTests.js",
+    "test": "npm run compile; node lib/testing/unitTests.js",
     "prepublish": "npm run compile"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/blockstack/dns-zone-file-js.git"
+    "url": "https://github.com/blockstack/blockstack-zones-js.git"
   },
   "keywords": [
     "DNS",
@@ -21,7 +21,7 @@
     "domain name"
   ],
   "author": "Halfmoon Labs Inc.",
-  "license": "ISC",
+  "license": "MIT",
   "contributors": [
     {
       "name": "Elgs Chen"

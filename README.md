@@ -28,15 +28,29 @@ var zoneFileText = makeZoneFile(zoneFileJson)
 var zoneFileJson = parseZoneFile(zoneFileText)
 ```
 
-#### Zone Information
+#### Zone File Objects
 
-_dns-zonefile_ accepts both zone data expressed as a JSON object or plain text
-zone file. It supports `SOA`, `NS`, `A`, `AAAA`, `CNAME`, `MX`, `PTR`, `SRV` and `TXT` record types
-as well as the `$ORIGIN` keyword (for zone-wide use only). Each record type
-(and the `$ORIGIN` keyword) is optional, though _bind_ expects to find at least
-an `SOA` record in a valid zone file.
+```js
+var zoneFileData = {
+  "$origin": "MYDOMAIN.COM.",
+  "$ttl": 3600,
+  "a": [
+    { "name": "@", "ip": "127.0.0.1" },
+    { "name": "www", "ip": "127.0.0.1" }
+  ]
+}
 
-#### Forward DNS Zone
+var zoneFile = new ZoneFile(zoneFileData)
+var zoneFileString = zoneFile.toString()
+var zoneFileJson = zoneFile.toJSON()
+```
+
+### Background Info
+
+This library accepts both zone data expressed as a JSON object or as a plain text zone file. It supports `SOA`, `NS`, `A`, `AAAA`, `CNAME`, `MX`, `PTR`, `SRV`, `TXT` and `URI` record types as well as the `$ORIGIN` keyword (for zone-wide use only). Each record type
+(and the `$ORIGIN` keyword) is optional, although _bind_ expects to find at least an `SOA` record in a valid zone file.
+
+#### Forward DNS Zone Files
 
 The following JSON produces a zone file for a forward DNS zone:
 
@@ -135,7 +149,7 @@ _xmpp-client._tcp	IN	SRV	10	0	5222	jabber
 _xmpp-server._tcp	IN	SRV	10	0	5269	jabber
 ```
 
-#### Reverse DNS Zone
+#### Reverse DNS Zone Files
 
 This JSON will produce a zone file for a reverse DNS zone (the `$ORIGIN`
 keyword is recommended for reverse DNS zones):
@@ -191,56 +205,4 @@ $TTL 3600
 ; PTR Records
 1	IN	PTR	HOST1.MYDOMAIN.COM.
 2	IN	PTR	HOST2.MYDOMAIN.COM.
-```
-
-### Standalone Usage
-
-To use _dns-zonefile_ to generate a zone file from JSON from the command line,
-place the desired JSON data in a file (`zonefile_data.json` in this example)
-and run the following command. Note that the resulting zone file will be
-printed to the console; to save the zone file to disk (`my_zone.conf` in this
-example), use redirection as in this example:
-
-```bash
-$ zonefile -g zonefile_data.json > my_zone.conf
-```
-
-To use _dns-zonefile_ to parse a zone file to JSON from the command line, place
-the desired zone file data in a file (`zonefile_data.txt` in this example) and
-run the following command. Note that the resulting JSON will be printed to the
-console; to save the JSON to disk (`my_zone.json` in this example), use
-redirection as in this example:
-
-```bash
-$ zonefile -p zonefile_data.txt > my_zone.json
-```
-
-If the `-g` and `-p` are omitted, `-g` will be assumed if the lower cased
-filename contains `.json`, otherwise, `-p` will be assumed.
-
-`zonefile -v` or `zonefile --version` will print the version information.
-
-## Module Usage
-
-_dns-zonefile_ can also be used as a module. Simply use `require()` to include
-it, then invoke its `generate()` function as shown in the following example:
-
-```js
-var zonefile = require('dns-zonefile');
-var options = require('./zonefile_forward.json');
-var output = zonefile.generate(options);
-console.log(output);
-```
-
-`options` can either be a parsed JSON object as shown above, or a regular
-Javascript object containing the same required fields.
-
-It is also possible to parse a zone file to JSON by invoking its `parse()`
-function as shown in the following example:
-
-```js
-var zonefile = require('dns-zonefile');
-var text = fs.readFileSync('./zonefile_forward.txt', 'utf8');
-output = zonefile.parse(text);
-console.log(output);
 ```

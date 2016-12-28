@@ -1,9 +1,10 @@
 (function () {
-    var fs = require('fs');
-    var zonefile = require('../lib/zonefile.js');
+    let fs = require('fs');
+    let zonefile = require('../lib/zonefile.js');
+
     console.log('##########', 'Generating forward zone file from JSON', '##########');
-    var options = require('./zonefile_forward.json');
-    var output = zonefile.generate(options);
+    let options = require('./zonefile_forward.json');
+    let output = zonefile.generate(options);
     console.log(output);
 
     console.log('##########', 'Generating reverse zone file from JSON', '##########');
@@ -17,7 +18,7 @@
     console.log(output);
 
     console.log('##########', 'Parsing forward zone file to JSON', '##########');
-    var text = fs.readFileSync('./zonefile_forward.txt', 'utf8');
+    let text = fs.readFileSync('./zonefile_forward.txt', 'utf8');
     output = zonefile.parse(text);
     console.log(output);
 

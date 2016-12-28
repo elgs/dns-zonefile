@@ -1,6 +1,6 @@
 {
   "name": "dns-zonefile",
-  "version": "0.1.19",
+  "version": "0.2.0",
   "description": "A DNS zone file parser and generator.",
   "main": "./lib/zonefile.js",
   "bin": {
@@ -12,7 +12,8 @@
   },
   "keywords": [
     "DNS",
-    "zone"
+    "zone",
+    "cli"
   ],
   "author": "Elgs Chen",
   "license": "ISC",

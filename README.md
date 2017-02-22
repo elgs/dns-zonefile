@@ -1,17 +1,17 @@
-# Blockstack Zone Files JS
+# Zone File JS
 
-[![CircleCI](https://img.shields.io/circleci/project/blockstack/blockstack-zones-js/master.svg)](https://circleci.com/gh/blockstack/blockstack-zones-js/tree/master)
-[![npm](https://img.shields.io/npm/l/blockstack-zones.svg)](https://www.npmjs.com/package/blockstack-zones)
-[![npm](https://img.shields.io/npm/v/blockstack-zones.svg)](https://www.npmjs.com/package/blockstack-zones)
-[![npm](https://img.shields.io/npm/dm/blockstack-zones.svg)](https://www.npmjs.com/package/blockstack-zones)
-[![Slack](http://slack.blockstack.org/badge.svg)](http://slack.blockstack.org/)
+[![CircleCI](https://img.shields.io/circleci/project/blockstack/zone-file-js/master.svg)](https://circleci.com/gh/blockstack/zone-file-js/tree/master)
+[![npm](https://img.shields.io/npm/l/zone-file-js.svg)](https://www.npmjs.com/package/zone-file)
+[![npm](https://img.shields.io/npm/v/zone-file-js.svg)](https://www.npmjs.com/package/zone-file)
+[![npm](https://img.shields.io/npm/dm/zone-file-js.svg)](https://www.npmjs.com/package/zone-file)
+[![Slack](http://chat.blockstack.org/badge.svg)](http://chat.blockstack.org/)
 
 An [RFC1035-compliant](http://www.ietf.org/rfc/rfc1035.txt) DNS zone file parser and generator for Node.js and the browser. Based on the `dns-zonefile` library by Elgs Qian Chen.
 
 ### Installation
 
 ```bash
-$ npm install blockstack-zones
+$ npm install zone-file
 ```
 
 ### Usage
@@ -19,19 +19,23 @@ $ npm install blockstack-zones
 #### Making Zone Files
 
 ```js
-var zoneFileText = makeZoneFile(zoneFileJson)
+import { makeZoneFile } from 'zone-file'
+let zoneFileText = makeZoneFile(zoneFileJson)
 ```
 
 #### Parsing Zone Files
 
 ```js
-var zoneFileJson = parseZoneFile(zoneFileText)
+import { parseZoneFile } from 'zone-file'
+let zoneFileJson = parseZoneFile(zoneFileText)
 ```
 
 #### Zone File Objects
 
 ```js
-var zoneFileData = {
+import { ZoneFile } from 'zone-file'
+
+let zoneFileData = {
   "$origin": "MYDOMAIN.COM.",
   "$ttl": 3600,
   "a": [
@@ -40,9 +44,9 @@ var zoneFileData = {
   ]
 }
 
-var zoneFile = new ZoneFile(zoneFileData)
-var zoneFileString = zoneFile.toString()
-var zoneFileJson = zoneFile.toJSON()
+let zoneFile = new ZoneFile(zoneFileData)
+let zoneFileString = zoneFile.toString()
+let zoneFileJson = zoneFile.toJSON()
 ```
 
 ### Background Info

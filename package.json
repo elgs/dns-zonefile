@@ -1,16 +1,21 @@
 {
   "name": "zone-file",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "A DNS zone file parser and generator",
   "main": "lib/index",
   "scripts": {
     "compile": "rm -rf lib; babel --presets es2015 src -d lib",
-    "test": "npm run compile; node lib/testing/unitTests.js",
-    "prepublish": "npm run compile"
+    "prepublish": "npm run compile",
+    "test": "npm run compile; node lib/testing/unitTests.js"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/blockstack/zone-file-js.git"
+  },
+  "author": "Blockstack Inc.",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/blockstack/zone-file-js/issues"
   },
   "keywords": [
     "DNS",
@@ -20,8 +25,6 @@
     "domain",
     "domain name"
   ],
-  "author": "Blockstack Inc.",
-  "license": "ISC",
   "contributors": [
     {
       "name": "Ryan Shea"

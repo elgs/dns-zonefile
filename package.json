@@ -1,10 +1,10 @@
 {
   "name": "zone-file",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "A DNS zone file parser and generator",
   "main": "lib/index",
   "scripts": {
-    "compile": "babel --presets es2015 src -d lib",
+    "compile": "rm -rf lib; babel --presets es2015 src -d lib",
     "test": "npm run compile; node lib/testing/unitTests.js",
     "prepublish": "npm run compile"
   },

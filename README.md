@@ -238,7 +238,7 @@ output = zonefile.parse(text);
 console.log(JSON.stringify(output));
 ```
 
-#License
+# License
 ISC License (ISC)
 
 Copyright (c) 2014, Elgs Qian Chen

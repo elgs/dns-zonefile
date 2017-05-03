@@ -29,6 +29,18 @@
             '\n     contains ".json", case insensitively, otherwise to parse the file as a zonefile to JSON.');
     } else if (input[0] === '-v' || input[0] === '--version') {
         console.log('dns-zonefile version: ', pjson.version);
+    } else if (input.indexOf('-i') !== -1) {
+        // parse direct input
+        var content = input[input.length-1];
+        if (input.indexOf('-g') !== -1 ) {
+            // parsing JSON
+            var output = zonefile.generate(JSON.parse(content));
+            console.log(output);
+        } else {
+            // assume we're parsing zone data
+            var output = zonefile.parse(content);
+            console.log(JSON.stringify(output));
+        }
     } else if (input[0] === '-g') {
         var src = input[1];
         var options = fs.readFileSync(src, 'utf8');

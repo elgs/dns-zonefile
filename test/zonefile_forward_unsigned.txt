@@ -1,8 +1,8 @@
-$ORIGIN MYDOMAIN.COM.
+$ORIGIN mydomain.com.
 $TTL 3600
 
 ; SOA Record
-@                       IN      SOA     NS1.NAMESERVER.NET.     HOSTMASTER.MYDOMAIN.COM.        (
+@                       IN      SOA     ns1.mydomain.com.     hostmaster.mydomain.com.        (
                         1411420237       ;serial
                         3600     ;refresh
                         600      ;retry
@@ -11,8 +11,8 @@ $TTL 3600
 )
 
 ; NS Records
-@       IN      NS      NS1.NAMESERVER.NET.
-@       IN      NS      NS2.NAMESERVER.NET.
+@       IN      NS      ns1
+@       IN      NS      ns2
 
 ; MX Records
 @       IN      MX      0       mail1
@@ -20,12 +20,14 @@ $TTL 3600
 
 ; A Records
 @       IN      A       127.0.0.1
-www     IN      A       127.0.0.1
-mail    IN      A       127.0.0.1
+www     IN      A       127.0.0.2
+mail    IN      A       127.0.0.3
+ns1	IN	A	127.0.0.4
+ns2	IN	A	127.0.0.5
 
 ; AAAA Records
 @       IN      AAAA    ::1
-mail    IN      AAAA    2001:db8::1
+mail    IN      AAAA    2001:db8::3
 
 ; CNAME Records
 mail1   IN      CNAME   mail
@@ -39,3 +41,7 @@ txt2    IN      TXT     "world"
 _xmpp-client._tcp       IN      SRV     10      0       5222    jabber
 _xmpp-server._tcp       IN      SRV     10      0       5269    jabber
 
+; Subdomain delegation with DS Record
+foo	IN	NS	ns1
+foo	IN	NS	ns2
+foo	IN	DS	44049	10	2	67F186B05DAAE8F130799B5ABB7D614A4FE004CF6060F65E28421C842974282F

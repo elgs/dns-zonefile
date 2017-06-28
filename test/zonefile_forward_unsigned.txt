@@ -18,6 +18,9 @@ $TTL 3600
 @       IN      MX      0       mail1
 @       IN      MX      10      mail2
 
+; DKIM
+
+
 ; A Records
 @       IN      A       127.0.0.1
 www     IN      A       127.0.0.2

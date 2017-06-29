@@ -1,0 +1,490 @@
+; File written on Thu May 25 07:15:54 2017
+; dnssec_signzone version 9.10.3-P4-Ubuntu
+mydomain.com.		3600	IN SOA	ns1.mydomain.com. hostmaster.mydomain.com. (
+					1411420237 ; serial
+					3600       ; refresh (1 hour)
+					600        ; retry (10 minutes)
+					604800     ; expire (1 week)
+					86400      ; minimum (1 day)
+					)
+			3600	RRSIG	SOA 10 2 3600 (
+					20170624041554 20170525041554 44048 mydomain.com.
+					165LwHtyATf2GMzpmettFIUdTV3PirtzKsqN
+					YPE2MqyB77Ern/FeoXIXJY0TobaPRmT6/pMo
+					hsEoSexruXSQ0pTCFH95ccpPa57PTmXX72IC
+					/EMDo67GGaI1b896jAUnUrdxHmcv87LscSmW
+					3zuhFfZjMGe1GLtvckjV6DqsosbvrPd5RRMu
+					jo3R0t5HwM9VwzqKgkfTySuWZtvcd246gW+x
+					JyfmvDN9hAAkQYbwLedsn1dl0w7wjnY+03CR
+					6tzQGcFrRNlnHibIxevNCgVbWuj1/YMaYoYr
+					6lf0BIj1ELVuTF9dZodY+Jx8nb46XBVtkF8o
+					Wt6beRsvcXewBHAp2Q== )
+			3600	NS	ns1.mydomain.com.
+			3600	NS	ns2.mydomain.com.
+			3600	RRSIG	NS 10 2 3600 (
+					20170624041554 20170525041554 44048 mydomain.com.
+					MvWrVnPnjFOcizY7hN/JpG5+0bp6IYhfg5Dd
+					elFlQxDH+cQvWeWHaaIfqGHc4EYh6tIRZFnJ
+					E6wgMeFoWsC1fv+AXAG1we0C4NLKWpUXNqXl
+					LrCAZ2KwQas9GHIesrI2yyb1xmAuiBQ135iq
+					7lFSFdj/VhW7GCxz3en2NtgxNQjhL5bnexNL
+					G+BpMY7u4+ztBInjRixy/hBVeyK2bXSB6K+G
+					bXQ/Cmod3fdB9gc2wbeEDQ576HNBqptyT40T
+					cZoGh3o3Mb99xHIVdqmyqtXp5D4+Y+bUTIQm
+					EkCgWuiOtrzBHu1aHXZ7rLjkmLtWx6zMN7qc
+					6mXx9WybCUmVB/MdGA== )
+			3600	A	127.0.0.1
+			3600	RRSIG	A 10 2 3600 (
+					20170624041554 20170525041554 44048 mydomain.com.
+					K4uGZw8EP318wdS9WaYrxWDvv4b6GfvmAD4u
+					3eH7bxekfS+nzr5v06AkfcGR/PqXCP8AA8Hx
+					wvdokLyVnVRPPcr97o0T0mg6797BtgxYdwPt
+					PlEy6Ni/odbKB7AltxgvBJRqgOgicj0IEl6d
+					NCoJ392+O3Cw40OF6ceaiDSwD+V0POUEQD3j
+					YxBMU9sZYfnO9IkFG7CNOUtU/QK/H2tVzIma
+					EzMyOkYSeBKRaFdsRmJWfFWkahaYQHUICASM
+					Trh8y1m/bfOU/TYnw7sMo4Er+rPT/VPhKKf9
+					9IK5FH2+6xSZwX/ZYlEgSaRT8QwQVE093yuC
+					0kCQtXB2wxS2c6gZYQ== )
+			3600	MX	0 mail1.mydomain.com.
+			3600	MX	10 mail2.mydomain.com.
+			3600	RRSIG	MX 10 2 3600 (
+					20170624041554 20170525041554 44048 mydomain.com.
+					BSIsvmIa5wSrvdd5ZSQkv9pVAXfdF22WS1LZ
+					JZK/lyF21+IZIPjOQFROf+Nn4c9CyYyPkb3W
+					VjlOll2o+4MM+qXKCnH6Cgv7uCNqDKRuo1wI
+					TNconHqQJQygkdZBrcn/+iIJS+LXBOEefKmS
+					LwppV4TQabNCbql5ENOcb4QicZWGoeTiqKhf
+					rkmw3kzVZjy0g1J0A1+vpuO6R7KZM/nsi3Kf
+					XD35rM6dd/W2dxfWIC6Q/m+9PgziHAAehg7q
+					/NDEDyG2+3AV4G+GNoR1+StZ1PaVpL+KDxZU
+					kkLbcVxlhHv8axnhC1Tq0EENINUrO8LH0t1n
+					GiQPDZLhzRGJ0R9fRQ== )
+			3600	AAAA	::1
+			3600	RRSIG	AAAA 10 2 3600 (
+					20170624041554 20170525041554 44048 mydomain.com.
+					uvHn47vcgJ+FPfwoyxbSNcjlmO6Fc6bgJ3CA
+					cKzYrd9kTntJNsWQYSO7THE39DoPbkOMWXwr
+					bLH0JzGuyvXy3XJeUBZtm5zijKWU99Vpke9Z
+					8OAk6LaiShlRh64U94wb1dfraU3cemCviXoN
+					iTqz8PIxERQLPif/BCqwxVFy9N6FMy6bexNH
+					wCmXsnh6l4aj9/0qRtG7BIO50NbsZNa5wdPh
+					Fmc5qZonKe9Ue9d8b+3w53JeNKMDUJ4mvbwh
+					2yfQ3bQ4DmY8U9fpA0DJm749iKtg5zvuykxF
+					LKUZlvfI5YZFDRF1liGnBdjhatdnL/PBvnSq
+					QmsIT08tRR7gBinYzA== )
+			3600	DNSKEY	256 3 10 (
+					AwEAAfXuHhC0KBrXHy92xmuWNbL0x992UsB8
+					Xv29qh1KsSKbhgF8EAf3bLXuE2ccd0G2ITVB
+					5vUN7FEc8fKgwHSWeEtg8sNjv18bCKvNsrSr
+					lu90VihLQYyJGAc5Ax7Zb3OH+Z7zmHPWU+Qm
+					bQEJ1qKU6y1tOUP0Kau9rgBZHrxi8hOfU3NQ
+					vRW1Wgtg0f1H+aOfD6zGNsNfZoyhYHnZI6x/
+					71L6Y06rLROHv5B9m/ay/IECNxhpAJZIqnsG
+					u6xTYLMk6xvxLvrG9uEuChS7ISSRzOqZ0x6P
+					twpPoLCm/j4RHl/mMKIrDvTZngADNu4JzxJW
+					DOHE4aE0qfmbfG30Bzj+230=
+					) ; ZSK; alg = RSASHA512; key id = 44048
+			3600	DNSKEY	257 3 10 (
+					AwEAAfXuHhC0KBrXHy92xmuWNbL0x992UsB8
+					Xv29qh1KsSKbhgF8EAf3bLXuE2ccd0G2ITVB
+					5vUN7FEc8fKgwHSWeEtg8sNjv18bCKvNsrSr
+					lu90VihLQYyJGAc5Ax7Zb3OH+Z7zmHPWU+Qm
+					bQEJ1qKU6y1tOUP0Kau9rgBZHrxi8hOfU3NQ
+					vRW1Wgtg0f1H+aOfD6zGNsNfZoyhYHnZI6x/
+					71L6Y06rLROHv5B9m/ay/IECNxhpAJZIqnsG
+					u6xTYLMk6xvxLvrG9uEuChS7ISSRzOqZ0x6P
+					twpPoLCm/j4RHl/mMKIrDvTZngADNu4JzxJW
+					DOHE4aE0qfmbfG30Bzj+230=
+					) ; KSK; alg = RSASHA512; key id = 44049
+			3600	RRSIG	DNSKEY 10 2 3600 (
+					20170624041554 20170525041554 44048 mydomain.com.
+					wrH+pTu6ua4ruzle2v3UIlL+VjZEOv9DLvnS
+					vhwjGnge3Ue58ufwMuiocg5/mq5IHn6FJ4am
+					lXMVbV77ScfBFWZPPOXrTQcuqgpmhKkEBMzs
+					iQ0/SfXARd3DNzkFaTNvtsVHr00laAyw1Wgr
+					R2CXiDfaSUY7/7MclsM+wexDodQv7hukYWL+
+					y1M319UJk98/EikxNAebGaoQ2Pe1dOKxrT8U
+					UxwWJPFiPohGTw/XJrnygrYgt5BkD6jbVYgy
+					5ND7JY15U1jiEk/gWY6+x+gob6gKlR2nXvTn
+					pV1eZNc8q9OqgUvgJZWt2FcDfiqZkxHhALup
+					VNtlEx434qyDWZ9rwg== )
+			3600	RRSIG	DNSKEY 10 2 3600 (
+					20170624041554 20170525041554 44049 mydomain.com.
+					v1HpD/63ErZ9ckSrUw/dSCNNxpy6JlU1DQxm
+					bXp52vJcgikniGI5s7dNDDIX+F6MogABELiP
+					m4qjo5ECpswqaiBwwUpoZjM9vGFLu27ma27+
+					CoRqHwbTouu/CH2mpuZxxx2hhXkqL8GV3zah
+					W8UZ7AC8EWc7Tl83W26/p1oxMUGf/n8dLjkQ
+					fYNE0LDfXAKXxQ6FY5MwNsY+afSNi89seYXl
+					HrFTHv5w9zYsbCMBGivGs4Urxu7v5800Zx/A
+					1yR4ToL06i5gGL7IxMmg4WAqfYAWxpiGyk6X
+					tYnsnwoTyvl6RqN6VtpgowT8jDVxDQKvOzaM
+					uZyZZdCke58tZYUK1w== )
+			0	NSEC3PARAM 1 0 10 36E630C88CA99190
+			0	RRSIG	NSEC3PARAM 10 2 0 (
+					20170624041554 20170525041554 44048 mydomain.com.
+					Ug0fXfjXf/6DnHRCSpKlaCHWPS8HDKn9cO9i
+					OpGp4R6S+IshDwD2tEpiUKAV/ijj0qztJYMZ
+					VgfLge6WILNv8gfu1w1e38tiS6kGv2dPRyQp
+					obWAEZ2qPeNcnuVYdeUZ6nKRcXmVdwKOEGRD
+					3gswcZpms5PmYHTKCA5UMyqgQn56xPDq40Vg
+					DQRsIXvwYxug6T+wpKfgKyy1dgPKFcpXBirE
+					Pip7b6Duw9848hEV5iuCJ23BR/YGNDAXfZRb
+					1s0E0j0j3VfqDifh62ob/grIdRMK/5C8l/C8
+					igUclumw80pZbFEFyyuixAbD/IGy8HWmSgc/
+					EaJA2/aVtasN4D2r/g== )
+_xmpp-client._tcp.mydomain.com.	3600 IN	SRV 10 0 5222 jabber.mydomain.com.
+			3600	RRSIG	SRV 10 4 3600 (
+					20170624041554 20170525041554 44048 mydomain.com.
+					Ou01i4vJBUsKb1gOpMHmF5HAuglWoZKNSk8P
+					a67sxE3YFLy+NZvSJEX72Y2Vg/AQ6xoNPRAO
+					yEUnd9TKE7S0+PuWzbLs6MiaDfB1Nmrn6KJi
+					9Ke/0Gf6OSSjYlnvRAHndNXjFAwmFFwC+vEO
+					/008Jx7yiMx5X9GH2Gbl5TYfBVB6RupXH4dz
+					EUwk3eeHsrrVvKC8IW4QsFFfWJHgNOp5TztU
+					ZLMsk+rkRye0NLHUeKkcWDuOfLp72NqVjPTh
+					8XXfjqUxv2+Fi+gYbxHnycA2aDk4pz9mYbhS
+					GVBx2WHz78NEbuNX/H7aTiHJ38R8gvGlDlpm
+					D0m4rpirRBoQZIGmtQ== )
+_xmpp-server._tcp.mydomain.com.	3600 IN	SRV 10 0 5269 jabber.mydomain.com.
+			3600	RRSIG	SRV 10 4 3600 (
+					20170624041554 20170525041554 44048 mydomain.com.
+					AJBn/C5qAjsH5GlAPUGaFGCKAJ6LyvH3oTaX
+					kJDLtQopO4TVVKNW3EV+Q4P7Roaf0cceop3X
+					xtI8UptxST0/z5M5heHaSPol+sWZEnkbtCzO
+					PLGAYBTpR//Gj8Pre1Nr18fc38GwxkcmX/Bd
+					RglE5q3PD3chWN3uVe3pBlX3np5z9U4sJWJY
+					gxnzxLCy0dbVUMm7ApV0CMZHiwdtlETMtmWl
+					oi+MH27srFRJVZiAjNZeIysAQyFG9Pku8JiL
+					IsYkz/mufjPcRU1Usz6SZHc2/8B4bOVvI0wD
+					QHLQP0dNZbGqf1tHv1CyTt+y8NCVKH3kn3Co
+					Z3NGP4F6Bv6RC+L5FQ== )
+mail.mydomain.com.	3600	IN A	127.0.0.3
+			3600	RRSIG	A 10 3 3600 (
+					20170624041554 20170525041554 44048 mydomain.com.
+					dN3IzAYQgErNXYDTzDJGcV7YiY0cwEBk2pmo
+					7nw1Gl0yhHhBNCAd9eoagu9qFK8QwJXgnjU2
+					gzR64Wb4OF1deXyDpEd2pBGsDDwD0m4Mdz3O
+					GAoBBtJkyAbQEoBJKyKRwpdsD8Y8ss1xodno
+					BFnfEiahJQFGQXzIzkBMR9co7XI/wpg2IWR4
+					p8yhT7ceICuN0JDksfawTiTOas5rXDENhcdw
+					BnhIoagLZdM1JUrqyeP6E1grB0Qmv0aakMhy
+					j+IkOEM1KRuMRxq2TW2zfskpEKtBawCfCPtU
+					Dv3HrAvD20bzcHF6chfdBQeKJYc14LKB/Xi8
+					Tq0rvf5HMj3plLwzYQ== )
+			3600	AAAA	2001:db8::3
+			3600	RRSIG	AAAA 10 3 3600 (
+					20170624041554 20170525041554 44048 mydomain.com.
+					VkE+KYbahwKAiiyZFCfqoV40VclPcZhP1vD0
+					WaXXfyLTJwqdtwROq2Jq7wS+/xTpc7WDdj17
+					sLEwKtbBO7EOkm1DadATpKxpc8yOYj1M0I+H
+					XMzjZ/WZrTq+X99z1B1INTSa8z2dAqCLKywY
+					9igUFWcFmLip7KzNpX12QoIICe0TXNNr4XuV
+					HS15u7CiCLCn2HSsFxrecgAzVDy/lEtiuLuF
+					A76hj1iqlBI/vAATsDT4rApanqjUxw6IBWZP
+					Os5t/TD+5w5ByDrAnjZbT1W9aVZjOdJjBYPD
+					o7ZYjNesL/i4vAcrdowlM9a8EZDVObT3u7F3
+					XSnQTvCNe6JxwMV7Uw== )
+mail1.mydomain.com.	3600	IN CNAME mail.mydomain.com.
+			3600	RRSIG	CNAME 10 3 3600 (
+					20170624041554 20170525041554 44048 mydomain.com.
+					LaWAYfWEs38tzZcri7danAF4P2Z51+Xchp61
+					ASWrHgxU8LFByNtSiFHkvemyrNrww5xYNzRy
+					QlupWhCdtp6v0SieY9zx7+spUKmDkxs3vTlr
+					otGvuLGhgveaDzV2jOCIwvFKvtvtcK/igCn0
+					+gdmJQJ36buYcDNpyYDCS4o8BxAp/IOvjYm9
+					G/tmffINq6WZksCawodV9EP6Uq3Z+bxFam0U
+					DHxXKTk4VQ2321rldEYnm3uKIQcW74p6tc5a
+					Zg/hXK8l1cZ2f9kqr0Jtc9pD5l1TSv8h2iXf
+					iTvXgMpeETahwRp2btmmlVJiWU5Cq1tPFeAq
+					HCX7A1XNKgeEXrokwQ== )
+mail2.mydomain.com.	3600	IN CNAME mail.mydomain.com.
+			3600	RRSIG	CNAME 10 3 3600 (
+					20170624041554 20170525041554 44048 mydomain.com.
+					BusIdDjmFghwox4DFLIFGtq/7TTFtgJ6aXSN
+					H0Ut1ls63fCwSxqWd8BQDWoTaIaPF0aw0fGN
+					kC0vLoK1gPkyj1Ygg6oM7sDgf31PDnLqN/xC
+					XAh/PTPUhJZ74RUI5JlBLXnEx2St7XWOCiIm
+					4lelm7ctVeY0M4x9Jq++R/JHWqs45xgskeYm
+					DAky/fjeBUgr/3j7mSST9DLgx8bn8yAQGT2w
+					LVEvbSBz708c1Y6LYiQKQJibnkei4fVpavTu
+					bfr/pnwbnkKXh4GD2RVAzO9ifCuS+SMDGPrx
+					btYj3Sj0D6RNHHJpD8iT+utJoi04bgRQBEgR
+					lMvQxIr01Ei/UmnUBw== )
+ns1.mydomain.com.	3600	IN A	127.0.0.4
+			3600	RRSIG	A 10 3 3600 (
+					20170624041554 20170525041554 44048 mydomain.com.
+					1fFGPCbNJE2IFPmDiKNoibI0Q0e4BIzuBGE8
+					VyTrPaQtJvsb0ZAPpwLPScojiWqgVxw2mVLo
+					l4CWNqR6GxneedX2jlb/dJAtUznpe7blmmJ1
+					Oj3K8/Kv1e4Jza2rXxuiuDuJ7yAQzvr/2kHM
+					O5h+Ze3U7qOHEAlnXATZZQ4OqeeS3vhaQlXR
+					QEkRu2C8Npi2dk309E2heKTwZR0gCCwjYcQD
+					ic5Ytqvj+6M7Ereb4AZK0+Fb1Dw8pCPKt83k
+					40a60/uwtK8fGldFYxRfoh3V9A9xmNZE1Q4P
+					FQm+wcyub3FBpwZN9rMQUUih74S3pZjy2P30
+					ERaG+UNbt+e5LvpqKg== )
+ns2.mydomain.com.	3600	IN A	127.0.0.5
+			3600	RRSIG	A 10 3 3600 (
+					20170624041554 20170525041554 44048 mydomain.com.
+					ILm0SDT/PduQxiaZPi+P2aFPPEo08//1yfFC
+					iClFccbY+NgWqWFmQDZ4+93yehf0D0piuhBY
+					KSyFNvFHaAxrqIY41deq8js1iX5m1TfqkjsG
+					Ral1LazVJUwj7cwAUg/9rSI0FUK1hPxA0rex
+					ei1gzlt3TWRIbVtV4QjC7xdqR3mJGgd1tegb
+					17gTJ1RzJpD5wEhP3mVuuvC+yUvYy/nM4Pch
+					FU74EUH0h47Ss6oS/cknT2uoLNbgo+sjYUEz
+					SPUGrRUbGWomspanvgkbMjZUpXICpT+K6HIf
+					l0ScTu0EAkBdx/w94HhKupW6Nie/DHo9iOtb
+					7cWlsfjgSOnc4nSXwA== )
+foo.mydomain.com.	3600	IN NS	ns1.mydomain.com.
+			3600	IN NS	ns2.mydomain.com.
+			3600	DS	44049 10 2 (
+					67F186B05DAAE8F130799B5ABB7D614A4FE0
+					04CF6060F65E28421C842974282F )
+			3600	RRSIG	DS 10 3 3600 (
+					20170624041554 20170525041554 44048 mydomain.com.
+					r8x17MC3Koqj8vP27dzBtXPZv59/H+bK7CQo
+					J5/hQhkodKRTG4GY9ysMqRTpTw1UjLbjke1z
+					j3JdG9gQNVlaw78stsOg3XF83kt5Z3fc266Q
+					YZAOXl63z+zcJC2y3wYVAvHp3dNUIawEufqA
+					b1qCMu1UclyhdDxnJCXHyBlSVGanBPEdxVrB
+					R5wxZasBm9kYyQgP6NoS4b0goB3pPikS5soj
+					78YwG3EtcGyVx/1AcwesyAOeAikCEISD7pCW
+					GglTf33/easpSTFRu2lAkG0VW3rnqR+pFSJU
+					MzBqI57siwCLU5kuU7pjmVs0p0xW+GGqclCW
+					0CnzGvpULIaCkcNLXw== )
+txt2.mydomain.com.	3600	IN TXT	"world"
+			3600	RRSIG	TXT 10 3 3600 (
+					20170624041554 20170525041554 44048 mydomain.com.
+					Yr7oREaSVKM/SNzg1qzJ92wY+141BPrG3kr3
+					sAorUbg+Hvy4ecS1aa26l7gaEPc506mfFopo
+					+pyKgp5eYjGF9vcywYy2AEd+gVvZwM8VZA99
+					quTzi0/6+KcJc35toOX4hGVWi8SRxTjHvvwr
+					uwUrIkp9xEXkeuP0sXAWhK8rYUxxvIyiDjJG
+					yl8OcgYb+A0cF2wgBN6ok2SYY6x5veUtNkEl
+					sYngm0xztwm/i7tOzJDG8EuQ2I9Qt7SEC0Zd
+					BJDBULIu5mvGWUqa9/TXvYlCFHyHlHhSKIDO
+					3ZWc7A51CLd0GTf1c9jE1bKeQ5GgrMfTOWwk
+					GssElZVNkDMrtT3gYw== )
+www.mydomain.com.	3600	IN A	127.0.0.2
+			3600	RRSIG	A 10 3 3600 (
+					20170624041554 20170525041554 44048 mydomain.com.
+					MrMBl6xx4v6UPHIS/Z4H2pSWSroX9n4eVKqO
+					Z0rDGpJ0Xz/7c6uI/tOGzIlRqdAEaYX3dkRn
+					YOdsxp9Q7gaP7jZprgWuPlNho/TyFyR3R6Bz
+					+ixlOz5f4iwZcwpxdFFNxh2h4aAxAw3TUJjF
+					PLqC3yQQGqXmj4ZDYqQQHs5Dl96KpkznQpg7
+					JZiAe92NI0f2pSujwhYvyCGHguYcx5HPFvLk
+					uc0g+LUt1+z0nigGJmbspker8iY96S/u5WQB
+					/ZPWh86qKcdI7kzzNxNFuXlG0GF/1rKX4lS8
+					8mkuj0I2yFbhLISzDNTr2ydI7ZIxVpWFaLbj
+					O4NDhKcUhnBXteFx6Q== )
+4J9UQOK189NJ13163JJS7O8FSLQUC1N2.mydomain.com. 86400 IN	NSEC3 1 1 10 36E630C88CA99190 (
+					A7J3BOQPKP5QVF3F6KDACET3NHS4O0PI
+					NS DS RRSIG )
+			86400	RRSIG	NSEC3 10 3 86400 (
+					20170624041554 20170525041554 44048 mydomain.com.
+					jA54pT3DOgmZjSggAOguFXmh8X8OKAg3mZVX
+					VUQgdOmAQLtGD2BthnglgVcr5UGI3tAcISGz
+					xR/OdT0U/mixuN44EswMljceDRL/Gr205YKn
+					zWff+gABgC44XvNvS2PGWkghBCOmSaoqtYcb
+					xtLJjQf91uV57YS9DB7hn5+yLZIBHKAkfjsH
+					J9uvpRJ7B8PaADjX2FpF6/OvD2meIswAIGeC
+					o0qGR3ybN5YyoThIlxIR6fxDiLxVskftz0/A
+					bQlaJ6JLaiRiAIaPGUe8tVeKkMikzSsJM+8s
+					iYPu7kKInhbiqeRDGKu+m30FIezvJTSf3GWR
+					ZOYZSqPjgZOJGpRINg== )
+A7J3BOQPKP5QVF3F6KDACET3NHS4O0PI.mydomain.com. 86400 IN	NSEC3 1 1 10 36E630C88CA99190 (
+					APLSK23PSOMJJHA4AH1J0UAU80KBJUTM
+					A AAAA RRSIG )
+			86400	RRSIG	NSEC3 10 3 86400 (
+					20170624041554 20170525041554 44048 mydomain.com.
+					8moj9ui2L742kmPJkpH3PEJNrn67HHVtSLxo
+					W30RIf5O36Z1Hui3DpjN+CPPU/KqUqW9ZUUe
+					hnpp0FUrHvWWTObY6ETMG0jEASZtWieeFbeI
+					+7gb7iS+s6O3IS7dF07LtIp7zwn3bOXqRxmi
+					5rJyVX5+UDQfzFCd9gXkPuxkjgwh+bKVM1qG
+					SDzXW2RS5MlJsUkOzVyVk1fO40Fer/ybKHiR
+					O/cRfpJTxtlu4nJ6uT+6hugXe6DK7O7ORV/5
+					4wEla23Ww0k1iiweCuQaM7btsfcX7AXMaaYg
+					uVHF+NZ6s/3daoxT8qEAJJxKbBoJu1k15fNv
+					Pvm8ZIlGHVHcVdWShA== )
+APLSK23PSOMJJHA4AH1J0UAU80KBJUTM.mydomain.com. 86400 IN	NSEC3 1 1 10 36E630C88CA99190 (
+					D94V0H49VVPJ28MMJ3H1L2CR0OQ4KDAH
+					CNAME RRSIG )
+			86400	RRSIG	NSEC3 10 3 86400 (
+					20170624041554 20170525041554 44048 mydomain.com.
+					OOojHqCpWHD/gSrjT/tjopw7Ntfi4tQ7von6
+					40H2IQDSBEXjSX2I6Fq11WIfcUffIVMvRWHg
+					y143+1vxZTumbAtLVyF2pp0l/T44o1JtZtnY
+					3JBP18NbdnDYcokbjfCzgfIF0vzQ6xT3k4yJ
+					qVvQw0M/+v6RTtY2SaOAh928bHDePwV/25jS
+					6ZxHYR9qyPyZh99Qn667QTbqvJIv2Fxwu9VI
+					ahKc48958Y48dqc768utvpOShY1aM1yNWQbH
+					ce9h5a9o5ImXMHD41vnoh4z2MDIkUyjio3Ah
+					5P94WbX7nlrrXyE2mogai8c/XoxGeSL+gBEl
+					Gxh7HjAsTshBe/kYuQ== )
+txt1.mydomain.com.	3600	IN TXT	"hello"
+			3600	RRSIG	TXT 10 3 3600 (
+					20170624041554 20170525041554 44048 mydomain.com.
+					sBqGXw1IXHPXwu+1fJubDpj7LqeK8cVgPpc3
+					VNlGHT8OwflbNgfZxozX1YzuEktL5P4OMIIH
+					GQ8+o3mSkBwob1VU6U+AIU5TvqNC1EP24+Ez
+					p5PPRTSV2Fe/7SyGR0newOG3QkdugSQYg1KM
+					df0nfsQUlx9ICQnmuI8U1lOtHq1Z11pEjSu/
+					1DIn878et1dZ2okVltG0tYKoP5SnerBcB9qQ
+					p8M7kRvC/x4gU37Z+Jk7CXWxXDeQiDfnL3n9
+					IbDspHt4u7fxjWUtTZ+sA+ODhsO4tCdcSYc5
+					1RonPH0vS+a6UiZ6r3BziMAYnvt4SRzgM6ZC
+					iFDJtkjar4BDCCMxpw== )
+DP51FCHFBPBPVVRAQRGPPUR77F4FJQGE.mydomain.com. 86400 IN	NSEC3 1 1 10 36E630C88CA99190 (
+					HA35UIAMLBKPPOBS6P9ADRIKU9PO24N4
+					TXT RRSIG )
+			86400	RRSIG	NSEC3 10 3 86400 (
+					20170624041554 20170525041554 44048 mydomain.com.
+					HULZfn3pS+OSrDTxRiRaNN5M2feKiT64slT8
+					WuGg78T5vr0aLkCLFFnqKlBGNm4gCWzyHm1M
+					FU/BwSYApm1bhb6xfegXWNRoVUqTSicbsjGs
+					YMCPcftevj+ThrTrcfGw2IEWvlbKuOqjsLIe
+					3l9Cmn+VzquOXPIcSKVW09+8jbH/mrALXPsi
+					2Fu1kS6m0z4qh0kkivAf3Nzej8OU64KGirBH
+					3M1enr5kkU3mJRXBCFoU7x+cby3LVqHnE0x0
+					zvjHHdlUrrI8JpHi4BkkuvzvKC0Q9iVgagx6
+					ZylQBAtwdRHrEDNqSfBExpFSKJyfsRNrvoGB
+					J9jnxARzqxD7/dGYcA== )
+HA35UIAMLBKPPOBS6P9ADRIKU9PO24N4.mydomain.com. 86400 IN	NSEC3 1 1 10 36E630C88CA99190 (
+					IJIS5RFF13ND1H77CP71VCBUR5012ARV
+					TXT RRSIG )
+			86400	RRSIG	NSEC3 10 3 86400 (
+					20170624041554 20170525041554 44048 mydomain.com.
+					U4kzWv3tTOPSSS/ukXTnJJNSBoDjG6WJvuhJ
+					zLjR/Wsgt7wBxV02zqoQNVqP5GeX9+7RX5JO
+					gOUrwy+tIJoFHtVQaN/VOqdWCyBUsYz0Fu6h
+					SiKYmTD6jd70hYWz97T7QwOdbCtchs/gCh1J
+					c235ezHrXIwjGhFbh/nj1WgMJ5V+ji9TqAH7
+					EsDXbUMDgESAGjfcvgMcdaQEGjkzX6vbd3QD
+					jaLMkOlkQlHJjwLcFj6g9ztkaBXXpVlSGznc
+					akMh85A0g8AaqTOL/4ZzmoNh65/SGLmb5qTe
+					goJUtGA2Flowc2Y/p7mYdjWDM47LvvVO1hqj
+					Rx5KCzVn0xe04gzReA== )
+IJIS5RFF13ND1H77CP71VCBUR5012ARV.mydomain.com. 86400 IN	NSEC3 1 1 10 36E630C88CA99190 (
+					LO5I3COFEUD5DRI1KEGP7JCNMMFCLLRS
+					CNAME RRSIG )
+			86400	RRSIG	NSEC3 10 3 86400 (
+					20170624041554 20170525041554 44048 mydomain.com.
+					wKtH/JUJhF09ecfhSmnQTd6zGfQmBCulSFGd
+					DMjvLZyiU3LBm5ztzRMh1AZa1mndDO37RavY
+					xBTz0mQ0zqLCVZBEVNpgi3YgNgwHc2t7lAK0
+					mmFucsUABoP2/cI2R0NxZmIy8T/SPpnoLzgi
+					NajlFwEptu4ZmIwYwhsgUdINW46V9DxYw9Vq
+					2LMzA1UISGh5P3Ct+RUL/0DDlugn9gLdcDDW
+					gwHj7OwoLOWXAPYVRsL8psfb9vxa+Pyxb6R1
+					O5P8DC6yP6eHLqUOpffotDsBy7cLBrt/LuNk
+					b//KFaRIYyd+4K+L/p1Ar0uh2a25zIiJFB3R
+					/CLXT/uXpbLTs/MFaQ== )
+LO5I3COFEUD5DRI1KEGP7JCNMMFCLLRS.mydomain.com. 86400 IN	NSEC3 1 1 10 36E630C88CA99190 (
+					LPE4RQ2LG3VCRLEHU204V1034F78DU1C
+					A RRSIG )
+			86400	RRSIG	NSEC3 10 3 86400 (
+					20170624041554 20170525041554 44048 mydomain.com.
+					4JPhkQYVI2P2y9Bry0DbRJY5uhlJ8526yg3j
+					Z8YmZ2sYFk4yZmB8HVVx5qiIuDLXJ62zLnkb
+					bD7CO2nIvIDQP+spCOP4s2deeS6s5zRRG4Gb
+					WWCPELj35kNVBRchOhsysBDrMP6Oxbosf3y8
+					vfanEruGfaPpd+yg6uG/rf5wd5PFTPddxTXL
+					w8aCef9EY4PvgtYjxrFTn2c/9u+ubbxkBHzp
+					Yz1voiV+9hLevaCajrjxKra8ByWKTjWkSaE0
+					ZFyPxrSE2sfultoWufeJXeYzcmiX8oZ0O7oE
+					zQNZg55WtM34St83W62jZnKUR8a8otfxlEtR
+					6wjwVO/vezTsDMiViQ== )
+LPE4RQ2LG3VCRLEHU204V1034F78DU1C.mydomain.com. 86400 IN	NSEC3 1 1 10 36E630C88CA99190 (
+					M31H6ROMN1CRS9THN14KFV1DTJM322D3 )
+			86400	RRSIG	NSEC3 10 3 86400 (
+					20170624041554 20170525041554 44048 mydomain.com.
+					4XnzMuaw5V6j3sCU4Ob+PwNiSiEeiDzwxDXV
+					8GJ5hb09cosVpWjegoqmRmDLc4cNnCZY5BCS
+					jKYV6kIJHWMIt8uFuNiwwg0uisoL7n4FBCDV
+					Ofl5ckQ4RXjVg6vbMSmAhkj2Llke9CUvCTCh
+					KsBIyl6b7lO46Np8NSKpNXhxzcoCGwl6y7A6
+					UznHwCr3nNAMCAjhqze3ZOpinEfmchmLnSPZ
+					l9i1UoXCs0HIwEYknUJc+AeCXdYX5AfMqIBd
+					UTEUgtoiQqJHI90H1TJxs5XFB8I0rVggwDvM
+					BMsDFVZX4Qhjh+NsPnGZNZdqSY6luhWBCW5a
+					W81qBRFaGcpcOvsieQ== )
+D94V0H49VVPJ28MMJ3H1L2CR0OQ4KDAH.mydomain.com. 86400 IN	NSEC3 1 1 10 36E630C88CA99190 (
+					DP51FCHFBPBPVVRAQRGPPUR77F4FJQGE
+					SRV RRSIG )
+			86400	RRSIG	NSEC3 10 3 86400 (
+					20170624041554 20170525041554 44048 mydomain.com.
+					j+OKzXdTGQzj6xoGPyBSqyJrvTxCO+ZRC5ye
+					MHp+i6/PJxVV3sC+onFVk0i1maEvf/wxWwkZ
+					tbJg37YC4T9S0bAp6f3Grkwk5P39aNd04V1v
+					mDeTzMW+MHt9vhXpsNSZFa66ZhlvyNBBeGAF
+					pl2k03tPEkdaaZPiK/vS+p+JHCsYhfxh3mmd
+					yIGD/vsunrdSyGTzHLWJ4Pn4RpE16HRWLqp6
+					/whhbHRfgkOx8OCdfrkjc/7Pvx6QlWLl7Bd3
+					tfUj+mmfIwUiNO4eAWAmwSXIaf+YCiQxpygz
+					hGKHcKI7nyJXM3TduszStl1MUxhTfLtahtjG
+					PhKWika9tpf/VKL1Cg== )
+M31H6ROMN1CRS9THN14KFV1DTJM322D3.mydomain.com. 86400 IN	NSEC3 1 1 10 36E630C88CA99190 (
+					M8VPOGB0U4PVGDOU7K3NLBL99PUM58R9
+					A RRSIG )
+			86400	RRSIG	NSEC3 10 3 86400 (
+					20170624041554 20170525041554 44048 mydomain.com.
+					kEDyKFZbJz0ThVOyioemy+x6I+TUtgG/FRbt
+					mcmdp1w4ZWCAnr2pfWaFUTICLIy+rr+fGWI3
+					McH8UFuBeWsZhHyoxe3fnp2jbTQKgjlHBs5K
+					eJcETh1443yTB4ycICAbDJs8P/hlJHLfAxJ0
+					4xyUhrpRxrkzFwvjGTVHBJDZMeu97AXpa/d/
+					M5who84fn3VwV92woExnUJzku91FjXXOugPU
+					LySse0jH0w3EvSrDb6nSIByzR6i0vxZgXQvd
+					KozRUAAH3wOukvamRkGB0JEcxmP+9ch6Z9vV
+					ELpwkod6jjU6QKWMYH7eZotd7Tk01533sjMU
+					bcaYDI0WSzs4iMKknw== )
+M8VPOGB0U4PVGDOU7K3NLBL99PUM58R9.mydomain.com. 86400 IN	NSEC3 1 1 10 36E630C88CA99190 (
+					P3E2RUR9MFN1GV6GMUSCQPB16Q1TG3TO
+					SRV RRSIG )
+			86400	RRSIG	NSEC3 10 3 86400 (
+					20170624041554 20170525041554 44048 mydomain.com.
+					qnyxmM54hoOCr23+MeQDo8HjztEJuK6pPErR
+					dhBuOwl9UMTtU2QrJCIPJAlAPnHllABJJ6/P
+					SZUuzu7m2+5j0b5gCGoRgYK7jY5WFpAM54Uw
+					cEGFaISqzarf6Si4vH6EAmCXRnd9nFPqh5bh
+					85A7SaUUo+ue/Jdkpm7UD97D03aJsCFQugP1
+					gnyoPHBwmbGl2BSL4R/UwEGUyQIJMCFScG9q
+					pnEB2yIXqtZyklw1ufS9qwPFyUn9xe0nWd77
+					lvPoi4wXLUjMD6R42ny3HpCeaf1J0qbc9FfQ
+					Z14JiG3qW96sdv7sDbtbmbeYQABKm2+1vGlA
+					CPp869BtwZdv40Da4w== )
+P3E2RUR9MFN1GV6GMUSCQPB16Q1TG3TO.mydomain.com. 86400 IN	NSEC3 1 1 10 36E630C88CA99190 (
+					R3440Q3VNGCEO0HJS976BL35KF3H2084
+					A NS SOA MX AAAA RRSIG DNSKEY NSEC3PARAM )
+			86400	RRSIG	NSEC3 10 3 86400 (
+					20170624041554 20170525041554 44048 mydomain.com.
+					fi77NgZ1pHuaH1t1XkWIMHiyunS2a/8/mSdb
+					II5HAtL/Fel/FTu+OoI5vWQVH2r4VnyxDo++
+					EdoorXQiCtQp3FoIWdbcesV7vnf8k9fyk6M3
+					Uki+bHHJwxIPLBceOs4W4b2A0Iy1Ng/3q+CK
+					ABhtOM7lYrV5Mj7R0HHPN6CHRkJUg33rSRT2
+					cWGd0o/0fU/dkCDbIKJDEl2eAeqDUIyyreue
+					WIXiGnrf1poJlzGdPf/y2Q9ebQ/Ssym3tjIf
+					dg5AmcS7CfkIMc28+r9D2o407KGctVxbuDeT
+					NrF0pSiwwLtxQoISCrALvS+jt+ZOVuoKVNcL
+					BuHbyqBzIUKI00KjKQ== )
+R3440Q3VNGCEO0HJS976BL35KF3H2084.mydomain.com. 86400 IN	NSEC3 1 1 10 36E630C88CA99190 (
+					4J9UQOK189NJ13163JJS7O8FSLQUC1N2
+					A RRSIG )
+			86400	RRSIG	NSEC3 10 3 86400 (
+					20170624041554 20170525041554 44048 mydomain.com.
+					b0C5pG1NeCRziDN7HT05A6pVfMFIkXyUsg0r
+					Avh1cq9CpWp2JIMAQuxsjlawppvmBa7aIg83
+					tdUr+79DPyL1YpSduDHUwrmLeRhG3PKgsIDm
+					aIbKbzDgcTbl0Bj/nfWu19ZFBP1uBbju+lgP
+					T+aj+p1Og0EYVURWb4qpriGtwpPofmPqZpP8
+					HMPrN1vnXlaElSFnS2QDwms4LivTyGSGLVi1
+					lbR2bjIbcz57J0kGwGzknzgZ8c9ruixxdoBM
+					u7XB0jknMIKCFpc23ky/i+1JAiZFO/0ofyBt
+					8CBYB2uiGdK0fglV7+DTvZDHmsKzENUnhPeG
+					x9O8LsMYkvf4GLQ40w== )

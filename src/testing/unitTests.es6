@@ -19,6 +19,11 @@ let zoneFileReferences = [{
   json: require('../../testData/zonefile_forward_3.json'),
   text: fs.readFileSync('./testData/zonefile_forward_3.txt', 'utf8'),
   records: ['uri']
+}, {
+  name: 'Multitext',
+  json: require('../../testData/zonefile_forward_4.json'),
+  text: fs.readFileSync('./testData/zonefile_reverse_multitxt.txt', 'utf8'),
+  records: ['uri', 'txt']
 }]
 
 function testZoneFileToText(zoneFileReference) {
@@ -49,7 +54,7 @@ function testZoneFileToJson(zoneFileReference) {
       t.equal(zoneFileJson['mx'][0]['preference'], zoneFileReference.json['mx'][0]['preference'])
     }
     if (zoneFileReference.records.indexOf('txt') > -1) {
-      t.equal(zoneFileJson['txt'][0]['txt'], zoneFileReference.json['txt'][0]['txt'])
+      t.deepEqual(zoneFileJson['txt'][0]['txt'], zoneFileReference.json['txt'][0]['txt'])
     }
     if (zoneFileReference.records.indexOf('uri') > -1) {
       t.equal(zoneFileJson['uri'][0]['target'], zoneFileReference.json['uri'][0]['target'])

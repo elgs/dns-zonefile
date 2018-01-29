@@ -114,7 +114,16 @@ let processTXT = function(data, template) {
     for (let i in data) {
         ret += (data[i].name || '@') + '\t';
         if (data[i].ttl) ret += data[i].ttl + '\t';
-        ret += 'IN\tTXT\t"' + data[i].txt + '"\n';
+        ret += 'IN\tTXT\t';
+        if (data[i].txt instanceof String) {
+          ret += '"' + data[i].txt + '"';
+        } else if (data[i].txt instanceof Array) {
+          ret += data[i].txt.reduce(
+              function(joined, datum) {
+                  return joined + ' "' + datum + '"';
+              });
+        }
+        ret += '\n';
     }
     return template.replace('{txt}', ret);
 };

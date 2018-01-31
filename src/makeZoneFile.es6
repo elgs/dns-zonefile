@@ -115,13 +115,16 @@ let processTXT = function(data, template) {
         ret += (data[i].name || '@') + '\t';
         if (data[i].ttl) ret += data[i].ttl + '\t';
         ret += 'IN\tTXT\t';
-        if (data[i].txt instanceof String) {
-          ret += '"' + data[i].txt + '"';
-        } else if (data[i].txt instanceof Array) {
-          ret += data[i].txt.reduce(
-              function(joined, datum) {
-                  return joined + ' "' + datum + '"';
-              });
+        let txtData = data[i].txt
+        if (txtData instanceof String || typeof(txtData) === 'string') {
+          ret += '"' + txtData + '"';
+        } else if (txtData instanceof Array) {
+          ret += txtData
+            .map(
+              function (datum) {
+                return '"' + datum + '"';
+              })
+            .join(' ');
         }
         ret += '\n';
     }

@@ -1,6 +1,6 @@
 {
   "name": "zone-file",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "A DNS zone file parser and generator",
   "main": "lib/index",
   "scripts": {
@@ -28,6 +28,9 @@
   "contributors": [
     {
       "name": "Ryan Shea"
+    },
+    {
+      "name": "Aaron Blankstein"
     },
     {
       "name": "Elgs Chen"

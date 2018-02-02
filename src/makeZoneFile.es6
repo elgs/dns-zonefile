@@ -115,7 +115,7 @@ let processTXT = function(data, template) {
         ret += (data[i].name || '@') + '\t';
         if (data[i].ttl) ret += data[i].ttl + '\t';
         ret += 'IN\tTXT\t';
-        let txtData = data[i].txt
+        const txtData = data[i].txt
         if (txtData instanceof String || typeof(txtData) === 'string') {
           ret += '"' + txtData + '"';
         } else if (txtData instanceof Array) {

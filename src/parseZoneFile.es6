@@ -171,13 +171,27 @@ let parseMX = function(rr) {
 let parseTXT = function(rr) {
     let rrTokens = rr.trim().match(/[^\s\"']+|\"[^\"]*\"|'[^']*'/g);
     let l = rrTokens.length;
-    let tokenTxt = rrTokens[l - 1]
-    if (tokenTxt.indexOf('\"') > -1) {
-        tokenTxt = tokenTxt.split('\"')[1]
+    let indexTXT = rrTokens.indexOf('TXT');
+
+    let stripText = function(txt) {
+        if (txt.indexOf('\"') > -1) {
+            txt = txt.split('\"')[1];
+        }
+        if (txt.indexOf('"') > -1) {
+            txt = txt.split('"')[1];
+        }
+        return txt;
     }
-    if (tokenTxt.indexOf('"') > -1) {
-        tokenTxt = tokenTxt.split('"')[1]
+
+    let tokenTxt;
+    if (l - indexTXT - 1 > 1) {
+        tokenTxt = rrTokens
+            .slice(indexTXT + 1)
+            .map(stripText);
+    } else {
+        tokenTxt = stripText(rrTokens[l - 1]);
     }
+
     let result = {
         name: rrTokens[0],
         txt: tokenTxt

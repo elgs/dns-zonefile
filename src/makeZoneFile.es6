@@ -114,7 +114,19 @@ let processTXT = function(data, template) {
     for (let i in data) {
         ret += (data[i].name || '@') + '\t';
         if (data[i].ttl) ret += data[i].ttl + '\t';
-        ret += 'IN\tTXT\t"' + data[i].txt + '"\n';
+        ret += 'IN\tTXT\t';
+        const txtData = data[i].txt
+        if (txtData instanceof String || typeof(txtData) === 'string') {
+          ret += '"' + txtData + '"';
+        } else if (txtData instanceof Array) {
+          ret += txtData
+            .map(
+              function (datum) {
+                return '"' + datum + '"';
+              })
+            .join(' ');
+        }
+        ret += '\n';
     }
     return template.replace('{txt}', ret);
 };

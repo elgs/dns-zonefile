@@ -4,9 +4,10 @@
   "description": "A DNS zone file parser and generator",
   "main": "lib/index",
   "scripts": {
-    "compile": "rm -rf lib; babel --presets env src -d lib",
+    "compile": "rm -rf lib; babel src -d lib",
+    "flow": "flow",
     "prepublish": "npm run compile",
-    "test": "npm run compile; node lib/testing/unitTests.js"
+    "test": "npm run compile && npm run flow && node lib/testing/unitTests.js"
   },
   "repository": {
     "type": "git",
@@ -65,8 +66,11 @@
     }
   ],
   "devDependencies": {
-    "babel-cli": "^6.7.5",
-    "babel-preset-env": "^1.6.1",
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.2.2",
+    "@babel/plugin-transform-modules-commonjs": "^7.2.0",
+    "@babel/preset-flow": "^7.0.0",
+    "flow-bin": "^0.89.0",
     "tape": "^4.5.1"
   }
 }

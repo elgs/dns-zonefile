@@ -22,7 +22,7 @@ export function makeZoneFile(jsonZoneFile, template=getZoneFileTemplate()) {
     return template.replace(/\n{2,}/gim, '\n\n');
 };
 
-let processOrigin = function(data, template) {
+function processOrigin (data, template) {
     let ret = '';
     if (typeof data !== 'undefined') {
         ret += '$ORIGIN ' + data;

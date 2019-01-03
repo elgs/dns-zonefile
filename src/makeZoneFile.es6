@@ -1,3 +1,5 @@
+/* @flow */
+
 'use strict'
 
 import { getZoneFileTemplate } from './zoneFileTemplate'

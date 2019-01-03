@@ -24,8 +24,7 @@ let flatten = function(text) {
         match = re.exec(text);
     }
     let arrText = text.split('');
-    for (let i in captured) {
-        match = captured[i];
+    for (const match of captured) {
         arrText.splice(match.index, match[0].length, match.replacement);
     }
     return arrText.join('').replace(/\(|\)/gim, ' ');
@@ -34,8 +33,7 @@ let flatten = function(text) {
 let parseRRs = function(text) {
     let ret = {};
     let rrs = text.split('\n');
-    for (let i in rrs) {
-        let rr = rrs[i];
+    for (const rr of rrs) {
         if (!rr || !rr.trim()) {
             continue;
         }

@@ -28,6 +28,14 @@
     "brace-style": 2,
     "semi": [2, "never"],
     "flowtype/define-flow-type": 1,
-    "valid-jsdoc": ["error"]
+    "valid-jsdoc": ["error"],
+    "indent": [2, 2, {
+     "FunctionDeclaration" : { "parameters": "first" },
+     "FunctionExpression" : { "parameters": "first" },
+     "ObjectExpression": "first",
+     "ArrayExpression": "first",
+     "ImportDeclaration": "first",
+     "CallExpression": { "arguments": "first" }
+     }]
   }
 }

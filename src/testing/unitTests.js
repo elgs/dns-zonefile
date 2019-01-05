@@ -101,6 +101,43 @@ function testZoneFileObjectFromJson(zoneFileReference) {
   })
 }
 
+function testZoneFileFromBlockstackJs() {
+  test('test-zf-from-blockstack.js', function(t) {
+    t.plan(2)
+    const zf = {
+      $origin: 'sweet.potato.pie',
+      $ttl: 3600,
+      uri: [
+        {
+          name: '_http._tcp',
+          priority: 10,
+          weight: 1,
+          target: 'https://potatos.com/hub/whatever'
+        }
+      ]
+    }
+    const zfTemplate = '{$origin}\n{$ttl}\n{uri}\n'
+    t.equal(makeZoneFile(zf, zfTemplate),
+            '$ORIGIN sweet.potato.pie\n$TTL 3600\n_http._tcp\tIN\tURI\t10\t1\t"https://potatos.com/hub/whatever"\n\n')
+    t.equal(makeZoneFile(zf),
+            '$ORIGIN sweet.potato.pie\n$TTL 3600\n\n; SOA Record\n{name} {ttl}    IN  SOA {mname}{rname}(\n{serial} ;serial\n{refresh} ;refresh\n{retry} ;retry\n{expire} ;expire\n{minimum} ;minimum ttl\n)\n\n; NS Records\n\n; MX Records\n\n; A Records\n\n; AAAA Records\n\n; CNAME Records\n\n; PTR Records\n\n; TXT Records\n\n; SRV Records\n\n; SPF Records\n\n; URI Records\n_http._tcp\tIN\tURI\t10\t1\t"https://potatos.com/hub/whatever"\n\n')
+  })
+}
+
+function testZoneFileMakingFromExtendedArray() {
+  test('makeZoneFileExtendedArray', function (t) {
+    t.plan(1)
+    Array.prototype.fail = 1
+    try {
+      t.ok(parseZoneFile('$ORIGIN sweet.potato.pie\n$TTL 3600\n_http._tcp\tIN\tURI\t10\t1\t"https://potatos.com/hub/whatever"\n\n'))
+    } catch (e) {
+      t.fail(`Error parsing zonefile when array.prototype is extended: ${e}`)
+    } finally {
+      delete Array.prototype.fail
+    }
+  })
+}
+
 function testZoneFileObjectFromString(zoneFileReference) {
   test('zoneFileFromString', function(t) {
     t.plan(5)
@@ -128,6 +165,9 @@ zoneFileReferences.forEach((zoneFileReference) => {
   testZoneFileObjectFromJson(zoneFileReference)
   testZoneFileObjectFromString(zoneFileReference)
 })
+
+testZoneFileFromBlockstackJs()
+testZoneFileMakingFromExtendedArray()
 
 /*
 let zoneFileReverseReferences = [{

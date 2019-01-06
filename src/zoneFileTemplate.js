@@ -1,3 +1,5 @@
+/* @flow */
+
 'use strict'
 
 export function getZoneFileTemplate() {

@@ -30,5 +30,10 @@
     "mx":[
         { "preference": 0, "host": "mail1" },
         { "preference": 10, "host": "mail2" }
+    ],
+    "caa":[
+        { "flags": 0, "tag": "issue", "value": "ca.example.net; policy=ev" },
+        { "flags": 0, "tag": "iodef", "value": "mailto:security@example.com" },
+        { "flags": 0, "tag": "iodef", "value": "http://iodef.example.com/" }
     ]
 }

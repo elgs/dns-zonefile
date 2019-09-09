@@ -25,6 +25,10 @@ tst 300 IN A 101.228.10.127;this is a comment
 @	AAAA	::1
 mail	AAAA	2001:db8::1
 
+@       CAA 0 issue "ca.example.net"
+@       CAA 0 iodef "mailto:security@example.com"
+@       CAA 0 iodef "http://iodef.example.com/"
+
 mail1	CNAME	mail
 mail2	CNAME	mail
 

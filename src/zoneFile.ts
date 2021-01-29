@@ -28,7 +28,8 @@ export type ZoneFileObject = {
   'txt'?: TXTType[],
   'srv'?: SRVType[],
   'spf'?: SPFType[],
-  'uri'?: URIType[]
+  'uri'?: URIType[],
+  "$domain"?: string,
 }
 
 

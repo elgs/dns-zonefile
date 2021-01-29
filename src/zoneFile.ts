@@ -12,14 +12,14 @@ export type SoaType = {
   rname?: string;
   mname?: string;
 };
-export type NSType = { name?: string; ttl?: number; host: string; fullname?: string };
-export type AType = { name?: string; ttl?: number; ip: string };
-export type CNAMEType = { name?: string; ttl?: number; alias: string };
-export type MXType = { name?: string; ttl?: number; host: string; preference: number };
-export type TXTType = { name?: string; ttl?: number; txt: string | Array<string> };
-export type SRVType = { name?: string; ttl?: number; priority: number; weight: number; port: number; target: string };
-export type SPFType = { name?: string; ttl?: number; data: string };
-export type URIType = { name?: string; ttl?: number; priority: number; weight: number; target: string };
+export type NSType = { name: string; ttl?: number; host: string; fullname?: string };
+export type AType = { name: string; ttl?: number; ip: string };
+export type CNAMEType = { name: string; ttl?: number; alias: string };
+export type MXType = { name: string; ttl?: number; host: string; preference: number };
+export type TXTType = { name: string; ttl?: number; txt: string[] };
+export type SRVType = { name: string; ttl?: number; priority: number; weight: number; port: number; target: string };
+export type SPFType = { name: string; ttl?: number; data: string };
+export type URIType = { name: string; ttl?: number; priority: number; weight: number; target: string };
 
 export type ZoneFileObject = {
   $origin?: string;

@@ -193,11 +193,11 @@ function parseTXT(rr: string) {
     return txt;
   }
 
-  let tokenTxt: string | Array<string>;
+  let tokenTxt: string[] = [];
   if (l - indexTXT - 1 > 1) {
-    tokenTxt = rrTokens.slice(indexTXT + 1).map(stripText);
+    tokenTxt.push(...rrTokens.slice(indexTXT + 1).map(stripText));
   } else {
-    tokenTxt = stripText(rrTokens[l - 1]);
+    tokenTxt.push(stripText(rrTokens[l - 1]));
   }
 
   const result: TXTType = {

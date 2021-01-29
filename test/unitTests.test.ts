@@ -1,6 +1,6 @@
 import * as fs from 'fs'
-import { makeZoneFile, parseZoneFile, ZoneFile } from '..'
-import { ZoneFileObject } from '../zoneFile'
+import { makeZoneFile, parseZoneFile, ZoneFile } from '../src'
+import { ZoneFileObject } from '../src/zoneFile'
 
 type ZoneFileReference = {name: string; json: ZoneFileObject; text: string; records: string[]};
 const zoneFileReferences: ZoneFileReference[] = [

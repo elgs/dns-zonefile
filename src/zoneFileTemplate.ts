@@ -40,5 +40,5 @@ export function getZoneFileTemplate() {
 \n\
 ; URI Records\n\
 {uri}\n\
-'
+';
 }

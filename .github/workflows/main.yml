@@ -35,3 +35,6 @@ jobs:
 
       - name: Build
         run: npm run build
+
+      - name: codecov
+        run: npm run codecovUpload

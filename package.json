@@ -16,7 +16,8 @@
     "build": "tsdx build --format cjs",
     "test": "tsdx test --coverage",
     "lint": "tsdx lint",
-    "prepare": "npm run build"
+    "prepare": "npm run build",
+    "codecovUpload": "codecov"
   },
   "prettier": {
     "printWidth": 120,
@@ -84,6 +85,7 @@
     }
   ],
   "devDependencies": {
+    "codecov": "^3.8.1",
     "tsdx": "^0.14.1",
     "typescript": "^4.1.3"
   }

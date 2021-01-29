@@ -1,24 +1,22 @@
-/* @flow */
-
-'use strict'
 import type { NSType, AType, CNAMEType, MXType,
               TXTType, SRVType, SPFType, URIType,
-              ZoneFileObject } from './zoneFile'
+              ZoneFileObject, 
+              SoaType} from './zoneFile'
 
-export function parseZoneFile(text: string): ZoneFileObject {
+export function parseZoneFile(text: string) {
   text = removeComments(text)
   text = flatten(text)
   return parseRRs(text)
 };
 
-function removeComments(text) {
+function removeComments(text: string) {
   const re = /(^|[^\\]);.*/g
-  return text.replace(re, function(m, g1) {
+  return text.replace(re, function(_m, g1) {
     return g1 ? g1 : '' // if g1 is set/matched, re-insert it, else remove
   })
 }
 
-function flatten(text) {
+function flatten(text: string) {
   const captured = []
   const re = /\([\s\S]*?\)/gim
   let match = re.exec(text)
@@ -36,8 +34,8 @@ function flatten(text) {
   return arrText.join('').replace(/\(|\)/gim, ' ')
 }
 
-function parseRRs(text) {
-  const ret = {}
+function parseRRs(text: string) {
+  const ret: ZoneFileObject = {}
   const rrs = text.split('\n')
   for (const rr of rrs) {
     if (!rr || !rr.trim()) {
@@ -82,11 +80,11 @@ function parseRRs(text) {
       ret.uri.push(parseURI(rr))
     }
   }
-  return ret
+  return ret;
 }
 
-function parseSOA(rr) {
-  const soa = {}
+function parseSOA(rr: string) {
+  const soa: SoaType = {}
   const rrTokens = rr.trim().split(/\s+/g)
   const l = rrTokens.length
   soa.name = rrTokens[0]
@@ -97,11 +95,11 @@ function parseSOA(rr) {
   soa.serial = parseInt(rrTokens[l - 5], 10)
   soa.rname = rrTokens[l - 6]
   soa.mname = rrTokens[l - 7]
-  if (!isNaN(rrTokens[1])) soa.ttl = parseInt(rrTokens[1], 10)
+  if (!isNaN(rrTokens[1] as unknown as number)) soa.ttl = parseInt(rrTokens[1], 10)
   return soa
 }
 
-function parseNS(rr) {
+function parseNS(rr: string) {
   const rrTokens = rr.trim().split(/\s+/g)
   const l = rrTokens.length
   const result: NSType = {
@@ -109,11 +107,11 @@ function parseNS(rr) {
     host: rrTokens[l - 1]
   }
 
-  if (!isNaN(rrTokens[1])) result.ttl = parseInt(rrTokens[1], 10)
+  if (!isNaN(rrTokens[1] as unknown as number)) result.ttl = parseInt(rrTokens[1], 10)
   return result
 }
 
-function parseA(rr, recordsSoFar) {
+function parseA(rr: string, recordsSoFar: AType[]) {
   const rrTokens = rr.trim().split(/\s+/g)
   const urrTokens = rr.trim().toUpperCase().split(/\s+/g)
   const l = rrTokens.length
@@ -130,11 +128,11 @@ function parseA(rr, recordsSoFar) {
     }
   }
 
-  if (!isNaN(rrTokens[1])) result.ttl = parseInt(rrTokens[1], 10)
+  if (!isNaN(rrTokens[1] as unknown as number)) result.ttl = parseInt(rrTokens[1], 10)
   return result
 }
 
-function parseAAAA(rr) {
+function parseAAAA(rr: string) {
   const rrTokens = rr.trim().split(/\s+/g)
   const l = rrTokens.length
   const result: AType = {
@@ -142,11 +140,11 @@ function parseAAAA(rr) {
     ip: rrTokens[l - 1]
   }
 
-  if (!isNaN(rrTokens[1])) result.ttl = parseInt(rrTokens[1], 10)
+  if (!isNaN(rrTokens[1] as unknown as number)) result.ttl = parseInt(rrTokens[1], 10)
   return result
 }
 
-function parseCNAME(rr) {
+function parseCNAME(rr: string) {
   const rrTokens = rr.trim().split(/\s+/g)
   const l = rrTokens.length
   const result: CNAMEType = {
@@ -154,11 +152,11 @@ function parseCNAME(rr) {
     alias: rrTokens[l - 1]
   }
 
-  if (!isNaN(rrTokens[1])) result.ttl = parseInt(rrTokens[1], 10)
+  if (!isNaN(rrTokens[1] as unknown as number)) result.ttl = parseInt(rrTokens[1], 10)
   return result
 }
 
-function parseMX(rr) {
+function parseMX(rr: string) {
   const rrTokens = rr.trim().split(/\s+/g)
   const l = rrTokens.length
   const result: MXType = {
@@ -167,18 +165,18 @@ function parseMX(rr) {
     host: rrTokens[l - 1]
   }
 
-  if (!isNaN(rrTokens[1])) result.ttl = parseInt(rrTokens[1], 10)
+  if (!isNaN(rrTokens[1] as unknown as number)) result.ttl = parseInt(rrTokens[1], 10)
   return result
 }
 
-function parseTXT(rr) {
+function parseTXT(rr: string) {
   const rrTokens = rr.trim().match(/[^\s\"']+|\"[^\"]*\"|'[^']*'/g)
   if (!rrTokens)
     throw new Error('Failure to tokenize TXT record')
   const l = rrTokens.length
   const indexTXT = rrTokens.indexOf('TXT')
 
-  function stripText(txt) {
+  function stripText(txt: string) {
     if (txt.indexOf('\"') > -1) {
       txt = txt.split('\"')[1]
     }
@@ -202,16 +200,16 @@ function parseTXT(rr) {
     txt: tokenTxt
   }
 
-  if (!isNaN(rrTokens[1])) result.ttl = parseInt(rrTokens[1], 10)
+  if (!isNaN(rrTokens[1] as unknown as number)) result.ttl = parseInt(rrTokens[1], 10)
   return result
 }
 
-function parsePTR(rr, recordsSoFar, currentOrigin) {
+function parsePTR(rr: string, recordsSoFar: NSType[], currentOrigin: string | undefined) {
   const rrTokens = rr.trim().split(/\s+/g)
   const urrTokens = rr.trim().toUpperCase().split(/\s+/g)
 
   if (urrTokens.lastIndexOf('PTR') === 0 && recordsSoFar[recordsSoFar.length - 1]) {
-    rrTokens.unshift(recordsSoFar[recordsSoFar.length - 1].name)
+    rrTokens.unshift(recordsSoFar[recordsSoFar.length - 1].name as string)
   }
 
   const l = rrTokens.length
@@ -221,11 +219,11 @@ function parsePTR(rr, recordsSoFar, currentOrigin) {
     host: rrTokens[l - 1]
   }
 
-  if (!isNaN(rrTokens[1])) result.ttl = parseInt(rrTokens[1], 10)
+  if (!isNaN(rrTokens[1] as unknown as number)) result.ttl = parseInt(rrTokens[1], 10)
   return result
 }
 
-function parseSRV(rr) {
+function parseSRV(rr: string) {
   const rrTokens = rr.trim().split(/\s+/g)
   const l = rrTokens.length
   const result: SRVType = {
@@ -236,11 +234,11 @@ function parseSRV(rr) {
     port: parseInt(rrTokens[l - 2], 10)
   }
 
-  if (!isNaN(rrTokens[1])) result.ttl = parseInt(rrTokens[1], 10)
+  if (!isNaN(rrTokens[1] as unknown as number)) result.ttl = parseInt(rrTokens[1], 10)
   return result
 }
 
-function parseSPF(rr) {
+function parseSPF(rr: string) {
   const rrTokens = rr.trim().split(/\s+/g)
   const result: SPFType = {
     name: rrTokens[0],
@@ -252,11 +250,11 @@ function parseSPF(rr) {
     result.data = rrTokens[l] + ' ' + result.data.trim()
   }
 
-  if (!isNaN(rrTokens[1])) result.ttl = parseInt(rrTokens[1], 10)
+  if (!isNaN(rrTokens[1] as unknown as number)) result.ttl = parseInt(rrTokens[1], 10)
   return result
 }
 
-function parseURI(rr) {
+function parseURI(rr: string) {
   const rrTokens = rr.trim().split(/\s+/g)
   const l = rrTokens.length
   const result: URIType = {
@@ -266,6 +264,6 @@ function parseURI(rr) {
     weight: parseInt(rrTokens[l - 2], 10)
   }
 
-  if (!isNaN(rrTokens[1])) result.ttl = parseInt(rrTokens[1], 10)
+  if (!isNaN(rrTokens[1] as unknown as number)) result.ttl = parseInt(rrTokens[1], 10)
   return result
 }

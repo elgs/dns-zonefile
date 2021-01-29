@@ -1,7 +1,3 @@
-/* @flow */
-
-'use strict'
-
 export function getZoneFileTemplate() {
   return '{$origin}\n\
 {$ttl}\n\

@@ -1,7 +1,7 @@
-/* @flow */
-
-export type SoaType = { name?: string, ttl?: number|string }
-export type NSType = { name?: string, ttl?: number, host: string }
+export type SoaType = { name?: string, ttl?: number|string, minimum?: number, 
+                        expire?: number, retry?: number, refresh?: number, 
+                        serial?: number, rname?: string, mname?: string }
+export type NSType = { name?: string, ttl?: number, host: string, fullname?: string }
 export type AType = { name?: string, ttl?: number, ip: string }
 export type CNAMEType = { name?: string, ttl?: number, alias: string }
 export type MXType = { name?: string, ttl?: number, host: string, preference: number }
@@ -19,16 +19,16 @@ export type ZoneFileObject = {
   '$origin'?: string,
   '$ttl'?: number,
   'soa'?: SoaType,
-  'ns'?: [NSType],
-  'a'?: [AType],
-  'aaaa'?: [AType],
-  'cname'?: [CNAMEType],
-  'mx'?: [MXType],
-  'ptr'?: [NSType],
-  'txt'?: [TXTType],
-  'srv'?: [SRVType],
-  'spf'?: [SPFType],
-  'uri'?: [URIType]
+  'ns'?: NSType[],
+  'a'?: AType[],
+  'aaaa'?: AType[],
+  'cname'?: CNAMEType[],
+  'mx'?: MXType[],
+  'ptr'?: NSType[],
+  'txt'?: TXTType[],
+  'srv'?: SRVType[],
+  'spf'?: SPFType[],
+  'uri'?: URIType[]
 }
 
 
@@ -43,6 +43,8 @@ export class ZoneFile {
       this.jsonZoneFile = JSON.parse(JSON.stringify(zoneFile))
     } else if (typeof zoneFile === 'string') {
       this.jsonZoneFile = parseZoneFile(zoneFile)
+    } else {
+      this.jsonZoneFile = undefined as unknown as ZoneFileObject;
     }
   }
 

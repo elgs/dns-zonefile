@@ -1,7 +1,4 @@
-/* @flow */
-
-'use strict'
-import type { ZoneFileObject } from './zoneFile'
+import type { AType, CNAMEType, MXType, NSType, SoaType, SPFType, SRVType, TXTType, URIType, ZoneFileObject } from './zoneFile'
 
 import { getZoneFileTemplate } from './zoneFileTemplate'
 
@@ -24,7 +21,7 @@ export function makeZoneFile(jsonZoneFile: ZoneFileObject,
   return template.replace(/\n{2,}/gim, '\n\n')
 };
 
-function processOrigin(data, template) {
+function processOrigin(data: string | undefined, template: string) {
   let ret = ''
   if (typeof data !== 'undefined') {
     ret += '$ORIGIN ' + data
@@ -32,7 +29,7 @@ function processOrigin(data, template) {
   return template.replace('{$origin}', ret)
 };
 
-function processTTL(data, template) {
+function processTTL(data: number | undefined, template: string) {
   let ret = ''
   if (typeof data !== 'undefined') {
     ret += '$TTL ' + data
@@ -40,20 +37,20 @@ function processTTL(data, template) {
   return template.replace('{$ttl}', ret)
 };
 
-function processSOA(data, template) {
+function processSOA(data: SoaType | undefined, template: string) {
   let ret = template
   if (typeof data !== 'undefined') {
     data.name = data.name || '@'
     data.ttl = data.ttl || ''
     for (const key in data) {
-      const value = data[key]
+      const value = (data as Record<string, string>)[key]
       ret = ret.replace('{' + key + '}', value + '\t')
     }
   }
   return ret
 };
 
-function processNS(data, template) {
+function processNS(data: NSType[] | undefined, template: string) {
   let ret = ''
   if (data) {
     for (const record of data) {
@@ -65,7 +62,7 @@ function processNS(data, template) {
   return template.replace('{ns}', ret)
 };
 
-function processA(data, template) {
+function processA(data: AType[] | undefined, template: string) {
   let ret = ''
   if (data) {
     for (const record of data) {
@@ -77,7 +74,7 @@ function processA(data, template) {
   return template.replace('{a}', ret)
 };
 
-function processAAAA(data, template) {
+function processAAAA(data: AType[] | undefined, template: string) {
   let ret = ''
   if (data) {
     for (const record of data) {
@@ -89,7 +86,7 @@ function processAAAA(data, template) {
   return template.replace('{aaaa}', ret)
 };
 
-function processCNAME(data, template) {
+function processCNAME(data: CNAMEType[] | undefined, template: string) {
   let ret = ''
   if (data) {
     for (const record of data) {
@@ -101,7 +98,7 @@ function processCNAME(data, template) {
   return template.replace('{cname}', ret)
 };
 
-function processMX(data, template) {
+function processMX(data: MXType[] | undefined, template: string) {
   let ret = ''
   if (data) {
     for (const record of data) {
@@ -113,7 +110,7 @@ function processMX(data, template) {
   return template.replace('{mx}', ret)
 };
 
-function processPTR(data, template) {
+function processPTR(data: NSType[] | undefined, template: string) {
   let ret = ''
   if (data) {
     for (const record of data) {
@@ -125,7 +122,7 @@ function processPTR(data, template) {
   return template.replace('{ptr}', ret)
 };
 
-function processTXT(data, template) {
+function processTXT(data: TXTType[] | undefined, template: string) {
   let ret = ''
   if (data) {
     for (const record of data) {
@@ -149,7 +146,7 @@ function processTXT(data, template) {
   return template.replace('{txt}', ret)
 };
 
-function processSRV(data, template) {
+function processSRV(data: SRVType[] | undefined, template: string) {
   let ret = ''
   if (data) {
     for (const record of data) {
@@ -164,7 +161,7 @@ function processSRV(data, template) {
   return template.replace('{srv}', ret)
 };
 
-function processSPF(data, template) {
+function processSPF(data: SPFType[] | undefined, template: string) {
   let ret = ''
   if (data) {
     for (const record of data) {
@@ -176,7 +173,7 @@ function processSPF(data, template) {
   return template.replace('{spf}', ret)
 };
 
-function processURI(data, template) {
+function processURI(data: URIType[] | undefined, template: string) {
   let ret = ''
   if (data) {
     for (const record of data) {
@@ -190,7 +187,7 @@ function processURI(data, template) {
   return template.replace('{uri}', ret)
 };
 
-function processValues(jsonZoneFile, template) {
+function processValues(jsonZoneFile: ZoneFileObject, template: string) {
   template = template.replace('{zone}', jsonZoneFile['$origin'] || (jsonZoneFile['soa'] ? jsonZoneFile['soa']['name']: false) || '')
   template = template.replace('{datetime}', (new Date()).toISOString())
   const time = Math.round(Date.now() / 1000)

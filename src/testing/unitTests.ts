@@ -1,109 +1,103 @@
-'use strict'
+import * as fs from 'fs'
+import { makeZoneFile, parseZoneFile, ZoneFile } from '..'
+import { ZoneFileObject } from '../zoneFile'
 
-import test from 'tape'
-import fs from 'fs'
-import { makeZoneFile, parseZoneFile, ZoneFile } from '../index'
-
-const zoneFileReferences = [{
-  name: 'Forward',
-  json: require('../../testData/zonefile_forward.json'),
-  text: fs.readFileSync('./testData/zonefile_forward.txt', 'utf8'),
-  records: ['soa', 'a', 'mx', 'txt']
-}, {
-  name: 'Forward 2',
-  json: require('../../testData/zonefile_forward_2.json'),
-  text: fs.readFileSync('./testData/zonefile_forward_2.txt', 'utf8'),
-  records: ['soa', 'a', 'mx', 'txt']
-}, {
-  name: 'Forward 3',
-  json: require('../../testData/zonefile_forward_3.json'),
-  text: fs.readFileSync('./testData/zonefile_forward_3.txt', 'utf8'),
-  records: ['uri']
-}, {
-  name: 'Multitext',
-  json: require('../../testData/zonefile_forward_4.json'),
-  text: fs.readFileSync('./testData/zonefile_reverse_multitxt.txt', 'utf8'),
-  records: ['uri', 'txt']
-},
-                            {
-                              name: 'blockstack-client CLI constructed zonefile',
-                              json: require('../../testData/blockstack-cli-zonefile.json'),
-                              text: fs.readFileSync('./testData/blockstack-cli-zonefile.txt', 'utf8'),
-                              records: ['uri', 'txt']
-                            },
-                            {
-                              name: 'onename transfer constructed zonefile',
-                              json: require('../../testData/onename-transfer-zonefile.json'),
-                              text: fs.readFileSync('./testData/onename-transfer-zonefile.txt', 'utf8'),
-                              records: ['uri']
-                            },
-                            {
-                              name: 'browser generated zonefile',
-                              json: require('../../testData/browser-generated-zonefile.json'),
-                              text: fs.readFileSync('./testData/browser-generated-zonefile.txt', 'utf8'),
-                              records: ['uri']
-                            }
+type ZoneFileReference = {name: string; json: ZoneFileObject; text: string; records: string[]};
+const zoneFileReferences: ZoneFileReference[] = [
+  {
+    name: 'Forward',
+    json: require('../testData/zonefile_forward.json'),
+    text: fs.readFileSync('./testData/zonefile_forward.txt', 'utf8'),
+    records: ['soa', 'a', 'mx', 'txt']
+  }, {
+    name: 'Forward 2',
+    json: require('../testData/zonefile_forward_2.json'),
+    text: fs.readFileSync('./testData/zonefile_forward_2.txt', 'utf8'),
+    records: ['soa', 'a', 'mx', 'txt']
+  }, {
+    name: 'Forward 3',
+    json: require('../testData/zonefile_forward_3.json'),
+    text: fs.readFileSync('./testData/zonefile_forward_3.txt', 'utf8'),
+    records: ['uri']
+  }, {
+    name: 'Multitext',
+    json: require('../testData/zonefile_forward_4.json'),
+    text: fs.readFileSync('./testData/zonefile_reverse_multitxt.txt', 'utf8'),
+    records: ['uri', 'txt']
+  },
+  {
+    name: 'blockstack-client CLI constructed zonefile',
+    json: require('../testData/blockstack-cli-zonefile.json'),
+    text: fs.readFileSync('./testData/blockstack-cli-zonefile.txt', 'utf8'),
+    records: ['uri', 'txt']
+  },
+  {
+    name: 'onename transfer constructed zonefile',
+    json: require('../testData/onename-transfer-zonefile.json'),
+    text: fs.readFileSync('./testData/onename-transfer-zonefile.txt', 'utf8'),
+    records: ['uri']
+  },
+  {
+    name: 'browser generated zonefile',
+    json: require('../testData/browser-generated-zonefile.json'),
+    text: fs.readFileSync('./testData/browser-generated-zonefile.txt', 'utf8'),
+    records: ['uri']
+  }
 ]
 
-function testZoneFileToText(zoneFileReference) {
-  test(zoneFileReference.name + ' testToText', (t) => {
-    t.plan(1)
-
+function testZoneFileToText(zoneFileReference: ZoneFileReference) {
+  test(zoneFileReference.name + ' testToText', () => {
     const zoneFileText = makeZoneFile(zoneFileReference.json)
-    t.equal(zoneFileText.split('\n')[0], zoneFileReference.text.split('\n')[0])
+    expect(zoneFileText.split('\n')[0]).toBe(zoneFileReference.text.split('\n')[0])
   })
 }
 
-function testZoneFileToJson(zoneFileReference) {
-  test(zoneFileReference.name + ' testToJson', (t) => {
-    const numberOfTests = 2 + zoneFileReference.records.length
-    t.plan(numberOfTests)
+function testZoneFileToJson(zoneFileReference: ZoneFileReference) {
+  test(zoneFileReference.name + ' testToJson', () => {
 
     const zoneFileJson = parseZoneFile(zoneFileReference.text)
-    t.equal(zoneFileJson['$origin'], zoneFileReference.json['$origin'])
-    t.equal(zoneFileJson['$ttl'], zoneFileReference.json['$ttl'])
+    expect(zoneFileJson['$origin']).toBe(zoneFileReference.json['$origin'])
+    expect(zoneFileJson['$ttl']).toBe(zoneFileReference.json['$ttl'])
 
     if (zoneFileReference.records.indexOf('soa') > -1) {
-      t.equal(zoneFileJson['soa']['refresh'], zoneFileReference.json['soa']['refresh'])
+      expect(zoneFileJson['soa']?.['refresh']).toBe(zoneFileReference.json['soa']?.['refresh'])
     }
     if (zoneFileReference.records.indexOf('a') > -1) {
-      t.equal(zoneFileJson['a'][0]['ip'], zoneFileReference.json['a'][0]['ip'])
+      expect(zoneFileJson['a']?.[0]['ip']).toBe(zoneFileReference.json['a']?.[0]['ip'])
     }
     if (zoneFileReference.records.indexOf('mx') > -1) {
-      t.equal(zoneFileJson['mx'][0]['preference'], zoneFileReference.json['mx'][0]['preference'])
+      expect(zoneFileJson['mx']?.[0]['preference']).toBe(zoneFileReference.json['mx']?.[0]['preference'])
     }
     if (zoneFileReference.records.indexOf('txt') > -1) {
-      t.deepEqual(zoneFileJson['txt'][0]['txt'], zoneFileReference.json['txt'][0]['txt'])
+      expect(zoneFileJson['txt']?.[0]['txt']).toEqual(zoneFileReference.json['txt']?.[0]['txt'])
     }
     if (zoneFileReference.records.indexOf('uri') > -1) {
-      t.equal(zoneFileJson['uri'][0]['target'], zoneFileReference.json['uri'][0]['target'])
+      expect(zoneFileJson['uri']?.[0]['target']).toBe(zoneFileReference.json['uri']?.[0]['target'])
     }
   })
 }
 
-function testZoneFileObjectFromJson(zoneFileReference) {
-  test('zoneFileFromJson', function(t) {
-    t.plan(5)
+function testZoneFileObjectFromJson(zoneFileReference: ZoneFileReference) {
+  test('zoneFileFromJson', function() {
 
     const zoneFile = new ZoneFile(zoneFileReference.json)
-    t.ok(zoneFile, 'ZoneFile object should have been created')
+    expect(zoneFile).toBeTruthy()
 
     const zoneFileJson = zoneFile.toJSON()
-    t.ok(zoneFileJson, 'ZoneFile JSON should have been created')
-    t.equal(zoneFileJson['$ttl'], zoneFileReference.json['$ttl'], 'zone file TTL should match reference')
-    t.equal(zoneFileJson['$domain'], zoneFileReference.json['$domain'], 'zone file domain should match reference')
+    expect(zoneFileJson).toBeTruthy();
+    expect(zoneFileJson['$ttl']).toBe(zoneFileReference.json['$ttl'])
+    expect(zoneFileJson['$domain']).toBe(zoneFileReference.json['$domain'])
     //t.equal(zoneFileJson['txt'][0]['txt'], zoneFileReference.json['txt'][0]['txt'], 'zone file TXT record should match reference')
     //t.equal(JSON.stringify(zoneFileJson), JSON.stringify(zoneFileJsonReference), 'ZoneFile JSON should match the reference')
 
     const zoneFileString = zoneFile.toString()
-    t.ok(zoneFileString, 'ZoneFile text should have been created')
+    expect(zoneFileString).toBeTruthy()
     //t.equal(zoneFileString.toString().split('; NS Records')[1], zoneFileStringReference.split('; NS Records')[1], 'Zonefile text should match the reference')
   })
 }
 
 function testZoneFileFromBlockstackJs() {
-  test('test-zf-from-blockstack.js', function(t) {
-    t.plan(2)
+  test('test-zf-from-blockstack.js', function() {
     const zf = {
       $origin: 'sweet.potato.pie',
       $ttl: 3600,
@@ -117,43 +111,42 @@ function testZoneFileFromBlockstackJs() {
       ]
     }
     const zfTemplate = '{$origin}\n{$ttl}\n{uri}\n'
-    t.equal(makeZoneFile(zf, zfTemplate),
+    expect(makeZoneFile(zf, zfTemplate)).toBe(
             '$ORIGIN sweet.potato.pie\n$TTL 3600\n_http._tcp\tIN\tURI\t10\t1\t"https://potatos.com/hub/whatever"\n\n')
-    t.equal(makeZoneFile(zf),
+    expect(makeZoneFile(zf)).toBe(
             '$ORIGIN sweet.potato.pie\n$TTL 3600\n\n; SOA Record\n{name} {ttl}    IN  SOA {mname}{rname}(\n{serial} ;serial\n{refresh} ;refresh\n{retry} ;retry\n{expire} ;expire\n{minimum} ;minimum ttl\n)\n\n; NS Records\n\n; MX Records\n\n; A Records\n\n; AAAA Records\n\n; CNAME Records\n\n; PTR Records\n\n; TXT Records\n\n; SRV Records\n\n; SPF Records\n\n; URI Records\n_http._tcp\tIN\tURI\t10\t1\t"https://potatos.com/hub/whatever"\n\n')
   })
 }
 
 function testZoneFileMakingFromExtendedArray() {
-  test('makeZoneFileExtendedArray', function (t) {
-    t.plan(1)
+  test('makeZoneFileExtendedArray', function () {
+    // @ts-expect-error
     Array.prototype.fail = 1
     try {
-      t.ok(parseZoneFile('$ORIGIN sweet.potato.pie\n$TTL 3600\n_http._tcp\tIN\tURI\t10\t1\t"https://potatos.com/hub/whatever"\n\n'))
+      expect(parseZoneFile('$ORIGIN sweet.potato.pie\n$TTL 3600\n_http._tcp\tIN\tURI\t10\t1\t"https://potatos.com/hub/whatever"\n\n')).toBeTruthy()
     } catch (e) {
-      t.fail(`Error parsing zonefile when array.prototype is extended: ${e}`)
+      throw new Error(`Error parsing zonefile when array.prototype is extended: ${e}`)
     } finally {
+      // @ts-expect-error
       delete Array.prototype.fail
     }
   })
 }
 
-function testZoneFileObjectFromString(zoneFileReference) {
-  test('zoneFileFromString', function(t) {
-    t.plan(5)
-
+function testZoneFileObjectFromString(zoneFileReference: ZoneFileReference) {
+  test('zoneFileFromString', function() {
     const zoneFile = new ZoneFile(zoneFileReference.text)
-    t.ok(zoneFile, 'ZoneFile object should have been created')
+    expect(zoneFile).toBeTruthy()
 
     const zoneFileJson = zoneFile.toJSON()
-    t.ok(zoneFileJson, 'ZoneFile JSON should have been created')
-    t.equal(zoneFileJson['$ttl'], zoneFileReference.json['$ttl'], 'zone file TTL should match reference')
-    t.equal(zoneFileJson['$domain'], zoneFileReference.json['$domain'], 'zone file domain should match reference')
+    expect(zoneFileJson).toBeTruthy()
+    expect(zoneFileJson['$ttl']).toBe(zoneFileReference.json['$ttl'])
+    expect(zoneFileJson['$domain']).toBe(zoneFileReference.json['$domain'])
     //t.equal(zoneFileJson['txt'][0]['txt'], zoneFileReference.json['txt'][0]['txt'], 'zone file TXT record should match reference')
     //t.equal(JSON.stringify(zoneFileJson), JSON.stringify(zoneFileJsonReference), 'ZoneFile JSON should match the reference')
 
     const zoneFileString = zoneFile.toString()
-    t.ok(zoneFileString, 'ZoneFile text should have been created')
+    expect(zoneFileString).toBeTruthy();
     //t.equal(zoneFileString.split('; NS Records')[1], zoneFileStringReference.split('; NS Records')[1], 'Zonefile text should match the reference')
   })
 }

@@ -1,14 +1,29 @@
 {
   "name": "zone-file",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "A DNS zone file parser and generator",
-  "main": "lib/index",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "engines": {
+    "node": ">=10"
+  },
   "scripts": {
-    "compile": "rm -rf lib; babel src -d lib",
-    "flow": "flow",
-    "prepublish": "npm run compile",
-    "lint": "eslint src",
-    "test": "npm run lint && npm run compile && npm run flow && node lib/testing/unitTests.js"
+    "start": "tsdx watch",
+    "build": "tsdx build --format cjs",
+    "test": "tsdx test --coverage",
+    "lint": "tsdx lint",
+    "prepare": "npm run build",
+    "codecovUpload": "codecov"
+  },
+  "prettier": {
+    "printWidth": 120,
+    "semi": true,
+    "singleQuote": true,
+    "trailingComma": "es5"
   },
   "repository": {
     "type": "git",
@@ -33,6 +48,9 @@
     },
     {
       "name": "Aaron Blankstein"
+    },
+    {
+      "name": "Matthew Little"
     },
     {
       "name": "Elgs Chen"
@@ -67,14 +85,8 @@
     }
   ],
   "devDependencies": {
-    "@babel/cli": "^7.2.3",
-    "@babel/core": "^7.2.2",
-    "@babel/plugin-transform-modules-commonjs": "^7.2.0",
-    "@babel/preset-flow": "^7.0.0",
-    "babel-eslint": "^10.0.1",
-    "eslint": "^5.11.1",
-    "eslint-plugin-flowtype": "^3.2.0",
-    "flow-bin": "^0.89.0",
-    "tape": "^4.5.1"
+    "codecov": "^3.8.1",
+    "tsdx": "^0.14.1",
+    "typescript": "^4.1.3"
   }
 }

@@ -1,7 +1,3 @@
-/* @flow */
-
-'use strict'
-
 export function getZoneFileTemplate() {
   return '{$origin}\n\
 {$ttl}\n\
@@ -44,5 +40,5 @@ export function getZoneFileTemplate() {
 \n\
 ; URI Records\n\
 {uri}\n\
-'
+';
 }

@@ -34,9 +34,10 @@ mail2	CNAME	mail
 
 test IN SPF "v=spf1" "mx:gcloud-node.com." "-all"
 test1 SPF "v=spf2" "mx:gcloud-node.com." "-all"
-    IN  SPF "v=spf3" "mx:gcloud-node.com." "-all    "
+    IN  SPF "v=spf3" "mx:gcloud-node.com." "-all    " "aasdfsadfdsafdasf"
     SPF "v=spf4" "mx:gcloud-node.com." "-all"
 
-treefrog.ca. IN TXT "v=spf1 a mx a:mail.treefrog.ca a:webmail.treefrog.ca ip4:76.75.250.33 ?all"
+treefrog.ca. IN TXT "v=spf1 a mx a:mail.treefrog.ca a:webmail.treefrog.ca ip4:76.75.250.33 ?all" "asdfsdaf" "sdfsadfdasf"
+   IN TXT "v=spf1 a mx a:mail.treefrog.ca a:webmail.treefrog.ca ip4:76.75.250.33 ?all" "asdfsdaf" sdfsadfdasf
 treemonkey.ca. IN TXT "v=DKIM1\; k=rsa\; p=MIGf..."
 treemonkey1.ca. IN TXT "v=DKIM1\; k=rsa\; p=MIGf..."

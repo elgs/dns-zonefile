@@ -81,7 +81,7 @@
   "txt": [
     {
       "name": "treefrog.ca.",
-      "txt": "\"v=spf1 a mx a:mail.treefrog.ca a:webmail.treefrog.ca ip4:76.75.250.33 ?all\""
+      "txt": "\"v=spf1 a mx a:mail.treefrog.ca a:webmail.treefrog.ca ip4:76.75.250.33 ?all\" \"sdfsadfdasf\""
     },
     {
       "name": "treemonkey.ca.",

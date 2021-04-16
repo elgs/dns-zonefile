@@ -38,3 +38,6 @@ unused
 # Babel
 lib
 dist
+
+# Webstorm
+.idea

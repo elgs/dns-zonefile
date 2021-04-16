@@ -3,6 +3,7 @@
   "version": "2.0.0",
   "description": "A DNS zone file parser and generator",
   "main": "dist/index.js",
+  "module": "dist/zone-file.esm.js",
   "typings": "dist/index.d.ts",
   "files": [
     "dist",
@@ -13,7 +14,7 @@
   },
   "scripts": {
     "start": "tsdx watch",
-    "build": "tsdx build --format cjs",
+    "build": "tsdx build --format cjs,esm",
     "test": "tsdx test --coverage",
     "lint": "tsdx lint",
     "prepare": "npm run build",

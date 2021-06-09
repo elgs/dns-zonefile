@@ -11,7 +11,7 @@ An [RFC1035-compliant](http://www.ietf.org/rfc/rfc1035.txt) DNS zone file parser
 ### Installation
 
 ```bash
-$ npm install zone-file
+npm install zone-file
 ```
 
 ### Usage

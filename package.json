@@ -1,6 +1,6 @@
 {
   "name": "dns-zonefile",
-  "version": "0.3.0",
+  "version": "0.2.10",
   "description": "A DNS zone file parser and generator.",
   "main": "./lib/zonefile.js",
   "types": "./lib/zonefile.d.ts",
@@ -53,5 +53,8 @@
     {
       "name": "Adam Dobrawy"
     }
-  ]
+  ],
+  "devDependencies": {
+    "jasmine": "^4.0.0"
+  }
 }

@@ -70,6 +70,14 @@ declare module "dns-zonefile" {
       value: string;
       ttl?: number;
     }[];
+    ds?: {
+      name: string;
+      key_tag: string;
+      algorithm: string;
+      digest_type: string;
+      digest: string;
+      ttl?: number;
+    }[];
   }
 
   function parse(zoneFile: string): DNSZone;

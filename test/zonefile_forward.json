@@ -105,5 +105,14 @@
       "name": "treemonkey1.ca.",
       "data": "\"v=DKIM1\\; k=rsa\\; p=MIGf...\""
     }
+  ],
+  "ds": [
+    {
+      "name": "secure.example.",
+      "key_tag": "tag=12345",
+      "algorithm": "alg=3",
+      "digest_type": "digest_type=1",
+      "digest": "<foofoo>"
+    }
   ]
 }

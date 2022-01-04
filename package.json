@@ -3,6 +3,7 @@
   "version": "0.2.9",
   "description": "A DNS zone file parser and generator.",
   "main": "./lib/zonefile.js",
+  "types": "./lib/zonefile.d.ts",
   "bin": {
     "zonefile": "./bin/zonefile"
   },

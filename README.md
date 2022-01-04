@@ -238,6 +238,18 @@ output = zonefile.parse(text);
 console.log(JSON.stringify(output));
 ```
 
+_dns-zonefile_ also exports an async version of parsing called `parseAsync()` which returns a Promise. 
+`parseAsync` runs on the main JS thread with added interrupts, so it does not block the node.js (or browser) event loop
+for the whole operation.  
+
+```javascript
+var zonefile = require('dns-zonefile');
+var text = fs.readFileSync('./zonefile_forward.txt', 'utf8');
+zonefile.parseAsync(text).then(output => {
+  console.log(JSON.stringify(output));
+});
+```
+
 # License
 ISC License (ISC)
 

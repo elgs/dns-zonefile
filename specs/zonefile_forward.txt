@@ -24,13 +24,16 @@ tst 300 IN A 101.228.10.127;this is a comment
 
 @	AAAA	::1
 mail	AAAA	2001:db8::1
+A  200 AAAA  2001:db8::1
 
 @       CAA 0 issue "ca.example.net; account=230123"
 @       CAA 0 iodef "mailto:security@example.com"
-@       CAA 0 iodef "http://iodef.example.com/"
+        CAA 0 iodef "http://iodef.example.com/"
 
 mail1	CNAME	mail
 mail2	CNAME	mail
+CNAME	CNAME	CNAME
+      CNAME	CNAME
 
 test IN SPF "v=spf1" "mx:gcloud-node.com." "-all"
 test1 SPF "v=spf2" "mx:gcloud-node.com." "-all"
@@ -40,6 +43,22 @@ test1 SPF "v=spf2" "mx:gcloud-node.com." "-all"
 treefrog.ca. IN TXT "v=spf1 a mx a:mail.treefrog.ca a:webmail.treefrog.ca ip4:76.75.250.33 ?all" "asdfsdaf" "sdfsadfdasf"
    IN TXT "v=spf1 a mx a:mail.treefrog.ca a:webmail.treefrog.ca ip4:76.75.250.33 ?all" "asdfsdaf" sdfsadfdasf
 treemonkey.ca. IN TXT "v=DKIM1\; k=rsa\; p=MIGf..."
-treemonkey1.ca. IN TXT "v=DKIM1\; k=rsa\; p=MIGf..."
+    TXT "v=DKIM1\; k=rsa\; p=MIGf..."
 
-secure.example.   DS      tag=12345 alg=3 digest_type=1 <foofoo>
+secure.example.   IN   DS      tag=12345 alg=3 digest_type=1 <foofoo>
+   DS      tag=12345 alg=3 digest_type=1 "<foofoo>"
+
+
+; foobar - use old-slow-box or new-fast-box if either is
+; available, make three quarters of the logins go to
+; new-fast-box.
+_foobar._tcp  200  SRV 0 1 9 old-slow-box.example.com.
+                SRV 0 3 9 new-fast-box.example.com.
+; if neither old-slow-box or new-fast-box is up, switch to
+; using the sysdmin's box and the server
+                SRV 1 0 9 sysadmins-box.example.com.
+                SRV 1 0 9 server.example.com.
+
+; NO other services are supported
+*._tcp          SRV  0 0 0 .
+*._udp          SRV  0 0 0 .

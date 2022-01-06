@@ -5,13 +5,15 @@ parser and generator for Node.js and browser.
 
 # Installation
 
-## Bower Install
+## Deno
 
-`bower install dns-zonefile --save`
+```typescript
+import { generate, parse } from 'https://deno.land/x/zonefile@0.2.10/lib/zonefile-es.js';
+```
 
 ## Standalone
 
-`sudo npm install dns-zonefile -g`
+`npm install dns-zonefile -g`
 
 ## Module
 
@@ -22,10 +24,11 @@ parser and generator for Node.js and browser.
 ## Zone Information
 
 _dns-zonefile_ accepts both zone data expressed as a JSON object or plain text
-zone file. It supports `SOA`, `NS`, `A`, `AAAA`, `CNAME`, `MX`, `PTR`, `SRV` and `TXT` record types
-as well as the `$ORIGIN` keyword (for zone-wide use only). Each record type
-(and the `$ORIGIN` keyword) is optional, though _bind_ expects to find at least
-an `SOA` record in a valid zone file.
+zone file. It supports `SOA`, `NS`, `A`, `AAAA`, `CNAME`, `MX`, `PTR`, `SRV`, 
+`SPF`, `CAA`, `DS` and `TXT` record types as well as the `$ORIGIN` keyword 
+(for zone-wide use only). Each record type (and the `$ORIGIN` keyword) is 
+optional, though _bind_ expects to find at least an `SOA` record in a valid 
+zone file.
 
 ### Examples
 

@@ -1,0 +1,37 @@
+{
+   "$origin": "0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.8.b.d.0.1.0.0.2.ip6.arpa.",
+   "$ttl": "3600",
+   "soa": {
+      "name": "@",
+      "minimum": 86400,
+      "expire": 604800,
+      "retry": 600,
+      "refresh": 3600,
+      "serial": 1406291485,
+      "rname": "HOSTMASTER.MYDOMAIN.COM.",
+      "mname": "NS1.NAMESERVER.NET."
+   },
+   "ns": [
+      {
+         "name": "@",
+         "host": "NS1.NAMESERVER.NET."
+      },
+      {
+         "name": "@",
+         "host": "NS2.NAMESERVER.NET."
+      }
+   ],
+   "ptr": [
+      {
+         "name": "1",
+         "fullname": "1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.8.b.d.0.1.0.0.2.ip6.arpa.",
+         "host": "HOST1.MYDOMAIN.COM.",
+         "ttl": 400
+      },
+      {
+         "name": "2",
+         "fullname": "2.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.8.b.d.0.1.0.0.2.ip6.arpa.",
+         "host": "HOST2.MYDOMAIN.COM."
+      }
+   ]
+}

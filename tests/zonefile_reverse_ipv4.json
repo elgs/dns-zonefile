@@ -1,0 +1,67 @@
+{
+   "$origin": "0.168.192.IN-ADDR.ARPA.",
+   "$ttl": "3600",
+   "soa": {
+      "name": "@",
+      "minimum": 86400,
+      "expire": 604800,
+      "retry": 600,
+      "refresh": 3600,
+      "serial": 1406291485,
+      "rname": "HOSTMASTER.MYDOMAIN.COM.",
+      "mname": "NS1.NAMESERVER.NET."
+   },
+   "ns": [
+      {
+         "name": "@",
+         "host": "NS1.NAMESERVER.NET."
+      },
+      {
+         "name": "@",
+         "host": "NS2.NAMESERVER.NET."
+      }
+   ],
+   "ptr": [
+      {
+         "name": "1",
+         "fullname": "1.0.168.192.IN-ADDR.ARPA.",
+         "host": "HOST1.MYDOMAIN.COM.",
+         "ttl": 400
+      },
+      {
+         "name": "2",
+         "fullname": "2.0.168.192.IN-ADDR.ARPA.",
+         "host": "HOST2.MYDOMAIN.COM."
+      },
+      {
+         "name": "3",
+         "fullname": "3.0.168.192.IN-ADDR.ARPA.",
+         "host": "HOST3.MYDOMAIN.COM."
+      },
+      {
+         "name": "4",
+         "fullname": "4.0.168.192.IN-ADDR.ARPA.",
+         "host": "HOST4.MYDOMAIN.COM."
+      },
+      {
+         "name": "4",
+         "fullname": "4.0.168.192.IN-ADDR.ARPA.",
+         "host": "HOST5.MYDOMAIN.COM."
+      },
+      {
+         "name": "4",
+         "fullname": "4.0.168.192.IN-ADDR.ARPA.",
+         "host": "HOST6.MYDOMAIN.COM."
+      },
+      {
+         "name": "10.3",
+         "fullname": "10.3.0.168.192.IN-ADDR.ARPA.",
+         "host": "HOST3.MYDOMAIN.COM."
+      },
+      {
+         "name": "10.4",
+         "fullname": "10.4.0.168.192.IN-ADDR.ARPA.",
+         "host": "HOST4.MYDOMAIN.COM."
+      }
+   ]
+}

@@ -7,6 +7,9 @@
   "bin": {
     "zonefile": "./bin/zonefile"
   },
+  "scripts": {
+    "test": "npx jasmine tests/tests.js"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/elgs/dns-zonefile.git"
@@ -56,6 +59,6 @@
   ],
   "devDependencies": {
     "deep-equal": "^2.0.5",
-    "jasmine": "^4.0.0"
+    "jasmine": "^4.0.1"
   }
 }

@@ -8,7 +8,7 @@ parser and generator for Node.js and browser.
 ## Deno
 
 ```typescript
-import { generate, parse } from 'https://deno.land/x/zonefile@0.2.10/lib/zonefile-es.js';
+import zonefile from 'https://deno.land/x/zonefile@0.3.0/lib/zonefile.js';
 ```
 
 ## Standalone
@@ -222,9 +222,11 @@ _dns-zonefile_ can also be used as a module. Simply use `require()` to include
 it, then invoke its `generate()` function as shown in the following example:
 
 ```javascript
-var zonefile = require('dns-zonefile');
-var options = require('./zonefile_forward.json');
-var output = zonefile.generate(options);
+import fs from 'fs';
+import zonefile from 'dns-zonefile';
+const json = fs.readFileSync('./zonefile_forward.json', 'utf8');
+const options = JSON.parse(json);
+const output = zonefile.generate(options);
 console.log(output);
 ```
 
@@ -235,7 +237,8 @@ It is also possible to parse a zone file to JSON by invoking its `parse()`
 function as shown in the following example:
 
 ```javascript
-var zonefile = require('dns-zonefile');
+import fs from 'fs';
+import zonefile from 'dns-zonefile';
 var text = fs.readFileSync('./zonefile_forward.txt', 'utf8');
 output = zonefile.parse(text);
 console.log(JSON.stringify(output));

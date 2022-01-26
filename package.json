@@ -1,15 +1,16 @@
 {
   "name": "dns-zonefile",
-  "version": "0.2.10",
+  "version": "0.3.0",
   "description": "A DNS zone file parser and generator.",
   "main": "./lib/zonefile.js",
   "types": "./lib/zonefile.d.ts",
   "bin": {
-    "zonefile": "./bin/zonefile"
+    "zonefile": "./bin/zonefile-cli.js"
   },
   "scripts": {
     "test": "npx jasmine tests/tests.js"
   },
+  "type": "module",
   "repository": {
     "type": "git",
     "url": "https://github.com/elgs/dns-zonefile.git"

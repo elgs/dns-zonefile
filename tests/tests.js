@@ -1,6 +1,14 @@
-const fs = require('fs');
-const zonefile = require('../lib/zonefile.js');
-const deepEqual = require('deep-equal');
+import fs from 'fs';
+import zonefile from '../lib/zonefile.js';
+import deepEqual from 'deep-equal';
+
+import path from 'path';
+import { fileURLToPath } from 'url';
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+import { createRequire } from "module";
+const require = createRequire(import.meta.url);
 
 /////////////////////////////////////////////////////////////////////////////////
 //                  _______                                                    //

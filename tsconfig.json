@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "outDir": "./lib/",
+    "target": "es2017",
+    "esModuleInterop": true,
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "skipLibCheck": true,
+    "allowSyntheticDefaultImports": true,
+    "module": "esnext",
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noFallthroughCasesInSwitch": true,
+    "strictNullChecks": true,
+    "declaration": true,
+    "lib": ["dom", "dom.iterable", "esnext"]
+  },
+  "include": ["src", "src/.manualTests/*"],
+  "exclude": ["src/ribston-policies"]
+}

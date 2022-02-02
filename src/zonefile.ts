@@ -1,4 +1,4 @@
-import { GenerateOptions, ParseResult, SOA } from "./types.js";
+import { DNSZone, ParseResult, SOA } from "./types.js";
 
 const defaultTemplate = `; Zone: {zone}
 ; Exported  (yyyy-mm-ddThh:mm:ss.sssZ): {datetime}
@@ -65,7 +65,7 @@ const defaultTemplate = `; Zone: {zone}
 //  $$$$$$/                                                                        //
 //                                                                                 //
 /////////////////////////////////////////////////////////////////////////////////////
-const generate = (options: GenerateOptions, template: string) => {
+const generate = (options: DNSZone, template: string) => {
   const json = JSON.parse(JSON.stringify(options));
   template = template || defaultTemplate;
   template = process$ORIGIN(json[`$origin`], template);
@@ -225,7 +225,7 @@ const processDS = (data: any, template: string) => {
   return template.replace(`{ds}`, ret);
 };
 
-const processValues = (options: GenerateOptions, template: string) => {
+const processValues = (options: any, template: string) => {
   template = template.replace(`{zone}`, options[`$origin`] || options[`soa`][`name`] || ``);
   template = template.replace(`{datetime}`, new Date().toISOString());
   return template.replace(`{time}`, Math.round(Date.now() / 1000).toString());
@@ -244,7 +244,7 @@ const processValues = (options: GenerateOptions, template: string) => {
 // $$/                                                //
 //                                                    //
 ////////////////////////////////////////////////////////
-const parse = (text: string) => {
+const parse = (text: string): DNSZone => {
   text = removeComments(text);
   text = flatten(text);
   return parseRRs(text);

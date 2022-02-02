@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 import fs from "fs";
-import zonefile from "../dist/js/zonefile.js";
+import zonefile from "../lib/zonefile.js";
 
 import { createRequire } from "module";
 const require = createRequire(import.meta.url);

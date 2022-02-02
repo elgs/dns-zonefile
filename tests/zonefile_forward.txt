@@ -63,32 +63,3 @@ _foobar._tcp  200  SRV 0 1 9 old-slow-box.example.com.
 *._tcp          SRV  0 0 0 .
 *._udp          SRV  0 0 0 .
 
-
-1d4b41c9db9172e5f151e4a5fe3c57ca3f98b8e6ba807450b10d1897._openpgpkey.weberdns.de. IN OPENPGPKEY (
-                  mQENBFnVAMgBCADWXo3I9Vig02zCR8WzGVN4FUrexZh9OdVSjOeSSmXPH6V5
-                  +sWRfgSvtUp77IWQtZU810EI4GgcEzg30SEdLBSYZAt/lRWSpcQWnql4LvPg
-                  oMqU+/+WUxFdnbIDGCMEwWzF2NtQwl4r/ot/q5SHoaA4AGtDarjA1pbTBxza
-                  /xh6VRQLl5vhWRXKslh/Tm4NEBD16Z9gZ1CQ7YlAU5Mg5Io4ghOnxWZCGJHV
-                  5BVQTrzzozyILny3e48dIwXJKgcFt/DhE+L9JTrO4cYtkG49k7a5biMiYhKh
-                  LK3nvi5diyPyHYQfUaD5jO5Rfcgwk7L4LFinVmNllqL1mgoxadpgPE8xABEB
-                  AAG0MUpvaGFubmVzIFdlYmVyIChPTkxZLVRFU1QpIDxqb2hhbm5lc0B3ZWJl
-                  cmRucy5kZT6JATgEEwECACIFAlnVAMgCGwMGCwkIBwMCBhUIAgkKCwQWAgMB
-                  Ah4BAheAAAoJEOvytPeP0jpogccH/1IQNza/JPiQRFLWwzz1mxOSgRgubkOw
-                  +XgXAtvIGHQOF6/ZadQ8rNrMb3D+dS4bTkwpFemY59Bm3n12Ve2Wv2AdN8nK
-                  1KLClA9cP8380CT53+zygV+mGfoRBLRO0i4QmW3mI6yg7T2E+U20j/i9IT1K
-                  ATg4oIIgLn2bSpxRtuSp6aJ2q91Y/lne7Af7KbKq/MirEDeSPrjMYxK9D74E
-                  ABLs4Ab4Rebg3sUga037yTOCYDpRv2xkyARoXMWYlRqME/in7aBtfo/fduJG
-                  qu2RlND4inQmV75V+s4/x9u+7UlyFIMbWX2rtdWHsO/t4sCP1hhTZxz7kvK7
-                  1ZqLj9hVjdW5AQ0EWdUAyAEIAKxTR0AcpiDm4r4Zt/qGD9P9jasNR0qkoHjr
-                  9tmkaW34Lx7wNTDbSYQwn+WFzoT1rxbpge+IpjMn5KabHc0vh13vO1zdxvc0
-                  LSydhjMI1Gfey+rsQxhT4p5TbvKpsWiNykSNryl1LRgRvcWMnxvYfxdyqIF2
-                  3+3pgMipXlfJHX4SoAuPn4Bra84y0ziljrptWf4U78+QonX9dwwZ/SCrSPfQ
-                  rGwpQcHSbbxZvxmgxeweHuAEhUGVuwkFsNBSk4NSi+7Y1p0/oD7tEM17WjnO
-                  NuoGCFh1anTS7+LE0f3Mp0A74GeJvnkgdnPHJwcZpBf5Jf1/6Nw/tJpYiP9v
-                  Fu1nF9EAEQEAAYkBHwQYAQIACQUCWdUAyAIbDAAKCRDr8rT3j9I6aDZrB/9j
-                  2sgCohhDBr/Yzxlg3OmRwnvJlHjs//57XV99ssWAg142HxMQt87s/AXpIuKH
-                  tupEAClN/knrmKubO3JUkoi3zCDkFkSgrH2Mos75KQbspUtmzwVeGiYSNqyG
-                  pEzh5UWYuigYx1/a5pf3EhXCVVybIJwxDEo6sKZwYe6CRe5fQpY6eqZNKjkl
-                  4xDogTMpsrty3snjZHOsQYlTlFWFsm1KA43Mnaj7Pfn35+8bBeNSgiS8R+EL
-                  f66Ymcl9YHWHHTXjs+DvsrimYbs1GXOyuu3tHfKlZH19ZevXbycpp4UFWsOk
-                  Sxsb3CZRnPxuz+NjZrOk3UNI6RxlaeuAQOBEow50

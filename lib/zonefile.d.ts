@@ -1,6 +1,6 @@
-import { GenerateOptions } from "./types.js";
+import { DNSZone } from "./types.js";
 declare const _default: {
-    generate: (options: GenerateOptions, template: string) => string;
-    parse: (text: string) => Record<string, any>;
+    generate: (options: DNSZone, template: string) => string;
+    parse: (text: string) => DNSZone;
 };
 export default _default;

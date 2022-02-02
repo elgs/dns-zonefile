@@ -1,5 +1,5 @@
 import fs from "fs";
-import zonefile from "../dist/js/zonefile.js";
+import zonefile from "../lib/zonefile.js";
 import deepEqual from "deep-equal";
 
 import path from "path";

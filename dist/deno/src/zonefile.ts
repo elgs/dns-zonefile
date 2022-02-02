@@ -48,6 +48,9 @@ const defaultTemplate = `; Zone: {zone}
 ; DS Records
 {ds}
 
+; TLSA Records
+{tlsa}
+
 `;
 
 /////////////////////////////////////////////////////////////////////////////////////
@@ -82,6 +85,7 @@ const generate = (options: DNSZone, template: string) => {
   template = processSPF(json[`spf`] || [], template);
   template = processCAA(json[`caa`] || [], template);
   template = processDS(json[`ds`] || [], template);
+  template = processTLSA(json[`tlsa`] || [], template);
   template = processValues(json, template);
   return template.replace(/\n{2,}/gim, `\n\n`);
 };
@@ -223,6 +227,19 @@ const processDS = (data: any, template: string) => {
     ret += `IN\tDS\t${value.key_tag}\t${value.algorithm}\t${value.digest_type}\t${value.digest}\n`;
   }
   return template.replace(`{ds}`, ret);
+};
+
+const processTLSA = (data: any, template: string) => {
+  let ret = ``;
+  for (const value of data) {
+    ret += (value.name || `@`) + `\t`;
+    if (value.ttl) ret += value.ttl + `\t`;
+    ret += `IN\tTLSA\t` + value.cert_usage + `\t`;
+    ret += value.selector + `\t`;
+    ret += value.matching + `\t`;
+    ret += value.cert_data + `\n`;
+  }
+  return template.replace(`{tlsa}`, ret);
 };
 
 const processValues = (options: any, template: string) => {
@@ -405,6 +422,10 @@ const parseRRs = (text: string) => {
         case `DS`:
           ret.ds = ret.ds || [];
           ret.ds.push(parseDS(nrr, ret.ds));
+          break;
+        case `TLSA`:
+          ret.tlsa = ret.tlsa || [];
+          ret.tlsa.push(parseTLSA(nrr, ret.tlsa));
           break;
       }
     }
@@ -696,6 +717,31 @@ const parseDS = (
   };
 
   if (rrData.hasTtl) result.ttl = parseInt(rrTokens[1], 10);
+  return result;
+};
+const parseTLSA = (
+  rrData: { rrType?: string; tokens: any; hasName: any; hasTtl: any; typeIndex?: number },
+  recordsSoFar: string | any[]
+) => {
+  const rrTokens = rrData.tokens;
+  if (!rrData.hasName) {
+    if (recordsSoFar.length) {
+      rrTokens.unshift(recordsSoFar[recordsSoFar.length - 1].name);
+    } else {
+      rrTokens.unshift(`@`);
+    }
+  }
+
+  const l = rrTokens.length;
+  const result: ParseResult = {
+    name: rrTokens[0],
+    cert_usage: parseInt(rrTokens[l - 4]),
+    selector: parseInt(rrTokens[l - 3]),
+    matching: parseInt(rrTokens[l - 2]),
+    cert_data: rrTokens[l - 1],
+  };
+
+  if (rrData.hasTtl) result.ttl = parseInt(rrTokens[1]);
   return result;
 };
 

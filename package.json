@@ -12,7 +12,8 @@
     "build": "tsc",
     "start": "tsc --watch",
     "before-publish": "yarn build && yarn compile-deno && yarn bundle-policies",
-    "compile-deno": "sh scripts/compile-deno.sh"
+    "compile-deno": "sh scripts/compile-deno.sh",
+    "manual-test": "node bin/zonefile-cli.js -p tests/zonefile_forward.txt"
   },
   "type": "module",
   "repository": {

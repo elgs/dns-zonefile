@@ -406,6 +406,10 @@ const parseRRs = (text: string) => {
           ret.ds = ret.ds || [];
           ret.ds.push(parseDS(nrr, ret.ds));
           break;
+        case `TLSA`:
+          ret.tlsa = ret.tlsa || [];
+          ret.tlsa.push(parseTLSA(nrr, ret.tlsa));
+          break;
       }
     }
   }
@@ -696,6 +700,31 @@ const parseDS = (
   };
 
   if (rrData.hasTtl) result.ttl = parseInt(rrTokens[1], 10);
+  return result;
+};
+const parseTLSA = (
+  rrData: { rrType?: string; tokens: any; hasName: any; hasTtl: any; typeIndex?: number },
+  recordsSoFar: string | any[]
+) => {
+  const rrTokens = rrData.tokens;
+  if (!rrData.hasName) {
+    if (recordsSoFar.length) {
+      rrTokens.unshift(recordsSoFar[recordsSoFar.length - 1].name);
+    } else {
+      rrTokens.unshift(`@`);
+    }
+  }
+
+  const l = rrTokens.length;
+  const result: ParseResult = {
+    name: rrTokens[0],
+    cert_usage: parseInt(rrTokens[l - 4]),
+    selector: parseInt(rrTokens[l - 3]),
+    matching: parseInt(rrTokens[l - 2]),
+    cert_data: rrTokens[l - 1],
+  };
+
+  if (rrData.hasTtl) result.ttl = parseInt(rrTokens[1]);
   return result;
 };
 

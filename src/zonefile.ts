@@ -48,6 +48,9 @@ const defaultTemplate = `; Zone: {zone}
 ; DS Records
 {ds}
 
+; TLSA Records
+{tlsa}
+
 `;
 
 /////////////////////////////////////////////////////////////////////////////////////
@@ -82,6 +85,7 @@ const generate = (options: DNSZone, template: string) => {
   template = processSPF(json[`spf`] || [], template);
   template = processCAA(json[`caa`] || [], template);
   template = processDS(json[`ds`] || [], template);
+  template = processTLSA(json[`tlsa`] || [], template);
   template = processValues(json, template);
   return template.replace(/\n{2,}/gim, `\n\n`);
 };
@@ -223,6 +227,19 @@ const processDS = (data: any, template: string) => {
     ret += `IN\tDS\t${value.key_tag}\t${value.algorithm}\t${value.digest_type}\t${value.digest}\n`;
   }
   return template.replace(`{ds}`, ret);
+};
+
+const processTLSA = (data: any, template: string) => {
+  let ret = ``;
+  for (const value of data) {
+    ret += (value.name || `@`) + `\t`;
+    if (value.ttl) ret += value.ttl + `\t`;
+    ret += `IN\tTLSA\t` + value.cert_usage + `\t`;
+    ret += value.selector + `\t`;
+    ret += value.matching + `\t`;
+    ret += value.cert_data + `\n`;
+  }
+  return template.replace(`{tlsa}`, ret);
 };
 
 const processValues = (options: any, template: string) => {

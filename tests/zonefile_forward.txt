@@ -62,3 +62,5 @@ _foobar._tcp  200  SRV 0 1 9 old-slow-box.example.com.
 ; NO other services are supported
 *._tcp          SRV  0 0 0 .
 *._udp          SRV  0 0 0 .
+
+_25._tcp.mail.example.com.  IN TLSA 3 0 1 8cb0fc6c527506a053f4f14c8464bebbd6dede2738d11468dd953d7d6a3021f1

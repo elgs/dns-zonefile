@@ -8,7 +8,7 @@ parser and generator for Node.js and browser.
 ## Deno
 
 ```typescript
-import zonefile from 'https://deno.land/x/zonefile@0.3.0/lib/zonefile.js';
+import zonefile from 'https://deno.land/x/zonefile@0.3.2/lib/zonefile.js';
 ```
 
 ## Standalone

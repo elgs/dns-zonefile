@@ -62,7 +62,7 @@
     }
   ],
   "devDependencies": {
-    "deep-equal": "^2.2.1",
-    "jasmine": "^5.0.0"
+    "deep-equal": "^2.2.3",
+    "jasmine": "^5.6.0"
   }
 }

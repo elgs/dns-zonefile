@@ -647,7 +647,7 @@ describe('reverse ipv6 parser', () => {
 //                $$$$$$/   $$$$$$$/ $$/   $$/  $$$$$$$/ $$/       $$$$$$$/    $$$$/   $$$$$$/  $$/                 $/      $$$$$$/   //
 //                                                                                                                                    //
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-describe('reverse ipv4 generator', () => {
+describe('reverse ipv6 generator', () => {
    let generated;
    let lines;
    beforeEach(() => {
@@ -708,7 +708,7 @@ describe('reverse ipv4 generator', () => {
 //                                                         $$/                                                                                               //
 //                                                                                                                                                           //
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-describe('reverse ipv4 idempotence tests', () => {
+describe('reverse ipv6 idempotence tests', () => {
    it('should be idempotent', () => {
       const text = fs.readFileSync(__dirname + '/zonefile_reverse_ipv6.txt', 'utf8');
       const json = zonefile.parse(text);

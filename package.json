@@ -8,7 +8,7 @@
     "zonefile": "./bin/zonefile-cli.js"
   },
   "scripts": {
-    "test": "npx jasmine tests/tests.js"
+    "test": "npx jasmine tests/tests.js tests/regressions.js"
   },
   "type": "module",
   "repository": {

@@ -724,3 +724,70 @@ describe('reverse ipv6 idempotence tests', () => {
       expect(deepEqual(text1.split('\n').slice(2), text2.split('\n').slice(2))).toBeTrue();
    });
 });
+describe('Parentheses grouping (RFC 1035 section 5.1)', () => {
+
+   it('should parse a TXT record split across lines with parentheses (issue #54)', () => {
+      const parts = ['v=DKIM1;h=sha256;p=' + 'A'.repeat(81), 'A'.repeat(100), 'A'.repeat(100), 'A'.repeat(100), 'A'.repeat(11)];
+      const text = `@ IN SOA ns1.example.com. hostmaster.example.com. (
+            1 ;serial
+            2 3 4 5 )
+2026b._domainkey.foo.me.   TXT (
+` + parts.map(p => `                "${p}"\n`).join('') + `        )
+`;
+      const parsed = zonefile.parse(text);
+      const expected = parts.map(p => `"${p}"`).join(' ');
+      expect(parsed.soa.serial).toBe(1);
+      expect(parsed.txt).toEqual([{ name: '2026b._domainkey.foo.me.', txt: expected }]);
+      // round trip: the record is regenerated on one line, unchanged
+      expect(zonefile.generate(parsed).split('\n')).toContain('2026b._domainkey.foo.me.\tIN\tTXT\t' + expected);
+   });
+
+   it('should parse parentheses on any record type, including single-line groups', () => {
+      const parsed = zonefile.parse(`@ MX ( 10
+            mail.example.com. )
+foo TXT ( "hello" "world" )
+`);
+      expect(parsed.mx).toEqual([{ name: '@', preference: 10, host: 'mail.example.com.' }]);
+      expect(parsed.txt).toEqual([{ name: 'foo', txt: '"hello" "world"' }]);
+   });
+
+   it('should treat parentheses inside quoted strings as literal', () => {
+      const parsed = zonefile.parse(`foo TXT (
+            "open (paren"
+            "close) paren" )
+bar TXT "call (me) maybe"
+`);
+      expect(parsed.txt).toEqual([
+         { name: 'foo', txt: '"open (paren" "close) paren"' },
+         { name: 'bar', txt: '"call (me) maybe"' },
+      ]);
+   });
+
+   it('should strip comments inside parentheses', () => {
+      const parsed = zonefile.parse(`foo TXT ( ; comment
+            "a" ; another
+            "b" )
+`);
+      expect(parsed.txt).toEqual([{ name: 'foo', txt: '"a" "b"' }]);
+   });
+
+   it('should inherit the owner name after a multi-line record', () => {
+      const parsed = zonefile.parse(`foo TXT (
+            "a" )
+      TXT "b"
+`);
+      expect(parsed.txt).toEqual([{ name: 'foo', txt: '"a"' }, { name: 'foo', txt: '"b"' }]);
+   });
+
+   it('should not merge a single-line SOA with a later parenthesized record', () => {
+      const parsed = zonefile.parse(`@ IN SOA ns1. hostmaster. 1 2 3 4 5
+foo TXT ( "a"
+            "b" )
+bar A 1.2.3.4
+`);
+      expect(parsed.soa.serial).toBe(1);
+      expect(parsed.soa.minimum).toBe(5);
+      expect(parsed.txt).toEqual([{ name: 'foo', txt: '"a" "b"' }]);
+      expect(parsed.a).toEqual([{ name: 'bar', ip: '1.2.3.4' }]);
+   });
+});
